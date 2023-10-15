@@ -129,12 +129,12 @@ def uploadCovid():
 
 @app.route('/upload_chest.html')
 def upload_chest():
-   return render_template('upload_chest.html')
+   return render_template('results_chest.html')
 
 
 @app.route('/upload_ct.html')
 def upload_ct():
-   return render_template('upload_ct.html')
+   return render_template('results_ct.html')
  
 @app.route('/breastcancer')
 def breast_cancer():
