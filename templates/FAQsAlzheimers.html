@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Alzheimer's Disease Prediction Wep App</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!--GitHub icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Appland - v4.7.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .col-md-6 {
+        text-align: left; /* Align the text to the right within each col-md-6 */
+        margin-top: 20px; /* Add margin between col-md-6 divs and h1 elements */
+        margin-bottom: 20px;
+    }
+    
+    #targetSection h1,h2 {
+        margin-top: 20px; /* Add margin between h1 and adjacent col-md-6 */
+        transition: color 0.3s; /* Add a transition for the hover effect */
+        cursor: pointer; /* Change cursor to pointer on hover */
+        color: rgb(66, 66, 191);
+    }
+
+    #targetSection h2:hover {
+        color: rgb(17, 212, 209); /* Change text color on hover */
+    }
+
+    .col-md-6 img {
+        max-width: 100%; /* Ensure images don't exceed their container width */
+        float: left; /* Move images to the left side */
+        margin-left: 100px; /* Add margin to the right of images */
+    }
+    #targetSection img{
+        width: 30%;
+        max-width: 100%; /* Ensure images don't exceed their container width */
+        display: block; /* Center-align images */
+        margin: 0 auto; /* Center-align images horizontally */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="#"><img src="static/assets/img/logo.png" alt="" class="img-fluid"> Alzheimer's Disease Prediction </a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto" href="{{url_for('homealzhiemers')}}">Home</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('aboutAlzheimers')}}">About Us</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('classifier')}}">Alzheimer's Disease Classifier</a></li>
+            <li><a class="nav-link scrollto active" href="{{url_for('faqsAlzhiemers')}}">FAQS </a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('game')}}" target="_blank">Memory Game </a></li>
+            <!-- Add this line for Alzheimer's news -->
+            <li><a class="nav-link scrollto" href="https://news.google.com/search?q=Alzheimer's" target="_blank">News</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+<!-------------------------- header ----------------------------------->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-up">
+          <div>
+            <h1>Frequently Asked questions <br> About Alzheimer Disease</h1>
+                <p> To get an clear answer and be more aware about your health </p>
+                <button id="scrollButton">
+                    <div id="gifContainer">
+                        <img src="static\assets\img\sticky objects gif.gif" alt="Your GIF" id="hoverGif"/>
+                    </div>
+                    Scroll Down
+                </button>
+                </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up">
+                <img src="static/assets/img/brain.png" class="img-fluid" alt="">
+                </div>
+            </div>
+            </div>
+                </section>
+<!----------faqs------------------------------------->
+<section id="targetSection">
+    <div class="container"> 
+        <div class="row no-gutters">
+          <div class="col-xl-12">
+            <div class="content d-flex flex-column justify-content-center">
+              <div class="row">
+                <h1>1. What is the difference between Alzheimer's disease and dementia?</h1>
+                <div class="col-md-6">
+                    <h4>Alzheimer's disease is a type of dementia. Dementia is a loss of thinking, remembering, 
+                        and reasoning skills that interferes with a person's daily life and activities. Alzheimer's disease is the most common cause of dementia among older people. Other types of dementia include frontotemporal disorders, Lewy body dementia, and vascular dementia.
+                        <br>Learn more about Alzheimer's disease and dementia.
+                    </h4>
+                    <a href="//www.nia.nih.gov/health/what-is-dementia"> About dementia</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="/static/assets/img/6.png" style="width: 70%;">
+                </div>
+                <h1> 2. Is Alzheimer's disease hereditary? </h1>
+                <div class="col-md-6">
+                    <h4>ust because a family member has Alzheimer's disease does not mean that you will get it, too. Most cases of Alzheimer's are late-onset. This form of the disease occurs in a person's mid-60s and is not linked to a specific change in genes. However, genetic factors appear to increase a person's risk of developing late-onset Alzheimer's.
+                        Early-onset Alzheimer's disease, which is rare, can be caused by genetic variants, or changes in certain genes. If one of the genetic variants is passed down, the child will usually — but not always — have the disease. For other cases of early-onset Alzheimer's, research shows other genetic components are involved.
+                    </h4>
+                    <a href="https://www.nia.nih.gov/health/assessing-risk-alzheimers-disease"> About  assessing risk for Alzheimer's disease.</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="/static/assets/img/Alzheimers2.jpg" style="width: 70%;">
+                </div>
+                <h1> 3. Is there a way to prevent Alzheimer's disease?</h1>
+                <div class="col-md-6">
+                    <h4>Currently, there is no definitive evidence about what can prevent Alzheimer's disease or age-related cognitive decline. What we do know is that a healthy lifestyle 
+                        — one that includes a healthy diet, physical activity, appropriate weight, and control of high blood pressure — can lower the risk of certain chronic diseases and boost overall health and well-being. Scientists are very interested in the possibility that a healthy lifestyle might delay, slow down, or even prevent Alzheimer's. They are also studying the role of social activity and intellectual stimulation in Alzheimer's disease risk.
+                    </h4>
+                    <a href="https://www.alzheimers.gov/taking-action/reduce-your-risk"> About reducing your risk for Alzheimer's disease.</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="/static/assets/img/ADA-Website-5-Ways.png" style="width: 70%;">
+                </div>
+                <h1> 4.Is there a cure for Alzheimer's disease? </h1>
+                <div class="col-md-6">
+                    <h4>Currently, there is no cure for Alzheimer's disease. Some sources claim that products such as coconut oil or dietary supplements can cure or delay Alzheimer's. However, there is no scientific evidence to support these claims.
+                        The U.S. Food and Drug Administration (FDA) has approved several drugs to treat people with Alzheimer's disease, and certain medicines and interventions may help control behavioral symptoms.
+                        Scientists are developing and testing possible new treatments for Alzheimer's. you can Learn more about taking part in clinical trials that help scientists learn about the brain in healthy aging and what happens in Alzheimer's and other dementias. Results of these trials are used to improve diagnosis, treatment, and prevention methods.
+                    </h4>
+                    <a href="https://www.nia.nih.gov/health/how-alzheimers-disease-treated"> About how Alzheimer's disease is treated.</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="/static/assets/img/YouAndAlzheimers.com-blog-02.jpg" style="width:80%;">
+                </div>
+                <h1> 5. How is Alzheimer’s disease diagnosed?</h1>
+                <div class="col-md-6">
+                    <h4>Alzheimer’s disease is diagnosed by trained specialists who perform a series of medical, physical and cognitive assessments. The assessments are designed to answer the following questions: <br>
+                        <ul>
+                        <li>Are there changes in behavior, mood or personality?</li>
+                        <li>Is the decline in memory or thinking skills comparable to, or worse than, others within the same age group?</li>
+                        <li>What is the extent of the cognitive impairment?</li>
+                        <li>How does the cognitive deterioration affect daily life and functioning?</li>
+                       </ul>
+                        Additional tests such as brain scans, or neuropsychological and neurocognitive testing which provide a more in-depth memory assessment, may also be conducted. These can help to exclude conditions such as vitamin deficiencies or thyroid dysfunction which can sometimes be associated with symptoms similar to those seen in Alzheimer’s disease.
+                    </h4>
+                    <a href="https://www.pacificneuroscienceinstitute.org/brain-health/conditions-treatment/alzheimers-disease/#tab-diagnosis"> About how Alzheimer’s disease is diagnosed.</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="/static/assets/img/how-alzheimers-is-diagnosed1.jpg" style="width:80%;">
+                </div>
+                <h2> For morw questions you can contact us below </h2>
+                <img src="/static/assets/img/7V2A.gif" alt="Your GIF" id="mygif"/>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+</section>
+</main><!-- End #main -->
+<!------footer------------------------------------>
+      <div class="footer" id="footer">
+        <div class="footer-container">
+            <div class="container1">
+                <div class="row1">
+                    <div class="footer-content">
+                      <div class="news-contact-container">
+                      <div class="about-section">
+                            <div class="footer-about-info">
+                                <h4> About Us </h4>
+                                <p> Alzheimers disease web App Classifier , aims to detect whether patient have an Alzheimer or not using machine learning Algorithems. </p>
+                                <ul style="list-style-type: none; /* Remove default bullet points */">
+                                    <li><i class="fa fa-map-marker"></i>
+                                        <span>university of Haifa , Abba Khoushy Ave 199,Haifa</span></li>
+                                    <li><i class="fa fa-envelope"></i>
+                                        <span>Email: <a href="mailto:aseel.khlady@gmail.com">aseel.khlady@gmail.com</a></span>
+                                    <li><i class="fa fa-envelope"></i>
+                                        <span>Email: <a href="mailto:orabimaria@gmail.com">orabimaria@gmail.com</a></span>
+                                    <li><i class="fa fa-envelope"></i>
+                                        <span>Email: <a href="mailto:ameerarayan2@gmail.com">ameerarayan2@gmail.com </a></span></li>
+                                </ul>
+                            </div>
+                            <div class="social-link footer-social-link">
+                                <ul>
+                                    <li><a href="https://is-web.hevra.haifa.ac.il/index.php" target="_blank">
+                                           <img src="static\assets\img\download.png" style="background-size: 20%; /* Adjust this property as needed */
+                                                border-radius: 50%; /* Create a circular shape */
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                width: 45px;
+                                                height: 45px;"></a></li>
+                                    <li><a href="https://www.haifa.ac.il/?lang=en" class="circle c-2">
+                                        <img src="static\assets\img\images.png" style="background-size: 20%; /* Adjust this property as needed */
+                                                border-radius: 50%; /* Create a circular shape */
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                width: 45px;
+                                                height: 45px;"></a></li>
+                                     <li><a href="https://www.facebook.com/ishaifau" target="_blank" class="circle c-3"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://gitlab.com/u_of_haifa_is_dpt/capstone_george_martvel/be-my-eyes" class="circle c-4">
+                                         <img src="static\assets\img\Screenshot 2023-09-26 225801.png" style="background-size: cover; /* Adjust this property as needed */
+                                                border-radius: 50%; /* Create a circular shape */
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;">
+                                    </a></li>
+                                </ul>
+                            </div> <!-- footer-social-link -->
+                        </div>
+                        <div class="news-section">
+                            <h4> Our News </h4>
+                            <div class="news-1">
+                                <a href="FAQs.html">
+                                    <img src="static/assets/img/news1.webp" alt="..." style="width:65px; height:65px;">
+                                </a>
+                                <div class="news">
+                                    <h5 class="news-h"><a href="https://www.sciencedaily.com/releases/2023/10/231005173755.htm">Protein that could help defeat Alzheimer's and increase productive lifespan..</a></h5>
+                                    <p class="date">OCT 5, 2023</p>
+                                </div>
+                            </div>
+                            <div class="news-2">
+                                <a href="FAQs.html">
+                                    <img src="static/assets/img/download.jfif" alt="..." style="width:65px; height:65px;">
+                                </a>
+                                <div class="news">
+                                    <h5 class="news-h"><a href="https://www.yourerie.com/news/local-news/health-report-identifying-risk-factors-for-alzheimers-disease/">Health Report: Identifying risk factors for Alzheimer’s Disease</a></h5>
+                                    <p class="date">Sep 1, 2023</p>
+                                </div>
+                            </div>
+                            <div class="news-3">
+                                <a href="FAQs.html">
+                                    <img src="static/assets/img/news2.webp" alt="..." style="width:65px; height:65px;">
+                                </a>
+                                <div class="news">
+                                    <h5 class="news-h"><a href="https://www.biospace.com/article/small-percentage-of-adults-with-early-alzheimer-s-eligible-for-leqembi-study-/">Small Percentage of Adults with Early Alzheimer’s Eligible for Leqembi: Study</a></h5>
+                                    <p class="date">Sep 26, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="contact-section">
+                            <h4> Contact Us </h4>
+                            <form action="...">
+                                <div class="form-group">
+                                    <input id="first_name" name="first_name" type="text" placeholder="Name"
+                                           class="form-control" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="email" name="email" type="email" placeholder="E-mail"
+                                           class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="4" placeholder="Message..."></textarea>
+                                </div>
+                                <div class="form-group buttons ">
+                                    <input type="submit" class="red-btn red-btn-form" value="Send Message">
+                                </div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="back-to-top">
+                <a class="top top-page" href="#"> <i class="icon-up-open-big"></i></a>
+            </div>
+    
+            <div class="back-to-top-mob">
+                <a class="top top-mob" href="#"> <i class="icon-up-open-big"></i></a>
+            </div>
+        </div>
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="copy-title">Copyright &copy; 2023 created by
+                            <a href="https://gitlab.com/u_of_haifa_is_dpt/capstone_george_martvel/be-my-eyes" target="_blank">Aseel&Ameera&Maria</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+ <!------------------end footer --------------->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static\assets\js\script.js"></script>
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+       /* Style for the advice box */
+       .advice-box {
+            background-color: #339FFF;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            font-family: cursive;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+      /* Style for the question and answer boxes */
+      .qa-container {
+          border: 1px solid #ccc;
+          padding: 10px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          background-color: #339FFF  ; /* Background color for questions */
+
+      }
+
+      .answer {
+          display: none;
+          padding: 10px;
+          background-color: #e0e0e0; /* Background color for answers */
+
+      }
+  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>A Diabetes Awareness Website</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/cssDiabetes/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Signika:400"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <!-- Brand and toggle get grouped for better mobile display -->
+
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/indexdiabetes.html"
+          ><img
+            src="../static/imgDiabetes/medical-tools.png"
+            alt="Diatension spelt out written on top of heart"
+            width="50"
+            height="50"
+        /></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="/indexdiabetes.html" role="button"
+            aria-haspopup="true"
+            aria-expanded="false">Home<span class="caret"></span
+              ></a>
+            <ul class="dropdown-menu">
+              <li>
+              <a href="/"
+                >Back to ProHealth360</a>
+              </li>
+           </ul>
+          </li>
+
+          <!--LINK ONE-->
+          <li class="dropdown active">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Diabetes <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="Implementaiondiabetes.html"
+                  >About Project</a
+                >
+              </li>
+              <li>
+                <a href="types-of-diabetes.html">Types of Diabetes</a>
+              </li>
+              <li class="active">
+                <a href="diabetes-risks.html">Risk Factors</a>
+              </li>
+              <li>
+                <a href="signs-and-symptoms.html">Signs/Symptoms</a>
+              </li>
+              <li>
+                <a href="diabetes-hypertension-link.html"
+                  >Diabetes and Hypertension</a
+                >
+              </li>
+              <li>
+                <a href="treatment-and-medication.html"
+                  >Treatment/Medications</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- LINK FOUR -->
+          <li class="dropdown">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Healthy Living <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="diet-and-nutrition.html">Diet and Nutrition</a>
+              </li>
+              <li>
+                <a href="physical-activity.html">Physical Activity</a>
+              </li>
+            </ul>
+          </li>
+
+          <!--LINK FIVE-->
+          <li class="dropdown">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Health Tools <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="bmi-calculator.html">BMI Calculator</a>
+              </li>
+              <li>
+                <a href="calorie-calculator.html">Calorie Calculator</a>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="dropdown">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Contact us<span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="contact_diabetes.html">Contact us</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <form class="navbar-form navbar-left">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+
+    <!-- body content-->
+    <div class="container body-content-types">
+      <div class="row">
+        <br><br><br>
+        <div class="col-lg-9 col-md-12 col-xs-12">
+          <div style="font-size: 20px; font-family: cursive; color: black" class="qa-container" onclick="toggleAnswer('type1')">What are the risk factors for type 1 diabetes? <b style="color: blue;">Click one me to know :)</b></div>
+    <div style="font-size: 20px; font-family: cursive; color: black" class="answer" id="type1">
+        Researchers continue to work hard to find out what causes type 1 diabetes. It is known that having a family member (parent, sibling) with type 1 diabetes slightly increases the risk; however, definite risk factors are currently not known.
+    </div>
+<br>
+    <div style="font-size: 20px; font-family: cursive; color: black" class="qa-container" onclick="toggleAnswer('type2')">What are the risk factors for type 2 diabetes?  <b style="color: blue;">Click one me to know :)</b></div>
+    <div style="font-size: 20px; font-family: cursive; color: black"  class="answer" id="type2">
+        Anyone over the age of 40 should be tested for diabetes every three years. Anyone who has one or more risk factors should be tested more frequently.
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+            } else {
+                answer.style.display = 'none';
+            }
+        }
+    </script>
+          <br /><span style="text-decoration: underline ; font-size: 20px; font-family: cursive; color: black"
+              >Risk factors are:
+                <img
+              src="../static/imgDiabetes/risk-management.png"
+              alt=""
+              width="60"
+              height="60"
+          ></span>
+            
+            <ul style="font-size: 20px; font-family: cursive; color: black">
+              <li>Having a parent, brother, or sister with diabetes;</li>
+              <li>
+                Being a member of a high-risk group (Aboriginal, Hispanic, South
+                Asian, Asian, or African descent);
+              </li>
+              <li>health complications that are associated with diabetes;</li>
+              <li>
+                Having given birth to a baby that weighed more than four kilograms
+                (nine pounds) at birth or having had gestational diabetes
+                (diabetes during pregnancy);
+              </li>
+              <li>
+                Having been diagnosed with prediabetes (impaired glucose tolerance
+                or impaired fasting glucose);
+              </li>
+              <li>Having high blood pressure;</li>
+              <li>Having high cholesterol or other fats in the blood;</li>
+              <li>
+                Being overweight, especially if that weight is mostly carried
+                around the tummy;
+              </li>
+              <li>Having been diagnosed with polycystic ovary syndrome;</li>
+              <li>
+                Having been diagnosed with Acanthosis nigricans (darkened patches
+                of skin);
+              </li>
+              <li>
+                Having been diagnosed with psychiatric disorders: schizophrenia,
+                depression, bipolar disorder;
+              </li>
+              <li>Having been diagnosed with obstructive sleep apnea;</li>
+              <li>
+                Having been prescribed a glucocorticoid medication by a doctor.
+              </li></ul>
+            
+          </p>
+          <br>
+          <div class="advice-box" style="text-align:left; font-size: 24px; font-family: cursive; color: black">
+            <h2>
+              <img
+              src="../static/imgDiabetes/specialist.png"
+              alt=""
+              width="60"
+              height="60"
+              style="text-align:left;"> <br>The earlier you are diagnosed, the sooner you can take action to stay well – now and in the future. If you already have type 2 diabetes, your children, brothers, and sisters are at risk. Urge them to be tested for diabetes.
+                </h2>
+      </div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-xs-12">
+          <br />
+          <div class="thumbnail">
+            <img
+              src="../static/imgDiabetes/diabetes22.png"
+              alt=""
+              width="900"
+              height="700"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer-section">
+      <div class="footer" style="color: white">
+        <div
+          class="container"
+          style="font-family: cursive; color: white; font-size: 20px"
+        >
+          <div
+            class="row"
+            style="font-family: cursive; color: white; font-size: 20px"
+          >
+            <div class="col-md-3 text-center">
+              <h1>Quick Links</h1>
+              <ul>
+                <li><a href="/indexdiabetes.html"> Diabetes</a></li>
+                <li>
+                  <a href="diet-and-nutrition.html">Diet & Nutrition</a>
+                </li>
+                <li>
+                  <a href="bmi-calculator.html">BMI Calculator</a>
+                </li>
+                <li>
+                  <a href="calorie-calculator.html">Calorie Calculator</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-3 text-center">
+              <h1>Contact</h1>
+              <p>
+                <a
+                  href="tel:888-999-0000"
+                  style="font-family: cursive; font-size: 20px"
+                >
+                  Call us at 888 999 0000
+                </a>
+              </p>
+              <p>
+                <a
+                  href="mailto:ameerarayan2@gmail.com"
+                  style="font-family: cursive; font-size: 20px"
+                >
+                  ameerarayan2@gmail.com
+                </a>
+              </p>
+              <p>
+                <a
+                  href="mailto:aseel.khaldy@gmail.com"
+                  style="font-family: cursive; font-size: 20px"
+                >
+                  aseel.khaldy@gmail.com
+                </a>
+              </p>
+              <p>
+                <a
+                  href="mailto:orabimaria@gmail.com"
+                  style="font-family: cursive; font-size: 20px"
+                >
+                  orabimaria@gmail.com
+                </a>
+              </p>
+              <p style="font-family: cursive; font-size: 20px">
+                University of Haifa,<br />
+                199 Aba khoushy ave. mount
+              </p>
+            </div>
+            <div class="col-md-3 text-center">
+              <h3 class="text-center footer-headings">Stay Connected</h3>
+              <div class="text-center">
+                <a href="https://www.facebook.com">
+                  <i
+                    id="social-fb"
+                    class="fa fa-facebook-square fa-2x social"
+                  ></i>
+                </a>
+                <a href="https://twitter.com">
+                  <i
+                    id="social-tw"
+                    class="fa fa-twitter-square fa-2x social"
+                  ></i>
+                </a>
+                <a href="https://plus.google.com/">
+                  <i
+                    id="social-gp"
+                    class="fa fa-google-plus-square fa-2x social"
+                  ></i>
+                </a>
+                <a href="mailto:diatension@gmail.com">
+                  <i
+                    id="social-em"
+                    class="fa fa-envelope-square fa-2x social"
+                  ></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-3 text-center">
+              <h3 class="text-center footer-headings">
+                Sign Up For Our Newsletter
+              </h3>
+              <form action="#" class="form-inline">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email Address"
+                />
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-search form-control"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row center-block">
+          <div class="copyright-text">
+            <p
+              style="font-family: cursive; font-size: 20px; text-align: center"
+            >
+              © copyright 2023 by
+              <a href="#" style="font-family: cursive; font-size: 20px"
+                >AmeeraRayan&AseelKwaled&MariaOrabi</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>

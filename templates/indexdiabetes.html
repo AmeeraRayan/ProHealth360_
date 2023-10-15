@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .advertisement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray; /* Background color for the advertisement */
+    padding: 10px;
+    position: relative; /* Needed for absolute positioning of icons */
+
+}
+.icon-left,
+.icon-right {
+    margin: 10px; /* Adjust the margin as needed */
+    top: 0;
+    animation: moveIcon 4s linear infinite alternate; /
+}
+.icon-right img {
+    width: 50px; /* Adjust the icon size as needed */
+    height: 50px;
+}
+.icon-left img {
+    width: 50px; /* Adjust the icon size as needed */
+    height: 50px;
+}
+.moving-icon {
+    width: 50px;
+    height: 50px;
+}
+@keyframes moveIcon {
+    0% {
+        transform: translateY(-10px); /* Move icons up by 10px */
+    }
+    100% {
+        transform: translateY(10px); /* Move icons down by 10px */
+    }
+}
+/* Style for the button */
+.btn-style-one {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding to your preference */
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  border-radius: 5px; /* Rounded corners */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+      .advice {
+        background-color: #f7f7f7;
+        border-left: 40px solid #007bff; /* Green border on the left */
+        padding: 15px;
+        margin-bottom: 20px;
+        margin-top: 40;
+        font-family: cursive;
+        font-size: 20px;
+      }
+      .advice p {
+        margin: 0; /* Remove default margin inside the advice div */
+      }
+      .video-note {
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 20px 0;
+        text-align: center;
+        font-family: cursive;
+        font-size: 30px;
+        color: rgb(10, 10, 50);
+      }
+      .video-note a {
+        text-decoration: none;
+        color: rgb(10, 10, 50);
+        font-weight: bold;
+        font-family: cursive;
+        font-size: 30px;
+      }
+      .video-note a:hover {
+        text-decoration: underline;
+        color: black;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>A Diabetes Awareness Website</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/cssDiabetes/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Signika:400"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <!-- <div class="container"> -->
+      <!-- Brand and toggle get grouped for better mobile display -->
+
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="/indexdiabetes.html"
+          ><img
+            src="../static/imgDiabetes/medical-tools.png"
+            alt="Diatension spelt out written on top of heart"
+            width="50"
+            height="50"
+        /></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="/indexdiabetes.html" role="button"
+            aria-haspopup="true"
+            aria-expanded="false">Home<span class="caret"></span
+              ></a>
+            <ul class="dropdown-menu">
+              <li>
+              <a href="/"
+                >Back to ProHealth360</a>
+              </li>
+           </ul>
+          </li>
+          <!--LINK ONE-->
+          <li class="dropdown">
+            <a
+              href="/indexdiabetes.html"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Diabetes <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="Implementaiondiabetes.html"
+                  >About Project</a
+                >
+              </li>
+              <li>
+                <a href="types-of-diabetes.html"
+                  >Types of Diabetes</a
+                >
+              </li>
+              <li>
+                <a href="diabetes-risks.html">Risk Factors</a>
+              </li>
+              <li>
+                <a href="signs-and-symptoms.html"
+                  >Signs/Symptoms</a
+                >
+              </li>
+              <li>
+                <a href="diabetes-hypertension-link.html"
+                  >Diabetes and Hypertension</a
+                >
+              </li>
+              <li>
+                <a href="treatment-and-medication.html"
+                  >Treatment/Medications</a
+                >
+              </li>
+            </ul>
+          </li>
+          
+          <!-- LINK FOUR -->
+          <li class="dropdown">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Healthy Living <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="diet-and-nutrition.html"
+                  >Diet and Nutrition</a
+                >
+              </li>
+              <li>
+                <a href="physical-activity.html"
+                  >Physical Activity</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!--LINK FIVE-->
+          <li class="dropdown">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Health Tools <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="bmi-calculator.html">BMI Calculator</a>
+              </li>
+              <li>
+                <a href="calorie-calculator.html"
+                  >Calorie Calculator</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Contact us<span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="contact_diabetes.html">Contact us</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+        <form class="navbar-form navbar-left id=searchForm">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="searchInput"
+              placeholder="Search"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="searchResults">
+          <!-- Results will be displayed here -->
+        </div>
+        <script>
+          document
+            .getElementById("searchForm")
+            .addEventListener("submit", function (event) {
+              event.preventDefault(); // Prevent the form from actually submitting
+
+              // Get the search query
+              var searchQuery = document
+                .getElementById("searchInput")
+                .value.toLowerCase();
+
+              // Search logic (replace this with your actual search logic)
+              var searchResults = performSearch(searchQuery);
+
+              // Display search results (replace this with how you want to display the results)
+              displaySearchResults(searchResults);
+            });
+
+          function performSearch(query) {
+            // Perform your search logic here and return the results
+            // For simplicity, let's assume we're searching for text within the page
+            var elementsToSearch = document.querySelectorAll("p"); // Search within paragraphs
+            var results = [];
+
+            elementsToSearch.forEach(function (element) {
+              var text = element.innerText.toLowerCase();
+              if (text.includes(query)) {
+                results.push(element);
+              }
+            });
+
+            return results;
+          }
+
+          function displaySearchResults(results) {
+            var searchResultsDiv = document.getElementById("searchResults");
+            searchResultsDiv.innerHTML = ""; // Clear previous results
+
+            if (results.length === 0) {
+              searchResultsDiv.innerHTML = "<p>No results found.</p>";
+              return;
+            }
+
+            results.forEach(function (result) {
+              // Display the results (you can customize this part)
+              var resultItem = document.createElement("div");
+              resultItem.innerHTML =
+                "<p>Search result: " + result.innerText + "</p>";
+              searchResultsDiv.appendChild(resultItem);
+            });
+          }
+        </script>
+      </div>
+      <!-- /.navbar-collapse -->
+      <!-- </div> -->
+      <!-- /.container-fluid -->
+    </nav>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="carousel-caption">
+            <h2>
+              Discover a life full of vitality and well-being – choose our
+              diabetes care today! With us, you won't need to visit a hospital
+              or go anywhere else to determine whether you have diabetes or not;
+              we provide all the necessary information you need
+            </h2>
+            <img src="../static/imgDiabetes/counselling.jpg" alt="" width="200" height="150" />
+            <div style="text-align: right; font-family: cursive;font-size: 24;">
+              <a href="/diabetesdetection" class="btn-style-one"
+                >Diabetes Detection</a
+              >
+            </div></div>
+        </div>
+        <div class="item">
+          <div class="carousel-caption">
+            <h2>
+              <b>Diabetes</b> doesn't define you; it's just a part of your
+              journey. With our comprehensive diabetes care, you can live your
+              life to the fullest, worry-free. Embrace a brighter future and
+              unlock your potential with our trusted diabetes solutions.
+            </h2>
+            <img
+              class="slider-img"
+              src="../static/imgDiabetes/blood-pressure-check2.jpg"
+              alt="patient getting her blood pressure checked"
+              class="second-slide"
+              width="200"
+              height="100"
+            />    <div style="text-align: right; font-family: cursive;font-size: 24;">
+              <a href="/diabetesdetection" class="btn-style-one"
+                >Diabetes Detection</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="carousel-caption">
+            <h1>
+              Take control of your health with our diabetes management solutions
+            </h1>
+            <h3>
+              Say goodbye to sugar spikes and hello to a healthier you
+              <img
+                class="slider-img"
+                src="../static/imgDiabetes/bye.png"
+                width="40"
+                height="40"
+              />
+            </h3>
+            <img
+              class="slider-img"
+              src="../static/imgDiabetes/kids-in-classroom1.jpg"
+              alt="African school children in class"
+              class="third-slide"
+              width="200"
+              height="100"
+            />    <div style="text-align: right; font-family: cursive;font-size: 24;">
+              <a href="/diabetesdetection" class="btn-style-one"
+                >Diabetes Detection</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Controls -->
+      <a
+        class="left carousel-control"
+        href="#myCarousel"
+        role="button"
+        data-slide="prev"
+      >
+        <span
+          class="glyphicon glyphicon-chevron-left"
+          aria-hidden="true"
+        ></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="right carousel-control"
+        href="#myCarousel"
+        role="button"
+        data-slide="next"
+      >
+        <span
+          class="glyphicon glyphicon-chevron-right"
+          aria-hidden="true"
+        ></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="container">
+      <div class="row row-1">
+        <div class="col-md-7">
+          <div class="advertisement">
+
+            <div class="icon-left">
+                <img src="../static/imgDiabetes/____diabetes.png" alt="Diabetes Icon" class="moving-icon" />
+            </div>
+            <p style="
+            font-size: 18px;
+            font-family: cursive;
+            color: white;
+          ">You could be one of the 1.5 million who have diabetes and don’t know it. It's important to know the risk factors and get checked</p>
+            <div class="icon-right">
+                <img src="../static/imgDiabetes/glucose-meter.png" alt="Diabetes Icon" class="moving-icon" />
+            </div>
+        </div>
+          <h1
+            id="about-diabetes"
+            style="
+              font-size: 30px;
+              font-family: cursive;
+              color: rgb(10, 10, 50);
+            "
+          >
+            Introduction to Diabetes
+          </h1>
+          <p class="about-diabetes-p" style="font-family: cursive">
+            Diabetes is a chronic medical condition that affects millions of
+            people worldwide. It occurs when the body is unable to properly
+            regulate blood sugar (glucose) levels, leading to either high blood
+            sugar (hyperglycemia) or low blood sugar (hypoglycemia). There are
+            two main types of diabetes: Type 1 and Type 2. In Type 1 diabetes,
+            the body's immune system attacks and destroys the insulin-producing
+            cells in the pancreas, while Type 2 diabetes is characterized by
+            insulin resistance, where the body's cells do not respond
+            effectively to insulin. Proper management and treatment of diabetes
+            are essential to prevent complications and maintain a healthy,
+            active life.
+          </p>
+        </div>
+        <div class="col-md-3 col-md-offset-2">
+          <img
+            id="big-logo"
+            class="center-block"
+            src="../static/imgDiabetes/diabetes.png"
+            alt="Diatension spelt out written on top of heart"
+            width="200"
+            height="200"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="video-note">
+      <p style="font-size: 30; font-family: cursive; color: rgb(10, 10, 50)">
+        Watch this video to learn more about what is diabetes:
+      </p>
+      <a href="#IntroductionDiabetes">Watch Video</a>
+    </div>
+    <div class="col-md-offset-2">
+      <iframe
+        id="IntroductionDiabetes"
+        style="justify-content: center; align-items: center"
+        width="540"
+        height="260"
+        src="https://www.youtube.com/embed/wZAjVQWbMlE"
+        title="What Is Diabetes? | 2 Minute Guide | Diabetes UK"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="advice">
+      <p>
+        One important piece of advice for managing diabetes is to monitor your
+        blood sugar levels regularly. Consistent monitoring allows you to
+        understand how different foods, activities, and medications impact your
+        glucose levels. By staying vigilant and recording your results, you can
+        work closely with your healthcare team to make necessary adjustments to
+        your treatment plan, ensuring better control of your diabetes and
+        reducing the risk of complications.
+      </p>
+    </div>
+    <img
+      src="../static/imgDiabetes/symptoms.png"
+      alt="word art with list of symptoms"
+      style="
+        display: block;
+        margin: 0 auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 5%, -40%);
+      "
+    />
+    
+    <p style="font-size: 25px; font-family: cursive; color: rgb(10, 10, 50)">
+      SIGNS AND SYMPTOMS OF DIABETES
+      <br />
+      There are many signs and symptoms that can indicate diabetes
+      <img src="../static/imgDiabetes/symptoms__.png" alt="" width="50" height="50" />
+    </p>
+    <p style="font-family: cursive; font-size: 30">
+      Signs and symptoms can include the following:
+    </p>
+
+    <ul style="font-family: cursive">
+      <li>Frequent urination</li>
+      <li>Unusual thirst</li>
+      <li>Weight change (gain or loss)</li>
+      <li>Extreme fatigue or lack of energy</li>
+      <li>Blurred vision</li>
+      <li>Frequent or recurring infections</li>
+      <li>Cuts and bruises that are slow to heal</li>
+      <li>Tingling or numbness in the hands or feet</li>
+      <li>Trouble getting or maintaining an erection</li>
+    </ul>
+    <br />
+    <div class="advice">
+      <p>
+        If you have any of these symptoms, it is important to contact your
+        health-care provider right away. Even if you don’t have symptoms, if you
+        are 40 or older, you should still get checked..
+        <br />
+        It is important to recognize, however, that many people who have type 2
+        diabetes may display no symptoms.
+      </p>
+    </div>
+    <p style="font-size: 25px; font-family: cursive; color: rgb(10, 10, 50)">
+      How can I find out if I have diabetes?
+    </p>
+    <div class="advice">
+      <p>
+        Sometimes a routine exam by an eye doctor or foot doctor will reveal
+        diabetes. Diabetes affects the circulation to your feet and the tiny
+        blood vessels in your eyes. If your eye doctor or your foot doctor
+        suspects you have diabetes, he will recommend you see your regular
+        physician for a blood sugar level test. The most common test is a
+        fasting blood glucose test. After not eating for at least eight hours,
+        usually overnight, your doctor will take a blood sample. The normal,
+        non-diabetic range for blood glucose is 70 to 110 mg/dl. If your level
+        is over 140 mg/dl, you may have diabetes.
+      </p>
+    </div>
+    <p style="font-size: 25px; font-family: cursive; color: rgb(10, 10, 50)">
+      If I have signs of diabetes, what should I do?
+    </p>
+    <div class="advice">
+      <p>
+        See your doctor. Your doctor will perform tests to determine whether or
+        not you have diabetes. If your blood sugar level is high, but not high
+        enough to be considered diabetic, this is a condition called
+        pre-diabetes. Your doctor will make recommendations to bring down your
+        blood sugar level so that you can delay the development of Type 2
+        diabetes.
+        <br />
+        <b style="color: red">Or here we are! </b> just click on me "Detect
+        Diabetes" and you will have the Quick Answer
+        <div>
+          <a href="/diabetesdetection" class="btn-style-one"
+            >Diabetes Detection</a
+          >
+        </div>
+      </p>
+    </div>
+    <div class="footer-section">
+      <div class="footer" style="color: white;">
+        <div class="container" style="font-family: cursive; color: white; font-size: 20px;">
+          <div class="row" style="font-family: cursive; color: white; font-size: 20px;">
+            <div class="col-md-3 text-center">
+              <h1>Quick Links</h1>
+              <ul>
+                <li><a href="/indexdiabetes.html"> Diabetes</a></li>
+                <li><a href="diet-and-nutrition.html">Diet & Nutrition</a></li>
+                <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                <li><a href="calorie-calculator.html">Calorie Calculator</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3 text-center">
+              <h1>Contact</h1>
+              <p>
+                <a href="tel:888-999-0000" style="font-family: cursive; font-size: 20px;">
+                  Call us at 888 999 0000
+                </a>
+              </p>
+              <p>
+                <a href="mailto:ameerarayan2@gmail.com" style="font-family: cursive; font-size: 20px;">
+                  ameerarayan2@gmail.com 
+                </a>
+              </p>
+              <p>
+                <a href="mailto:aseel.khaldy@gmail.com" style="font-family: cursive; font-size: 20px;">
+                  aseel.khaldy@gmail.com
+                </a>
+              </p>
+              <p>
+                <a href="mailto:orabimaria@gmail.com" style="font-family: cursive; font-size: 20px;">
+                  orabimaria@gmail.com 
+                </a>
+              </p>
+              <p style="font-family: cursive; font-size: 20px;">
+                University of Haifa,<br />
+                199 Aba khoushy ave. mount
+              </p>
+            </div>
+            <div class="col-md-3 text-center">
+              <h3 class="text-center footer-headings">Stay Connected</h3>
+              <div class="text-center">
+                <a href="https://www.facebook.com">
+                  <i id="social-fb" class="fa fa-facebook-square fa-2x social"></i>
+                </a>
+                <a href="https://twitter.com">
+                  <i id="social-tw" class="fa fa-twitter-square fa-2x social"></i>
+                </a>
+                <a href="https://plus.google.com/">
+                  <i id="social-gp" class="fa fa-google-plus-square fa-2x social"></i>
+                </a>
+                <a href="mailto:diatension@gmail.com">
+                  <i id="social-em" class="fa fa-envelope-square fa-2x social"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-3 text-center">
+              <h3 class="text-center footer-headings">Sign Up For Our Newsletter</h3>
+              <form action="#" class="form-inline">
+                <input type="email" class="form-control" placeholder="Email Address" />
+                <button type="submit" class="btn btn-primary btn-search form-control">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row center-block">
+            <div class="copyright-text">
+              <p style="font-family: cursive
+              ; font-size: 20px; text-align: center;">© copyright 2023 by <a href="#" style="font-family: cursive
+                ; font-size: 20px;">AmeeraRayan&AseelKwaled&MariaOrabi</a></p> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .image-container {
+        text-align: center;
+      }
+
+      /* Style for the image */
+      .bmi-img {
+        display: block; /* Ensures that the image is a block element */
+        margin: 0 auto; /* Centers the image horizontally */
+      }
+      .advice-box {
+        background-color: #339fff;
+        font-size: 24;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: black;
+        font-family: cursive;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>A Diabetes Awareness Website</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../static/cssDiabetes/index.css" />
+    <link rel="stylesheet" href="../static/cssDiabetes/bmi-calculator.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Signika:400"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <!-- <div class="container"> -->
+      <!-- Brand and toggle get grouped for better mobile display -->
+
+      <div class="navbar-header">
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="/indexdiabetes.html"
+          ><img
+            src="../static/imgDiabetes/medical-tools.png"
+            alt="Diatension spelt out written on top of heart"
+            width="50"
+            height="50"
+        /></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a
+              href="/indexdiabetes.html"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Home<span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/">Back to ProHealth360</a>
+              </li>
+            </ul>
+          </li>
+          <!--LINK ONE-->
+          <li class="dropdown">
+            <a
+              href="/indexdiabetes.html"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Diabetes <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="Implementaiondiabetes.html">About Project</a>
+              </li>
+              <li>
+                <a href="types-of-diabetes.html">Types of Diabetes</a>
+              </li>
+              <li>
+                <a href="diabetes-risks.html">Risk Factors</a>
+              </li>
+              <li>
+                <a href="signs-and-symptoms.html">Signs/Symptoms</a>
+              </li>
+              <li>
+                <a href="diabetes-hypertension-link.html"
+                  >Diabetes and Hypertension</a
+                >
+              </li>
+              <li>
+                <a href="treatment-and-medication.html"
+                  >Treatment/Medications</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- LINK FOUR -->
+          <li class="dropdown">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Healthy Living <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="diet-and-nutrition.html">Diet and Nutrition</a>
+              </li>
+              <li>
+                <a href="physical-activity.html">Physical Activity</a>
+              </li>
+            </ul>
+          </li>
+          <!--LINK FIVE-->
+          <li class="dropdown">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Health Tools <span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="bmi-calculator.html">BMI Calculator</a>
+              </li>
+              <li>
+                <a href="calorie-calculator.html">Calorie Calculator</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+              >Contact us<span class="caret"></span
+            ></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="contact_diabetes.html">Contact us</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left id=searchForm">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="searchInput"
+              placeholder="Search"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="searchResults">
+          <!-- Results will be displayed here -->
+        </div>
+        <script>
+          document
+            .getElementById("searchForm")
+            .addEventListener("submit", function (event) {
+              event.preventDefault(); // Prevent the form from actually submitting
+
+              // Get the search query
+              var searchQuery = document
+                .getElementById("searchInput")
+                .value.toLowerCase();
+
+              // Search logic (replace this with your actual search logic)
+              var searchResults = performSearch(searchQuery);
+
+              // Display search results (replace this with how you want to display the results)
+              displaySearchResults(searchResults);
+            });
+
+          function performSearch(query) {
+            // Perform your search logic here and return the results
+            // For simplicity, let's assume we're searching for text within the page
+            var elementsToSearch = document.querySelectorAll("p"); // Search within paragraphs
+            var results = [];
+
+            elementsToSearch.forEach(function (element) {
+              var text = element.innerText.toLowerCase();
+              if (text.includes(query)) {
+                results.push(element);
+              }
+            });
+
+            return results;
+          }
+
+          function displaySearchResults(results) {
+            var searchResultsDiv = document.getElementById("searchResults");
+            searchResultsDiv.innerHTML = ""; // Clear previous results
+
+            if (results.length === 0) {
+              searchResultsDiv.innerHTML = "<p>No results found.</p>";
+              return;
+            }
+
+            results.forEach(function (result) {
+              // Display the results (you can customize this part)
+              var resultItem = document.createElement("div");
+              resultItem.innerHTML =
+                "<p>Search result: " + result.innerText + "</p>";
+              searchResultsDiv.appendChild(resultItem);
+            });
+          }
+        </script>
+      </div>
+      <!-- /.navbar-collapse -->
+      <!-- </div> -->
+      <!-- /.container-fluid -->
+    </nav>
+    <!-- BODY-CONTENT-->
+    <div class="body-content-about-diabetes body-content-types">
+      <div class="container">
+        <div class="row">
+          <br />
+          <div>
+            <h1 style="font-family: cursive; color: black">
+              BMI (BODY MASS INDEX) CALCULATOR
+            </h1>
+          </div>
+
+          <!-- beginning of copy-->
+          <div class="col-lg-6 col-md-12 col-xs-12">
+            <img
+              src="../static/imgDiabetes/weigh2.jpg"
+              class="img-responsive center-block img-weight2"
+            />
+            <h1 style="font-family: cursive; color: black">
+              What is BMI?
+              <img
+                src="../static/imgDiabetes/body-mass-index.png"
+                class=""
+                width="70"
+                height="70"
+              />
+            </h1>
+            <p style="font-size: 18px; font-family: cursive; color: black">
+              Body mass index, or BMI, is used to determine whether you are in a
+              healthy weight range for your height.
+              <br /><br />
+
+              A BMI of 25.0 or more is overweight, while the healthy range is
+              18.5 to 24.9. BMI applies to most adults 18-65 years.<br /><br />
+
+              Although BMI has limitations in that it is an estimate that cannot
+              take body composition into account, it can be used as a general
+              indicator of a healthy body weight based on a person's height. The
+              value obtained from the calculation of BMI is widely used to
+              categorize whether a person is underweight, normal weight,
+              overweight, or obese depending on what range the value falls
+              between. These ranges of BMI vary based on factors such as region
+              and age, and are sometimes further divided into subcategories such
+              as severely underweight or very severely obese. However, due to a
+              wide variety of body types as well as distribution of muscle, bone
+              mass, and fat, BMI should be considered along with other
+              measurements rather than being used as the sole method for
+              determining a person's "healthy" body weight.
+            </p>
+            <h1 style="font-family: cursive; color: black">
+              Why isn't BMI used for muscle builders, long-distance athletes,
+              pregnant women, the elderly or young children?
+            </h1>
+            <p style="font-size: 24; font-family: cursive; color: black">
+              BMI is not used for muscle builders, long distance athletes,
+              pregnant women, the elderly or young children. This is because BMI
+              does not take into account whether the weight is carried as muscle
+              or fat, just the number. Those with a higher muscle mass, such as
+              athletes, may have a high BMI but not be at greater health risk.
+              Those with a lower muscle mass, such as children who have not
+              completed their growth or the elderly who may be losing some
+              muscle mass may have a lower BMI. During pregnancy and lactation,
+              a woman's body composition changes, so using BMI is not
+              appropriate.
+            </p>
+          </div>
+          <!-- end of first coloumm-->
+
+          <div class="col-lg-5 col-lg-offset-1 col-md-12 col-xs-12">
+            <h2 style="font-family: cursive; color: black">
+              Complete the form below to determine your Body Mass Index
+            </h2>
+            <br />
+            <div class="form-border">
+              <form class="form-bmi">
+                <div class="form-group">
+                  <input
+                    style="font-family: cursive; color: black; font-size: 20"
+                    type="text"
+                    class="form-control"
+                    id="height"
+                    placeholder="Enter you height"
+                    size="10"
+                    autofocus
+                  />
+                  <select
+                    style="font-family: cursive; color: black; font-size: 20"
+                    type="multiple"
+                    id="heightunits"
+                    class="form-control"
+                  >
+                    <option
+                      style="font-family: cursive; color: black; font-size: 20"
+                      value="metres"
+                      selected="selected"
+                    >
+                      Metres
+                    </option>
+                    <option
+                      style="font-family: cursive; color: black; font-size: 20"
+                      value="inches"
+                    >
+                      Inches
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input
+                    style="font-family: cursive; color: black; font-size: 20"
+                    type="text"
+                    class="form-control"
+                    id="weight"
+                    placeholder="Enter your weight"
+                    width="10px"
+                    autofocus
+                  />
+                  <select
+                    style="font-family: cursive; color: black; font-size: 20"
+                    type="multiple"
+                    id="weightunits"
+                    class="form-control"
+                  >
+                    <option
+                      style="font-family: cursive; color: black; font-size: 20"
+                      value="kg"
+                      selected="selected"
+                    >
+                      Kilograms
+                    </option>
+                    <option
+                      style="font-family: cursive; color: black; font-size: 20"
+                      value="lb"
+                    >
+                      Pounds
+                    </option>
+                  </select>
+                </div>
+                <button
+                  style="font-family: cursive; color: black; font-size: 20"
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="computeBMI();"
+                >
+                  Calculate your BMI
+                </button>
+                <button
+                  style="font-family: cursive; color: black; font-size: 20"
+                  class="btn btn-danger"
+                  id="resetButton"
+                >
+                  Reset
+                </button>
+                <br /><br />
+                <h4><span id="output"></span></h4>
+
+                <h4><span id="comment"></span></h4>
+              </form>
+            </div>
+            <h2 style="font-family: cursive; color: black">NOTE:</h2>
+            <div>
+              <h2 class="advice-box">
+                BMI is a useful measurement for most people over 18 years old.
+                But it is only an estimate and it doesn’t take into account age,
+                ethnicity, gender and body composition. We recommend you also
+                check your waist measurement and other risk factors.<br /><br />
+
+                Speak to your doctor, an Accredited Practising Dietitian or a
+                health practitioner about your weight.<br /><br />
+
+                This calculator shouldn’t be used for pregnant women or
+                children.
+              </h2>
+            </div>
+
+            <div class="image-container">
+              <img
+                src="../static/imgDiabetes/bmiguide1.jpg"
+                alt=""
+                class="bmi-img"
+                width="600"
+                height="500"
+              />
+            </div>
+          </div>
+          <!-- end of second coloum-->
+        </div>
+        <!-- end  of row-->
+
+        <!-- end of second row-->
+      </div>
+    </div>
+    <div class="footer-section">
+      <div class="footer" style="color: white">
+        <div
+          class="container"
+          style="font-family: cursive; color: white; font-size: 20px"
+        >
+          <div
+            class="row"
+            style="font-family: cursive; color: white; font-size: 20px"
+          >
+            <div class="col-md-3 text-center">
+              <h1>Quick Links</h1>
+              <ul>
+                <li><a href="/indexdiabetes.html"> Diabetes</a></li>
+                <li><a href="diet-and-nutrition.html">Diet & Nutrition</a></li>
+                <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                <li>
+                  <a href="calorie-calculator.html">Calorie Calculator</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-3 text-center">
+              <h1>Contact</h1>
+              <p>
+                <a
+                  href="tel:888-999-0000"
+                  style="font-family: cursive; font-size: 20px"
+                >
+                  Call us at 888 999 0000
+                </a>
+              </p>
+              <p>
+                <a
+                  href="mailto:ameerarayan2@gmail.com"
+                  style="font-family: cursive; font-size: 20px"
+                >
+                  ameerarayan2@gmail.com
+                </a>
+              </p>
+              <p>
+                <a
+                  href="mailto:aseel.khaldy@gmail.com"
+                  style="font-family: cursive; font-size: 20px"
+                >
+                  aseel.khaldy@gmail.com
+                </a>
+              </p>
+              <p>
+                <a
+                  href="mailto:orabimaria@gmail.com"
+                  style="font-family: cursive; font-size: 20px"
+                >
+                  orabimaria@gmail.com
+                </a>
+              </p>
+              <p style="font-family: cursive; font-size: 20px">
+                University of Haifa,<br />
+                199 Aba khoushy ave. mount
+              </p>
+            </div>
+            <div class="col-md-3 text-center">
+              <h3 class="text-center footer-headings">Stay Connected</h3>
+              <div class="text-center">
+                <a href="https://www.facebook.com">
+                  <i
+                    id="social-fb"
+                    class="fa fa-facebook-square fa-2x social"
+                  ></i>
+                </a>
+                <a href="https://twitter.com">
+                  <i
+                    id="social-tw"
+                    class="fa fa-twitter-square fa-2x social"
+                  ></i>
+                </a>
+                <a href="https://plus.google.com/">
+                  <i
+                    id="social-gp"
+                    class="fa fa-google-plus-square fa-2x social"
+                  ></i>
+                </a>
+                <a href="mailto:diatension@gmail.com">
+                  <i
+                    id="social-em"
+                    class="fa fa-envelope-square fa-2x social"
+                  ></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-3 text-center">
+              <h3 class="text-center footer-headings">
+                Sign Up For Our Newsletter
+              </h3>
+              <form action="#" class="form-inline">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email Address"
+                />
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-search form-control"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row center-block">
+          <div class="copyright-text">
+            <p
+              style="font-family: cursive; font-size: 20px; text-align: center"
+            >
+              © copyright 2023 by
+              <a href="#" style="font-family: cursive; font-size: 20px"
+                >AmeeraRayan&AseelKwaled&MariaOrabi</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script src="../static/jsDiabetes/bmi-calculator.js"></script>
+  </body>
+</html>

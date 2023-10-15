@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+            /* Style for the circular image */
+            .circular-img {
+            width: 300px; /* Set the desired width and height for the circular image */
+            height: 250px;
+            border-radius: 50%; /* Create a circular shape with a border radius of 50% */
+            overflow: hidden; /* Hide any overflow outside the circle */
+        }
+
+        /* Style for the actual image */
+        .circular-img img {
+            width: 100%; /* Ensure the image fills the circular container */
+            height: auto; /* Maintain the image's aspect ratio */
+            display: block; /* Remove any default spacing around the image */
+        }
+    .advice-box {
+        background-color: #339fff;
+        font-size: 24;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: black;
+        font-family: cursive;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      /* Style for the question and answer boxes */
+      .qa-container {
+          border: 1px solid #ccc;
+          padding: 10px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          background-color: #339FFF  ; /* Background color for questions */
+
+      }
+
+      .answer {
+          display: none;
+          padding: 10px;
+          background-color: #e0e0e0; /* Background color for answers */
+
+      }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>A Diabetes Awareness Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/cssDiabetes/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Signika:400" rel="stylesheet"> 
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <!-- <div class="container"> -->
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="/indexdiabetes.html"
+        ><img
+          src="../static/imgDiabetes/medical-tools.png"
+          alt="Diatension spelt out written on top of heart"
+          width="50"
+          height="50"
+      /></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="/indexdiabetes.html" role="button"
+          aria-haspopup="true"
+          aria-expanded="false">Home<span class="caret"></span
+            ></a>
+          <ul class="dropdown-menu">
+            <li>
+            <a href="/"
+              >Back to ProHealth360</a>
+            </li>
+         </ul>
+        </li>
+
+        <!--LINK ONE-->
+        <li class="dropdown">
+          <a
+            href="/indexdiabetes.html"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Diabetes <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="Implementaiondiabetes.html"
+                >About Project</a
+              >
+            </li>
+            <li>
+              <a href="types-of-diabetes.html">Types of Diabetes</a>
+            </li>
+            <li>
+              <a href="diabetes-risks.html">Risk Factors</a>
+            </li>
+            <li>
+              <a href="signs-and-symptoms.html">Signs/Symptoms</a>
+            </li>
+            <li>
+              <a href="diabetes-hypertension-link.html"
+                >Diabetes and Hypertension</a
+              >
+            </li>
+            <li>
+              <a href="treatment-and-medication.html"
+                >Treatment/Medications</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- LINK FOUR -->
+        <li class="dropdown">
+          <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+            >Healthy Living <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="diet-and-nutrition.html">Diet and Nutrition</a>
+            </li>
+            <li>
+              <a href="physical-activity.html">Physical Activity</a>
+            </li>
+          </ul>
+        </li>
+        <!--LINK FIVE-->
+        <li class="dropdown">
+          <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+            >Health Tools <span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="bmi-calculator.html">BMI Calculator</a>
+            </li>
+            <li>
+              <a href="calorie-calculator.html">Calorie Calculator</a>
+            </li>
+          </ul>
+        </li>
+        
+        <li class="dropdown">
+          <a href="#" role="button" aria-haspopup="true" aria-expanded="false"
+            >Contact us<span class="caret"></span
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="contact_diabetes.html">Contact us</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left id=searchForm">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="searchInput"
+            placeholder="Search"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div id="searchResults">
+        <!-- Results will be displayed here -->
+      </div>
+      <script>
+        document
+          .getElementById("searchForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the form from actually submitting
+
+            // Get the search query
+            var searchQuery = document
+              .getElementById("searchInput")
+              .value.toLowerCase();
+
+            // Search logic (replace this with your actual search logic)
+            var searchResults = performSearch(searchQuery);
+
+            // Display search results (replace this with how you want to display the results)
+            displaySearchResults(searchResults);
+          });
+
+        function performSearch(query) {
+          // Perform your search logic here and return the results
+          // For simplicity, let's assume we're searching for text within the page
+          var elementsToSearch = document.querySelectorAll("p"); // Search within paragraphs
+          var results = [];
+
+          elementsToSearch.forEach(function (element) {
+            var text = element.innerText.toLowerCase();
+            if (text.includes(query)) {
+              results.push(element);
+            }
+          });
+
+          return results;
+        }
+
+        function displaySearchResults(results) {
+          var searchResultsDiv = document.getElementById("searchResults");
+          searchResultsDiv.innerHTML = ""; // Clear previous results
+
+          if (results.length === 0) {
+            searchResultsDiv.innerHTML = "<p>No results found.</p>";
+            return;
+          }
+
+          results.forEach(function (result) {
+            // Display the results (you can customize this part)
+            var resultItem = document.createElement("div");
+            resultItem.innerHTML =
+              "<p>Search result: " + result.innerText + "</p>";
+            searchResultsDiv.appendChild(resultItem);
+          });
+        }
+      </script>
+    </div>
+    <!-- /.navbar-collapse -->
+    <!-- </div> -->
+    <!-- /.container-fluid -->
+  </nav>                   <!--body content -->
+ <div class="body-content-types body-content-about-diabetes">
+  <div class="container">
+   <div class="row">
+     <br>
+        <img src="../static/imgDiabetes/food.jpg" class="img-responsive center-block">
+          <div >
+              <h1 style="font-family: cursive; color: black">DIET AND NUTRITION - <small style="color:#262626;">  Managing diabetes and Hypertension through nutrition</small></h1>
+          </div>
+              <br>
+              <div>
+                <h2 class="advice-box">
+                  <b style="color: blue; text-decoration: underline;">Nutrition </b> is an important part of a healthy lifestyle when you have diabetes and hypertension. What you choose to eat, how much you eat, and when you eat are all important in keeping your blood glucose level in the range that your health care team recommends.
+                </h2>
+              </div>
+              <br>
+              <div style="font-size: 20px; font-family: cursive; color: black" class="qa-container" onclick="toggleAnswer('type1')">WHAT DO I EAT IF I HAVE DIABETES AND HYPERTENSION? <b style="color: blue;">Click on me to know :)</b></div>
+              <div style="font-size: 20px; font-family: cursive; color: black" class="answer" id="type1">
+                You may worry that having diabetes and hypertension means going without foods you enjoy. The good news is that you can still eat your favorite foods, but you might need to eat smaller portions or enjoy them less often.<br> Your health care team will help create a diabetes meal plan for you that meets your needs and likes.
+                <br>The key to eating with diabetes is to eat a variety of healthy foods from all food groups, in the amounts your meal plan outlines.</p>              </div>
+              
+              <script>
+                  function toggleAnswer(id) {
+                      var answer = document.getElementById(id);
+                      if (answer.style.display === 'none' || answer.style.display === '') {
+                          answer.style.display = 'block';
+                      } else {
+                          answer.style.display = 'none';
+                      }
+                  }
+              </script>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <p style="font-size: 24px; font-family: cursive; color: black"> The food groups are:<img
+              src="../static/imgDiabetes/cutlery.png"
+              class=""
+              width="70"
+              height="70"
+            />
+            <ul style="font-size: 18px; font-family: cursive; color: black">
+                <li>Vegetables <img
+                  src="../static/imgDiabetes/harvest.png"
+                  class=""
+                  width="60"
+                  height="60"
+                /> <ul><li>Non starchy: includes broccoli, carrots, greens, peppers, and tomatoes </li> <li>	Starchy: includes potatoes, corn, and green peas</li></ul></li>
+                <li>Grains  <img
+                  src="../static/imgDiabetes/wheat.png"
+                  class=""
+                  width="50"
+                  height="50"
+                /> - At least half of your grains for the day should be whole grains. <ul><li>Includes wheat, rice, oats, cornmeal, barley and qunoa. Examples are bread, pasta, cereal and tortillas</li></ul></li> <li>Protein <img
+                  src="../static/imgDiabetes/protein.png"
+                  class=""
+                  width="50"
+                  height="50"
+                /> <ul><li>Lean meat</li><li>Chicken or turkey without the skin</li><li>Fish</li><li>Eggs</li><li>Nuts and peanuts</li><li>Dried beans and certain peas such as chick peas and split peas</li><li>Meat substitutes such as tofu</li></ul></li> <li>Diary <img
+                  src="../static/imgDiabetes/cheese.png"
+                  class=""
+                  width="50"
+                  height="50"
+                /> - non fat or low fat <ul><li>Milk or lactose free milk if you're lactose intolerant</li><li>Yogurt</li><li>Cheese</li></ul></li> <li>
+                  Fruits <img
+                  src="../static/imgDiabetes/cherry.png"
+                  class=""
+                  width="60"
+                  height="60"
+                />- Includes oranges, melon, berries, apples, bananas and grapes</li>
+            </ul> 
+                <p style="font-size:24px; font-family: cursive; color: black"><b style="color: blue;">Eat foods  </b>with heart healthy fats, which can be gotten from :
+                  <ul style="font-size: 18px; font-family: cursive; color: black"> 
+                      <li>Oils that are liquid at room temperature, such as canola and olive oil</li>
+                      <li>Nuts and seeds</li>
+                      <li>Heart healthy fish such as salmon, tuna, and mackerel</li>
+                      <li>Avocado</li>
+                  </ul>
+              </p>
+         </div>
+        <div class="col-md-6" style=" font-family: cursive; color: black">
+            <br>
+            <div class="circular-img">
+              <img src="../static/imgDiabetes/oils.jpg" alt="" class="img-responsive center-block">
+          </div>
+          <div class="advice-box"><h6>Use oils when cooking food instead of butter, cream, shortening, lard, or stick margarine. 
+            Choose healthy fats such as from nuts, seeds and olive oil.</h6>
+          </div>
+        </div>
+        </div>
+    </div>
+    <h2 style=" font-family: cursive; color: black">FOOD AND DRINKS TO BE LIMITED</h2>
+    <p style="font-size: 20px; font-family: cursive; color: black">
+            Foods and drinks to limit include:
+            <ul style="font-size: 18px; font-family: cursive; color: black">
+                <li>Fried foods and other foods high in saturated fat and trans fat</li>
+                <li>Foods high in salt, also called sodium</li>
+                <li>Sweets such as baked goods, candy, and ice cream</li>
+                <li>Beverages with added sugars such as juice, regular soda, and regular sports or energy drinks</li>
+            </ul>
+            <p style="font-size: 24px; font-family: cursive; color: black">
+           <b style="color: blue;"> <span style="text-decoration: underline;">Drink water</span> instead of sweetened beverages  </b>. <br> <p  style="font-size: 19px; font-family: cursive; color: black"> Consider using a sugar substitute in your coffee or tea.
+            <br> If you drink alcohol, drink moderately. No more than one drink a day if you’re a woman or two drinks a day if you’re a man.<br> If you use insulin or diabetes medicines that increase the amount of insulin your body makes, alcohol can make your blood glucose level drop too low.<br> This is especially true if you haven’t eaten in a while. It’s best to eat some food when you drink alcohol.</p></p>
+    </p>
+    <div style="font-size: 24px; font-family: cursive; color: black" class="qa-container" onclick="toggleAnswer('type2')">When to eat ? <b style="color: blue;">Click on me to know :)</b></div>
+    <div style="font-size: 20px; font-family: cursive; color: black" class="answer" id="type2">
+      Some people with diabetes need to eat at about the same time each day.<br> Others can be more flexible with the timing of their meals. Depending on your diabetes medicines or type of insulin, you may need to eat the same amount of carbohydrates at the same time each day.<br> If you take “mealtime” insulin, your eating schedule can be more flexible.
+      <br>If you use certain diabetes medicines or insulin and you skip or delay a meal, your blood glucose level can drop too low. Ask your health care team when you should eat and whether you should eat before and after physical activity.
+          </div>
+    <script>
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === 'none' || answer.style.display === '') {
+                answer.style.display = 'block';
+            } else {
+                answer.style.display = 'none';
+            }
+        }
+    </script>
+    <h2  style="font-family: cursive; color: black">FOOD QUANTITY INTAKE</h2>
+    <p  style="font-size: 18px; font-family: cursive; color: black">Eating the right amount of food will also help you in managing your blood glucose level and your weight. 
+      Your health care team can help you figure out how much food and how many calories you should eat daily.
+      <br>Look up how many calories are in what you eat and drink with our <a href="calorie-calculator.html">Calorie Calculator</a>
+      <br><br>   
+      <div class="col-md-12">
+          <div class="row">
+              <div class="col-md-6">
+                <img src="../static/imgDiabetes/oatmeal.jpg" class="img-responsive">
+                <br>
+              </div>
+              <div class="col-md-6">
+                <img src="../static/imgDiabetes/fruits.jpg" class="img-responsive">
+                <br>
+              </div>
+          </div>
+        </div> 
+    </p>
+    <h2 style="font-family: cursive; color: black">WEIGHT LOSS PLAN</h2>
+    <p style="font-size: 18px; font-family: cursive; color: black">If you are overweight or obese, work with your health care team to create a weight-loss plan.<br>
+    You can find out if you're overweight or obese with our <a href="bmi-calculator.html">BMI Calculator</a><br>
+    To lose weight, you need to eat fewer calories and replace less healthy foods with foods lower in calories, fat, and sugar.
+    </p>
+    <h2 style="font-family: cursive; color: black">MEAL PLANNING METHODS</h2>
+<p style="font-size: 18px; font-family: cursive; color: black">
+        Two common ways to help you plan how much to eat if you have diabetes are the plate method and carbohydrate counting, also called carb counting.
+        <br> Make sure you check with your health care team about the method that’s best for you.
+</p>
+<h2 style="font-family: cursive; color: black">THE PLATE METHOD</h2>
+<p style="font-size: 18;font-family: cursive; color: black">The plate method helps you control your portion sizes. You don’t need to count calories. The plate method shows the amount of each food group you should eat. This method works best for lunch and dinner.
+     <br>   Use a 9-inch plate. Put non starchy vegetables on half of the plate, meat or other protein on one-fourth of the plate and grains or other starch on the last one-fourth.<br> Starches include starchy vegetables such as corn and peas. You also may eat a small bowl of fruit or a piece of fruit, and drink a small glass of milk as included in your meal plan.
+     <div class="circular-img" >
+     <img src="../static/imgDiabetes/Plate.jpg" class="img-responsive center-block"></div>
+    <p style="font-size: 24;font-family: cursive; color: black"> Your daily eating plan also may include small snacks between meals.
+    </p></p>
+    <h2 style="font-size: 24;font-family: cursive; color: black">PORTION SIZES</h2>
+    <p>
+        <ul style="font-size: 18;font-family: cursive; color: black">
+            <li>You can use everyday objects or your hand to judge the size of a portion.</li>
+            <li>1 serving of meat or poultry is the palm of your hand or a deck of cards</li>
+            <li>1 3-ounce serving of fish is a checkbook</li>
+            <li>1 serving of cheese is six dice</li>
+            <li>1/2 cup of cooked rice or pasta is a rounded handful or a tennis ball</li>
+            <li>1 serving of a pancake or waffle is a DVD</li>
+            <li>2 tablespoons of peanut butter is a ping-pong ball</li>
+        </ul>
+    </p>
+
+        <h2 style="font-family: cursive; color: black">CARBOHYDRATE COUNTING</h2>
+        <p style="font-size: 18;font-family: cursive; color: black">
+                Carbohydrate counting involves keeping track of the amount of carbohydrates you eat and drink each day.<br> Because carbohydrates turn into glucose in your body, they affect your blood glucose level more than other foods do.<br> Carb counting can help you manage your blood glucose level. If you take insulin, counting carbohydrates can help you know how much insulin to take.
+       <br> The right amount of carbohydrates varies by how you manage your diabetes, including how physically active you are and what medicines you take, if any.<br> Your health care team can help you create a personal eating plan based on carbohydrate counting.
+         <br>The amount of carbohydrates in foods is measured in grams. To count carbohydrate grams in what you eat, you’ll need to:
+         <ul style="font-size: 18;font-family: cursive; color: black">
+             <li>Learn which foods have carbohydrates</li>
+             
+             <li> Learn to estimate the number of grams of carbohydrate in the foods you eat</li>
+             
+             <li>Add the grams of carbohydrate from each food you eat to get your total for each meal and for the day</li>
+         </ul>
+<p style="font-size: 16;font-family: cursive; color: black">
+         Most carbohydrates <img
+         src="../static/imgDiabetes/bread.png"
+         class=""
+         width="50"
+         height="50"
+       /> come from starches, fruits, milk, and sweets. Try to limit carbohydrates with added sugars or those with refined grains, such as white bread and white rice.<br> Instead, eat carbohydrates from fruit, vegetables, whole grains, beans, and low-fat or nonfat milk.
+         Choose healthy carbohydrates, such as fruit, vegetables, whole grains, beans, and low-fat milk, as part of your diabetes meal plan.
+    </p></p>
+    <br>
+    
+    </div>
+  </div>
+ </div>
+ <div class="footer-section">
+  <div class="footer" style="color: white">
+    <div
+      class="container"
+      style="font-family: cursive; color: white; font-size: 20px"
+    >
+      <div
+        class="row"
+        style="font-family: cursive; color: white; font-size: 20px"
+      >
+        <div class="col-md-3 text-center">
+          <h1>Quick Links</h1>
+          <ul>
+            <li><a href="/indexdiabetes.html"> Diabetes</a></li>
+            <li><a href="diet-and-nutrition.html">Diet & Nutrition</a></li>
+            <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+            <li>
+              <a href="calorie-calculator.html">Calorie Calculator</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 text-center">
+          <h1>Contact</h1>
+          <p>
+            <a
+              href="tel:888-999-0000"
+              style="font-family: cursive; font-size: 20px"
+            >
+              Call us at 888 999 0000
+            </a>
+          </p>
+          <p>
+            <a
+              href="mailto:ameerarayan2@gmail.com"
+              style="font-family: cursive; font-size: 20px"
+            >
+              ameerarayan2@gmail.com
+            </a>
+          </p>
+          <p>
+            <a
+              href="mailto:aseel.khaldy@gmail.com"
+              style="font-family: cursive; font-size: 20px"
+            >
+              aseel.khaldy@gmail.com
+            </a>
+          </p>
+          <p>
+            <a
+              href="mailto:orabimaria@gmail.com"
+              style="font-family: cursive; font-size: 20px"
+            >
+              orabimaria@gmail.com
+            </a>
+          </p>
+          <p style="font-family: cursive; font-size: 20px">
+            University of Haifa,<br />
+            199 Aba khoushy ave. mount
+          </p>
+        </div>
+        <div class="col-md-3 text-center">
+          <h3 class="text-center footer-headings">Stay Connected</h3>
+          <div class="text-center">
+            <a href="https://www.facebook.com">
+              <i
+                id="social-fb"
+                class="fa fa-facebook-square fa-2x social"
+              ></i>
+            </a>
+            <a href="https://twitter.com">
+              <i
+                id="social-tw"
+                class="fa fa-twitter-square fa-2x social"
+              ></i>
+            </a>
+            <a href="https://plus.google.com/">
+              <i
+                id="social-gp"
+                class="fa fa-google-plus-square fa-2x social"
+              ></i>
+            </a>
+            <a href="mailto:diatension@gmail.com">
+              <i
+                id="social-em"
+                class="fa fa-envelope-square fa-2x social"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <h3 class="text-center footer-headings">
+            Sign Up For Our Newsletter
+          </h3>
+          <form action="#" class="form-inline">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email Address"
+            />
+            <button
+              type="submit"
+              class="btn btn-primary btn-search form-control"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <div class="container">
+    <div class="row center-block">
+      <div class="copyright-text">
+        <p
+          style="font-family: cursive; font-size: 20px; text-align: center"
+        >
+          © copyright 2023 by
+          <a href="#" style="font-family: cursive; font-size: 20px"
+            >AmeeraRayan&AseelKwaled&MariaOrabi</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+                </body>
+                </html>

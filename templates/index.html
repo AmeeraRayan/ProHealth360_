@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      /* Style for the clickable element */
+      .clickable {
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        /* Style for the popup window */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 100%;
+            left: 50%;
+            transform: translate(-70%, -100%);
+            padding: 30px;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 10px 10px 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10000;
+        }
+      .moving-image-container {
+    position: relative;
+    width: 100%;
+    animation: moveImage 5s linear infinite; /* Adjust the animation duration and timing function */
+  }
+
+  @keyframes moveImage {
+    from {
+      left: 0;
+    }
+    to {
+      left: calc(100% - 50px); /* Adjust the distance the image travels */
+    }
+  }
+  .custom-background {
+    background-image: url("../static/uploads/assets/images/spreed.jpg"); /* URL of your image */
+    padding: 10px; /* Add some padding to separate content from the background */
+    border-radius: 10px; /* Add rounded corners to the background */
+    color: white; /* Set text color for better visibility */
+  width: 1000px;
+  height: 500px;;
+  }
+      .center-container {
+        display: flex;
+        justify-content: left;
+        align-items: left;
+      }
+      .footer-widget__logo {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .blue-button {
+    background-color: blue;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.blue-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+.container1 {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    background-color: blue;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../static/uploads/virus.png'); /* You can replace 'corona_icon.png' with the actual path to your icon image */
+    background-size: cover;
+    margin-right: 10px;
+  }
+
+  .video-container {
+    display: none;
+    position: relative;
+    padding: 20px 0;
+  }
+
+  iframe {
+    width: 350px;
+    height: 350px;
+  }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>COVID-19 Detector</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../static/uploads/assets/images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../static/uploads/assets/images/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../static/uploads/assets/images/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../static/uploads/assets/images/favicons/site.webmanifest" />
+    <!-- plugin scripts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700%7CBarlow:300,400,500,600,700,800,900%7CPT+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/uploads/assets/css/animate.min.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/jquery.mCustomScrollbar.min.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/vimns-icons.css" />
+    <!-- template styles -->
+    <link rel="stylesheet" href="../static/uploads/assets/css/main.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/responsive.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <img src="../static/uploads/assets/images/loader.png" class="preloader__image" alt="" />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+      <header class="site-header-one">
+        <nav class="main-nav__one stricky">
+          <div class="container-fluid">
+            <div class="main-nav__logo-box">
+
+              <a href="#" class="side-menu__toggler"
+                ><i class="fa fa-bars"></i
+              ></a>
+            </div>
+            <!-- /.main-nav__logo-box -->
+            <div class="main-nav__main-navigation">
+              <ul class="main-nav__navigation-box">
+                <li class="dropdown">
+                  <a href="index.html">
+                    <img src="../static/uploads/assets/images/home.png" alt="Home Icon" width="24" height="24">
+                    Home
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="/">
+                    <img src="../static/uploads/assets/images/smart-home.png" alt="about Icon" width="30" height="30">
+                    Back to ProHealth360
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="about.html">
+                    <img src="../static/uploads/assets/images/about.png" alt="about Icon" width="24" height="24">
+                    About Project
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="faqs.html">
+                    <img src="../static/uploads/assets/images/faq.png" alt="FAQs Icon" width="28" height="28">
+                    FAQs
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="https://news.google.com/search?q=covid">
+                    <img src="../static/uploads/assets/images/radio.png" alt="News Icon" width="28" height="28">
+                    News
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="contact.html">
+                    <img src="../static/uploads/assets/images/call.png" alt="contact Icon" width="28" height="28">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.main-nav__main-navigation -->
+            <div class="main-nav__cta">
+              <div class="main-nav__cta-icon">
+                <i class="vimns-icon-phone"></i>
+              </div>
+              <!-- /.main-nav__cta-icon -->
+              <div class="main-nav__cta-content">
+                <h3><a href="tel:666-888-0000">666 888 0000</a></h3>
+                <p>Helpline</p>
+              </div>
+              <!-- /.main-nav__cta-content -->
+            </div>
+            <!-- /.main-nav__cta -->
+            <div class="main-nav__right">
+              
+              <a  style="font-size: 20px;font-family: Georgia;" href="/covid" class="main-nav__btn">Detect COVID</a
+              ><!-- /.main-nav__btn -->
+            </div>
+            <!-- /.main-nav__right -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+        <!-- /.main-nav__one -->
+      </header>
+      <!-- /.site-header-one -->
+      <section class="banner-one">
+ 
+        <div
+        class="banner-one__video wow fadeInUp"
+        data-wow-animation-duration="1500ms"
+      >
+        <img src="../static/uploads/assets/images/resources/video-2-1.jpg" alt=""  />
+        <a id='video'href="https://www.youtube.com/watch?v=Xj1nUFFVK1E"
+          class="video-popup banner-one__video-btn"
+          ><i class="fa fa-play"></i></a>
+      </div>       
+          <!-- /.banner-one__video -->
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="banner-one__content">
+                <h3 style="padding-top: -100%; font-size: 90px;">
+                  How To Protect Yourself <br/>
+                  From <span>CoronaVirus?</span>
+                </h3>
+                <p style="padding-top: -100%; font-size: 30px;font-family: Georgia;"><a style="text-decoration: underline;color: black;" href="#video">Watch</a> the video above to know more</p>
+                <a style="font-size: 20px;font-family: Georgia;" href="/covid" class="thm-btn banner-one__btn"
+                  >Detect COVID?</a
+                >
+
+                <!-- /.thm-btn banner-one__btn -->
+              </div>
+              <!-- /.banner-one__content -->
+
+            </div>
+            <!-- /.col-lg-6 -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.banner-one -->
+
+      <section class="cta-three">
+        <img
+          src="../static/uploads/assets/images/shapes/about-bg-1-1.png"
+          class="cta-three__bg"
+          alt=""
+        />
+        <div class="container">
+          <div class="inner-container">
+            <div class="cta-three__icon">
+              <i class="vimns-icon-alert"></i>
+            </div>
+            <!-- /.cta-three__icon -->
+            <div class="cta-three__content">
+              <h3 >Coronavirus disease COVID-19 Alert</h3>
+              <div class="cta-three__btn-block">
+                <a style="font-family: Georgia;" href="contact.html" class="cta-three__btn">Help & Information</a
+                ><!-- /.cta-three__btn -->
+              </div>
+              <!-- /.cta-three__btn-block -->
+            </div>
+            <!-- /.cta-three__content -->
+          </div>
+          <!-- /.inner-container -->
+        </div>
+
+        <!-- /.container -->
+      </section>
+      <!-- /.cta-three -->
+
+      <section class="about-one">
+        <img
+          src="../static/uploads/assets/images/shapes/virus-shape-1-1.png"
+          class="about-one__virus"
+          alt=""
+        />
+        <div class="container">
+          <div class="inner-container">
+            <div class="row">
+              <div class="col-lg-6">
+                <div
+                  class="about-one__images wow fadeInLeft"
+                  data-wow-animation-duration="1500ms"
+                >
+                  <img src="../static/uploads/assets/images/brand/blog55.jpg" alt="" width="450" />
+                  <a
+                    href="https://www.youtube.com/watch?v=vGQQbulRUjY"
+                    class="about-one__video-btn video-popup"
+                    ><i class="fa fa-play"></i
+                  ></a>
+                  <!-- /.about-one__video-btn video-popup -->
+                </div>
+                <!-- /.about-one__images -->
+                <div class="about-one__fact-wrap">
+                  <div class="about-one__fact">
+                    <div class="about-one__fact-icon">
+                      <i class="vimns-icon-mask"></i>
+                    </div>
+                    <!-- /.about-one__fact-icon -->
+                    <div class="about-one__fact-content">
+                      <h4>COIVD-19</h4>
+                      <p>
+                        Spreads <br />
+                        Very <br />
+                        Fast!
+                      </p>
+                    </div>
+                    <!-- /.about-one__fact-content -->
+                  </div>
+                  <!-- /.about-one__fact -->
+                </div>
+                <div class="about-one__fact-wrap">
+                  <div class="about-one__fact">
+                    <div class="about-one__fact-icon">
+                      <i class="vimns-icon-mask"></i>
+                    </div>
+                    <!-- /.about-one__fact-icon -->
+                    <div class="about-one__fact-content">
+                      <h4>COIVD-19</h4>
+                      <p>
+                        Stands <br />
+                        for COronaVIrus <br />
+                        Disease 
+                        <br />
+                        of 2019
+                      </p>
+                    </div>
+                    <!-- /.about-one__fact-content -->
+                  </div>
+                  <!-- /.about-one__fact -->
+                </div>
+
+                <div class="about-one__fact-wrap">
+                  <div class="about-one__fact">
+                    <div class="about-one__fact-icon">
+                      <i class="vimns-icon-mask"></i>
+                    </div>
+                    <!-- /.about-one__fact-icon -->
+                    <div class="about-one__fact-content">
+                      <h4>COIVD-19</h4>
+                      <p>
+                        Impacting <br />
+                        many <br />
+                        people!
+                      </p>
+                    </div>
+                    <!-- /.about-one__fact-content -->
+                  </div>
+                  <!-- /.about-one__fact -->
+                </div>
+                <div class="about-one__fact-wrap">
+                  <div class="about-one__fact">
+                    <div class="about-one__fact-icon">
+                      <i class="vimns-icon-mask"></i>
+                    </div>
+                    <!-- /.about-one__fact-icon -->
+                    <div class="about-one__fact-content">
+                      <h4>COIVD-19</h4>
+                      <p>
+                        Is <br />
+                        caused <br />
+                        by viruses!
+                      </p>
+                    </div>
+                    <!-- /.about-one__fact-content -->
+                  </div>
+                  <!-- /.about-one__fact -->
+                </div>
+                <!-- /.about-one__fact-wrap -->
+              </div>
+              
+              <!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <div class="about-one__content">
+                  <div class="block-title text-left">
+                    <p style="font-size: 30px;font-family: cursive;color: rgb(10, 10, 50);">Introduction of Coronavirus:</p>
+                    <h3>Coronavirus disease (COVID-19)</h3>
+                  </div>
+                  <!-- /.block-title -->
+                  <div class="about-one__icon-box">
+                    <div class="about-one__icon">
+                      <i class="vimns-icon-virus"></i>
+                    </div>
+                    <!-- /.about-one__icon -->
+                    <div class="about-one__icon-content">
+                      <p>
+                        Coronavirus disease is an infectious disease caused by a
+                        new virus.
+                      </p>
+                    </div>
+                    <!-- /.about-one__icon-content -->
+                  </div>
+                  <!-- /.about-one__icon-box -->
+                  <p>
+                    Coronavirus disease (COVID-19) is the infectious disease caused by the most recently discovered coronavirus. Most people who become infected experience mild illness and recover, but it can be more severe for others, particularly older people and those with underlying medical conditions. Here are some simple steps you can take to protect your health and the health of other people.
+                  </p>
+                  <ul class="list-unstyled about-one__list">
+                    <li>
+                      <i class="vimns-icon-tick"></i> Wash your hands regularly
+                      for 20 seconds.
+                    </li>
+                    <li>
+                      <i class="vimns-icon-tick"></i> Cover your nose and mouth
+                      with a disposable tissue.
+                    </li>
+                    <li>
+                      <i class="vimns-icon-tick"></i> Avoid close contact (1
+                      meter or 3 feet) with people.
+                    </li>
+                    <li>
+                      <i class="vimns-icon-tick"></i> Stay home and self-isolate
+                      from others in the household.
+                    </li>
+                    <li>
+                      <i class="vimns-icon-tick"></i> Protect yourself and help
+                      prevent spreading the virus.
+                    </li>
+                  </ul>
+                  <!-- /.list-unstyled about-one__list -->
+                  <a  style="font-size: 20px;font-family: Georgia;" href="/covid" class="thm-btn about-one__btn"
+                    >Detect COVID</a
+                  ><!-- /.thm-btn about-one__btn -->
+                </div>
+                <!-- /.about-one__content -->
+              </div>
+              <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.inner-container -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.about-one -->
+      <section class="funfact-one">
+        <div class="container">
+          <img
+            src="../static/uploads/assets/images/shapes/funfact-virus-1-1.png"
+            class="funfact-one__virus-1"
+            alt=""
+            width="100"
+          />
+          <img
+            src="../static/uploads/assets/images/shapes/funfact-virus-1-2.png"
+            class="funfact-one__virus-2"
+            alt=""
+            width="100"
+          />
+          <!-- <h3><span class="counter"></span></h3> -->
+          <p  style=" font-family: cursive;
+          ; font-size: 35px;">Millions of People are Infected by this Virus</p>
+        </div>
+
+        <!-- /.container -->
+      </section>
+      <!-- /.funfact-one -->
+      <section class="service-one">
+        <div class="container">
+          <div class="block-title text-center">
+            </p>
+            <h3>How Virus is Spreading</h3>
+          </div>
+          <!-- /.block-title -->
+          <div class="row no-gutters">
+            <div
+              class="col-lg-4 wow fadeInLeft"
+              data-wow-animation-duration="1500ms"
+            >
+              <div class="service-one__single">
+                <div class="service-one__inner">
+                  <div class="service-one__image">
+                    <img src="../static/uploads/assets/images/shapes/service-i-1.png" alt="" />
+                  </div>
+                  <!-- /.service-one__image -->
+                  <div class="service-one__content">
+                    <h3>
+                      <a href="#">Nose, mouth, or eyes to hands to others</a>
+                    </h3>
+                    <p>
+                      Germs can spread to the hands by sneezing, coughing, or rubbing the eyes and then can be transferred to other family members or friends. Simply washing your hands can help prevent such illnesses as the common cold or eye infections.
+                    </p>
+                    <a href="#" class="service-one__link"
+                      ><i class="vimns-icon-front"></i
+                    ></a>
+                    <!-- /.service-one__link -->
+                  </div>
+                  <!-- /.service-one__content -->
+                </div>
+                <!-- /.service-one__inner -->
+              </div>
+              <!-- /.service-one__single -->
+            </div>
+            <!-- /.col-lg-4 -->
+            <div
+              class="col-lg-4 wow fadeInUp"
+              data-wow-animation-duration="1500ms"
+            >
+              <div class="service-one__single">
+                <div class="service-one__inner">
+                  <div class="service-one__image">
+                    <img src="../static/uploads/assets/images/hand.png" alt="" width="70" />
+                  </div>
+                  <!-- /.service-one__image -->
+                  <div class="service-one__content">
+                    <h3>
+                      <a href="#">Hands to food: </a>
+                    </h3>
+                    <p>
+                      Usually germs are transmitted from unclean hands to food by an infected food preparer who didn’t wash his or her hands after using the toilet. The germs are then passed to those who eat the food. This is easily prevented by always washing your hands after using the toilet and before preparing food items.
+                    </p>
+                    <a href="#" class="service-one__link"
+                      ><i class="vimns-icon-front"></i
+                    ></a>
+                    <!-- /.service-one__link -->
+                  </div>
+                  <!-- /.service-one__content -->
+                </div>
+                <!-- /.service-one__inner -->
+              </div>
+              <!-- /.service-one__single -->
+            </div>
+            <!-- /.col-lg-4 -->
+            <div
+              class="col-lg-4 wow fadeInRight"
+              data-wow-animation-duration="1500ms"
+            >
+              <div class="service-one__single">
+                <div class="service-one__inner">
+                  <div class="service-one__image">
+                    <img src="../static/uploads/assets/images/father-and-son.png" alt="" width="90" />
+                  </div>
+                  <!-- /.service-one__image -->
+                  <div class="service-one__content">
+                    <h3>
+                      <a href="#">Infected child to hands to other children</a>
+                    </h3>
+                    <p>
+                      Germs are passed from a child with diarrhea to the hands of the parent during diaper changing. If the parent doesn’t immediately wash his or her hands, the germs that cause diarrhea are then passed to others.                    </p>
+                    <a href="#" class="service-one__link"
+                      ><i class="vimns-icon-front"></i
+                    ></a>
+                    <!-- /.service-one__link -->
+                  </div>
+                  <!-- /.service-one__content -->
+                </div>
+                <!-- /.service-one__inner -->
+              </div>
+              <!-- /.service-one__single -->
+            </div>
+            <!-- /.col-lg-4 -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.service-one -->
+
+      <section class="prevention-one prevention-one__home-1">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="prevention-one__box">
+                <div class="prevention-one__box-top">
+                  <h3>Things You Should Do</h3>
+                </div>
+                <!-- /.prevention-one__box-top -->
+                <div class="prevention-one__box-bottom">
+                  <div class="prevention-one__single">
+                    <div class="prevention-one__icon">
+                      <div class="prevention-one__icon-inner">
+                        <img
+                          src="../static/uploads/assets/images/shapes/should-do-i-1-1.png"
+                          alt=""
+                        />
+                      </div>
+                      <!-- /.prevention-one__icon-inner -->
+                    </div>
+                    <!-- /.prevention-one__icon -->
+                    <div class="prevention-one__content">
+                      <h3>Wash Your Hands 20 Seconds</h3>
+                      <p>
+                        Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water
+                        <span style="color: black;" class="clickable" onclick="openPopup1()">why?</span>
+                      </p>
+                    </div>
+                    <div class="overlay" id="overlay" onclick="closePopup1()"></div>
+                    <div class="popup" id="popup" onclick="closePopup1()">
+                      <p style="font-family: Georgia;color: black
+                      ; font-size: 16px; ">
+                          We frequently use our hands to touch objects and surfaces that may be contaminated. Without realizing it,
+                          we then touch our faces, transferring viruses to our eyes, nose and mouth where they can infect us.
+                          Washing your hands with soap and water  <img
+                          src="../static/uploads/assets/images/shapes/hand-wash.png"
+                          alt=""
+                          width="50"
+                        /> or using alcohol-based hand rub kills viruses that may be on your
+                          hands — including the virus that causes COVID-19 
+                          
+                      </p>
+                  </div>
+                  <script>
+                    function openPopup1() {
+                        var popup = document.getElementById('popup');
+                        popup.style.display = 'block';
+                    }
+                </script>
+                <script>
+                function closePopup1() 
+                {
+                  var overlay = document.getElementById('overlay');
+                  var popup = document.getElementById('popup');
+                  overlay.style.display = 'none';
+                  popup.style.display = 'none';
+                }
+                </script>
+                    <!-- /.prevention-one__content -->
+                  </div>
+                  <!-- /.prevention-one__single -->
+
+                  <div class="prevention-one__single">
+                    <div class="prevention-one__icon">
+                      <div class="prevention-one__icon-inner">
+                        <img
+                          src="../static/uploads/assets/images/shapes/should-do-i-1-2.png"
+                          alt=""
+                        />
+                      </div>
+                      <!-- /.prevention-one__icon-inner -->
+                    </div>
+                    <!-- /.prevention-one__icon -->
+                    <div class="prevention-one__content">
+                      <h3>Cover your cough</h3>
+                      <p>
+                        Make sure that you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with the bend of your elbow or with a tissue when you cough or sneeze. Dispose of the used tissue immediately into a closed bin and wash your hands.
+                        <span style="color: black;" class="clickable" onclick="openPopup()">why?</span>
+                      </p>
+                    </div>
+                    <div class="overlay" id="overlay1" onclick="closePopup()"></div>
+                    <div class="popup" id="popup1" onclick="closePopup()">
+                      <p style="font-family: Georgia;color: black
+                      ; font-size: 16px; ">
+                           When someone coughs or sneezes  <img
+                           src="../static/uploads/assets/images/shapes/cough.png"
+                           alt=""
+                           width="50"
+                         /> they spray small liquid droplets from their nose or mouth which may contain virus. By covering your cough or sneeze you avoid spreading viruses and other germs to other people. By using the bend of your elbow or a tissue and not your hands to cover your cough or sneeze, you avoid transferring contaminated droplets to your hands. This prevents you from contaminating a person or a surface through touching them with your hands.
+                          
+                      </p>
+                  </div>
+                  <script>
+                    function openPopup() {
+                        var popup = document.getElementById('popup1');
+                        popup.style.display = 'block';
+                    }
+                </script>
+                <script>
+                function closePopup() 
+                {
+                  var overlay = document.getElementById('overlay1');
+                  var popup = document.getElementById('popup1');
+                  overlay.style.display = 'none';
+                  popup.style.display = 'none';
+                }
+                </script>
+                    <!-- /.prevention-one__content -->
+                  </div>
+                  <!-- /.prevention-one__single -->
+                  <div class="prevention-one__single">
+                    <div class="prevention-one__icon">
+                      <div class="prevention-one__icon-inner">
+                        <img
+                          src="../static/uploads/assets/images/shapes/should-do-i-1-3.png"
+                          alt=""
+                        />
+                      </div>
+                      <!-- /.prevention-one__icon-inner -->
+                    </div>
+                    <!-- /.prevention-one__icon -->
+                    <div class="prevention-one__content">
+                      <h3>Avoid touching your hands ,eyes, nose and mouth</h3>
+                      <p>
+                        We often touch our faces without noticing it. Be aware of this, and avoid touching your eyes, nose and mouth.
+                        <span style="color: black;" class="clickable" onclick="openPopup2()">why?</span>
+                      </p>
+                    </div>
+                    <div class="overlay" id="overlay2" onclick="closePopup2()"></div>
+                    <div class="popup" id="popup2" onclick="closePopup2()">
+                      <p style="font-family: Georgia;color: black
+                      ; font-size: 16px; ">
+                       Hands touch <img
+                       src="../static/uploads/assets/images/shapes/do-not-touch.png"
+                       alt=""
+                       width="50"
+                     /> many surfaces and can pick up viruses. Once contaminated, hands can transfer the virus to your eyes, nose or mouth and can then enter your body and make you sick.                          
+                      </p>
+                  </div>
+                  <script>
+                    function openPopup2() {
+                        var popup = document.getElementById('popup2');
+                        popup.style.display = 'block';
+                    }
+                </script>
+                <script>
+                function closePopup2() 
+                {
+                  var overlay = document.getElementById('overlay2');
+                  var popup = document.getElementById('popup2');
+                  overlay.style.display = 'none';
+                  popup.style.display = 'none';
+                }
+                </script>
+                    <!-- /.prevention-one__content -->
+                  </div>
+                  <!-- /.prevention-one__single -->
+                  <div class="prevention-one__single">
+                    <div class="prevention-one__icon">
+                      <div class="prevention-one__icon-inner">
+                        <img
+                          src="../static/uploads/assets/images/shapes/should-do-i-1-4.png"
+                          alt=""
+                        />
+                      </div>
+                      <!-- /.prevention-one__icon-inner -->
+                    </div>
+                    <!-- /.prevention-one__icon -->
+                    <div class="prevention-one__content">
+                      <h3>If you have a fever, cough and difficulty breathing, seek medical care early — but call first</h3>
+                      <p>
+                        If you have a fever, cough and difficulty breathing, seek medical care early — if you can, call your hospital or health centre first so that they can tell you where you should go.
+                        <span style="color: black;" class="clickable" onclick="openPopup3()">why?</span>
+                      </p>
+                    </div>
+                    <div class="overlay" id="overlay3" onclick="closePopup3()"></div>
+                    <div class="popup" id="popup3" onclick="closePopup3()">
+                      <p style="font-family: Georgia;color: black
+                      ; font-size: 16px; ">
+                     This will help to make sure you get the right advice, are directed to the right health facility, and will prevent you from infecting others <img
+                     src="../static/uploads/assets/images/stop.png"
+                     alt=""
+                     width="50"
+                   /></p>
+                  </div>
+                  <script>
+                    function openPopup3() {
+                        var popup = document.getElementById('popup3');
+                        popup.style.display = 'block';
+                    }
+                </script>
+                <script>
+                function closePopup3() 
+                {
+                  var overlay = document.getElementById('overlay3');
+                  var popup = document.getElementById('popup3');
+                  overlay.style.display = 'none';
+                  popup.style.display = 'none';
+                }
+                </script>
+            
+                    <!-- /.prevention-one__content -->
+                  </div>
+                  <!-- /.prevention-one__single -->
+                  
+                </div>
+                <!-- /.prevention-one__box-bottom -->
+              </div>
+              
+              <!-- /.prevention-one__box -->
+            </div>
+            <!-- /.col-lg-6 -->
+            <div class="col-lg-6">
+              <div class="prevention-one__box">
+                <div class="prevention-one__box-top">
+                  <h3>Things You Shouldn't Do</h3>
+                </div>
+                <!-- /.prevention-one__box-top -->
+                <div class="prevention-one__box-bottom">
+                  <div class="prevention-one__single">
+                    <div class="prevention-one__icon">
+                      <div class="prevention-one__icon-inner">
+                        <img
+                          src="../static/uploads/assets/images/lazy.png"
+                          alt=""
+                        />
+                      </div>
+                      <!-- /.prevention-one__icon-inner -->
+                    </div>
+                    <!-- /.prevention-one__icon -->
+                    <div class="prevention-one__content">
+                      <h3>Avoid being sedentary <img
+                        src="../static/uploads/assets/images/alarm.png"
+                        alt=""
+                        width="30"
+                        height="30"
+                      /></h3>
+                      <p>
+                       " Just because we’re told that we need to keep a social distance and be inside doesn’t mean you can’t exercise for a half-hour,” licensed professional counselor Michelle Salerno Sigmund said while calling from her Philadelphia office. “Go take a jog, ride a block, or go for a long walk. There’s no need to sit in a chair all day. Kids want and need to be active."
+                      </p>
+                    </div>
+                    <!-- /.prevention-one__content -->
+                  </div>
+                  <!-- /.prevention-one__single -->
+
+                  <div class="prevention-one__single">
+                    <div class="prevention-one__icon">
+                      <div class="prevention-one__icon-inner">
+                        <img
+                          src="../static/uploads/assets/images/calm.png"
+                          alt=""
+                        />
+                      </div>
+                      <!-- /.prevention-one__icon-inner -->
+                    </div>
+                    <!-- /.prevention-one__icon -->
+                    <div class="prevention-one__content">
+                      <h3>Forget about normalcy for now</h3>
+                      <p>
+                        “Alleviate the perception of how we lived our lives every day before the coronavirus altered the way we live,” Salerno-Sigmund said. “We have to let go of expectations. People keep thinking about when we will go back to normal. We’ll get there, but it’s not something that we should think about every day. People talk about it every day, but we need to stay in the now. People are optimistic and people are pessimistic. What we need to do is just live in the moment.”
+                      </p>
+                    </div>
+                    <!-- /.prevention-one__content -->
+                  </div>
+                  <!-- /.prevention-one__single -->
+
+                  <div class="prevention-one__single">
+                    <div class="prevention-one__icon">
+                      <div class="prevention-one__icon-inner">
+                        <img
+                          src="../static/uploads/assets/images/soap.png"
+                          alt=""
+                        />
+                      </div>
+                      <!-- /.prevention-one__icon-inner -->
+                    </div>
+                    <!-- /.prevention-one__icon -->
+                    <div class="prevention-one__content">
+                      <h3>Do not wash fruits and vegetables with soap</h3>
+                      <p>
+                        Dr. Gregory Charlop said while calling from his Pasadena, California, office. “That’s the last thing you want to do. Soap leaves a residue that will upset your stomach and cause GI problems. We are not supposed to ingest soap. Continue to eat fruit and vegetables after you wash them with cold water.”
+                      </p>
+                    </div>
+                    <!-- /.prevention-one__content -->
+                  </div>
+                  <!-- /.prevention-one__single -->
+                </div>
+                <!-- /.prevention-one__box-bottom -->
+              </div>
+              <!-- /.prevention-one__box -->
+            </div>
+            <!-- /.col-lg-6 -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+        <div class="brand-one">
+          <img
+            src="../static/uploads/assets/images/shapes/virus-shape-1-2.png"
+            class="brand-one__shape"
+            alt=""
+            width="100" height="100"
+          />
+      </section>
+      <!-- /.prevention-one -->
+      <section class="hand-wash-one">
+        <div class="container">
+          <div class="block-title text-center">
+            <p>4 Easy Steps</p>
+            <h3>Hand Wash Procedure</h3>
+          </div>
+          <!-- /.block-title text-center -->
+          <div class="row">
+            <div
+              class="col-lg-3 col-md-6 wow fadeInUp"
+              data-wow-duration="1500ms"
+              data-wow-delay="000ms"
+            >
+              <div class="hand-wash-one__single">
+                <div class="hand-wash-one__image">
+                  <img
+                    src="../static/uploads/assets/images/shapes/hw-i-1-1.png"
+                    alt=""
+                  />
+                </div>
+                <!-- /.hand-wash-one__image -->
+                <h3>Use Soap</h3>
+              </div>
+              <!-- /.hand-wash-one__single -->
+            </div>
+            <!-- /.col-lg-3 col-md-6 wow fadeInUp -->
+            <div
+              class="col-lg-3 col-md-6 wow fadeInUp"
+              data-wow-duration="1500ms"
+              data-wow-delay="100ms"
+            >
+              <div class="hand-wash-one__single">
+                <div class="hand-wash-one__image">
+                  <img
+                    src="../static/uploads/assets/images/shapes/hw-i-1-2.png"
+                    alt=""
+                  />
+                </div>
+                <!-- /.hand-wash-one__image -->
+                <h3>Palm to Palm</h3>
+              </div>
+              <!-- /.hand-wash-one__single -->
+            </div>
+            <!-- /.col-lg-3 col-md-6 wow fadeInUp -->
+            <div
+              class="col-lg-3 col-md-6 wow fadeInUp"
+              data-wow-duration="1500ms"
+              data-wow-delay="200ms"
+            >
+              <div class="hand-wash-one__single">
+                <div class="hand-wash-one__image">
+                  <img
+                    src="../static/uploads/assets/images/shapes/hw-i-1-3.png"
+                    alt=""
+                  />
+                </div>
+                <!-- /.hand-wash-one__image -->
+                <h3>Fingers Interlaced</h3>
+              </div>
+              <!-- /.hand-wash-one__single -->
+            </div>
+            <!-- /.col-lg-3 col-md-6 wow fadeInUp -->
+            <div
+              class="col-lg-3 col-md-6 wow fadeInUp"
+              data-wow-duration="1500ms"
+              data-wow-delay="300ms"
+            >
+              <div class="hand-wash-one__single">
+                <div class="hand-wash-one__image">
+                  <img
+                    src="../static/uploads/assets/images/shapes/hw-i-1-4.png"
+                    alt=""
+                  />
+                </div>
+                <!-- /.hand-wash-one__image -->
+                <h3>Rinse Hands</h3>
+              </div>
+              <!-- /.hand-wash-one__single -->
+            </div>
+            <!-- /.col-lg-3 col-md-6 wow fadeInUp -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.hand-wash-one -->
+
+      <section
+        class="cta-two wow fadeInUp"
+        data-wow-animation-duration="1500ms"
+        style="background-image: url(../static/uploads/assets/images/12345.jpg)"
+      >
+            <div class="brand-one">
+        <img
+          src="../static/uploads/assets/images/shapes/virus-shape-1-2.png"
+          class="brand-one__shape"
+          alt=""
+          width="100" height="100"
+        />
+        <div class="container">
+          <h3>
+            It’s Our Government Job to Project <br />
+            Themselves And Others
+          </h3>
+          <a style="font-family: Georgia;color: white
+          ; font-size: 24px; padding: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);" href="contact.html" class="blue-button">Contact With Us</a>
+          <!-- /.thm-btn cta-two__btn -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.cta-two -->
+      <div class="brand-one">
+        <img
+          src="../static/uploads/assets/images/shapes/virus-shape-1-2.png"
+          class="brand-one__shape"
+          alt=""
+          width="100" height="100"
+        />
+        <div class="container">
+          <div
+            class="brand-one__carousel owl-theme owl-carousel thm__owl-carousel"
+            data-options='{"nav": false, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 700, "dots": false, "margin": 140, "responsive": { "0": { "items": 2, "margin": 20 }, "480": { "items": 2, "margin": 20 }, "767": { "items": 3, "margin": 20 }, "991": { "items": 4, "margin": 40 }, "1199": { "items": 5 } }}'
+          >
+            <div class="item">
+              <img src="../static/uploads/assets/images/brand/childMom.jpg" alt="" />
+            </div>
+            <div class="item">
+              <img src="../static/uploads/assets/images/brand/brand.png" alt="" />
+            </div>
+            <!-- /.item -->
+            <div class="item">
+             <img src="../static/uploads/assets/images/brand/blog55.jpg" alt="" />
+             </div>
+            <!-- /.item -->
+            <div class="item">
+              <img src="../static/uploads/assets/images/brand/blog6.jpg" alt="" />
+            </div>
+                        <!-- /.item -->
+                        <div class="item">
+                          <img src="../static/uploads/assets/images/brand/blog7.jpg" alt="" />
+                        </div>
+            <!-- /.item -->
+            <div class="item">
+              <img src="../static/uploads/assets/images/brand/blog-1-3.jpg" alt="" />
+            </div>
+            <!-- /.item -->
+            <div class="item">
+              <img src="../static/uploads/assets/images/brand/blog-1-4.jpg" alt="" />
+            </div>
+            <!-- /.item -->
+            <div class="item">
+              <img src="../static/uploads/assets/images/brand/blog-1-5.jpg" alt="" />
+            </div>
+            <!-- /.item -->
+            <div class="item">
+              <img src="../static/uploads/assets/images/brand/blog-1-6.jpg" alt="" />
+            </div>
+            <!-- /.item -->
+            <div class="item">
+              <img src="../static/uploads/assets/images/brand/blog-1-1.jpg" alt="" />
+            </div>
+            <!-- /.item -->
+            <div class="item">
+              <img src="../static/uploads/assets/images/brand/blog-1-2.jpg" alt="" />
+            </div>
+            <!-- /.item -->
+          </div>
+          <!-- /.brand-one__carousel owl-theme owl-carousel thm__owl-carousel -->
+        </div>
+        <!-- /.container -->
+      </div>
+      <!-- /.brand-one -->
+      <!-- /.faq-one faq-one__home-one -->
+      <footer class="site-footer-one site-footer-one__home-one">
+        <div class="site-footer-one__upper">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="footer-widget footer-widget__about">
+                  <a href="index.html">
+                    <img width="137" src="../static/uploads/assets/images/coronavirus.png" alt="" />
+                  </a>
+                </div>
+                <!-- /.footer-widget footer-widget__about -->
+              </div>
+              <!-- /.col-lg-4 -->
+              <img
+              src="../static/uploads/assets/images/shapes/virus-shape-1-3.png"
+              class="faq-one__virus"
+              alt=""
+            />
+              <div class="col-lg-3">
+                <div class="footer-widget footer-widget__links">
+                  <h3 class="footer-widget__title" style="font-family: Oswald
+                  ; font-size: 24px;">Quick Links</h3>
+                  <!-- /.footer-widget__title -->
+                  <div class="footer-widget__links-wrap">
+                    <ul class="list-unstyled footer-widget__links-list">
+                      <li><a href="about.html" style="font-family: Oswald
+                        ; font-size: 18px;" >About</a></li>
+                      <li><a href="prevention.html" style="font-family: Oswald
+                        ; font-size: 18px;">Prevention</a></li>
+                      <li><a href="contact.html" style="font-family: Oswald
+                        ; font-size: 18px;">Contact</a></li>
+                      <li><a href="faqs.html" style="font-family: Oswald
+                        ; font-size: 18px;">FAQs</a></li>
+                    </ul>
+                  </div>
+                  <!-- /.footer-widget__links-wrap -->
+                </div>
+                <!-- /.footer-widget footer-widget__about -->
+              </div>
+              <!-- /.col-lg-3 -->
+              <div class="col-lg-4">
+                <div class="footer-widget footer-widget__contact">
+                  <h3 class="footer-widget__title" style="font-family: Oswald
+                  ; font-size: 24px;">Contact</h3>
+                  <!-- /.footer-widget__title -->
+                  <p>
+                    <a href="tel:888-999-0000" style="font-family: Oswald
+                    ; font-size: 18px;">
+                      Call us at 888 999 0000 <i class="fas fa-phone"></i> 
+                    </a>
+                  </p>
+                    <p>
+                      <a href="mailto:ameerarayan2@gmail.com" style="font-family: Oswald
+                      ; font-size: 18px;">
+                        ameerarayan2@gmail.com <i class="fas fa-envelope"></i>                      </a>
+                    </p>
+                    <p>
+                      <a href="mailto:aseel.khaldy@gmail.com" style="font-family: Oswald
+                      ; font-size: 18px;">
+                        aseel.khaldy@gmail.com <i class="fas fa-envelope"></i>                      </a>
+                    </p>
+                    <p>
+                      <a href="mailto:orabimaria@gmail.com" style="font-family: Oswald
+                      ; font-size: 18px;">
+                        orabimaria@gmail.com <i class="fas fa-envelope"></i>                      </a>
+                    </p>
+                  <p style="font-family: Oswald
+                  ; font-size: 18px;">
+                    University of Haifa,<br />
+                    199 Aba khoushy ave. mount 
+                    </p>
+                </div>
+                <!-- /.footer-widget footer-widget__contact -->
+                <div class="center-container">
+                <div class="col-lg-2 d-flex">
+                  <div class="footer-widget my-auto">
+                <div class="footer-widget__social">
+                  <a href="https://www.facebook.com/" class="fab fa-facebook-square"></a>
+                  <a href="https://www.twitter.com/" class="fab fa-twitter"></a>
+                  <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                  <a href="https://www.pinterest.com/" class="fab fa-pinterest-p"></a>
+                </div>
+                </div>
+        </div>
+      </div>
+              </div>
+              <!-- /.col-lg-3 -->
+                    <!-- Social Media Links -->
+    </div>
+  </div>
+        <!-- /.site-footer-one__upper -->
+        <div class="site-footer-one__bottom">
+          <div class="container">
+            <p style="font-family: Oswald
+            ; font-size: 20px;">© copyright 2023 by <a href="#" style="font-family: Oswald
+              ; font-size: 20px;">AmeeraRayan&AseelKwaled&MariaOrabi</a></p>
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.site-footer-one__bottom -->
+      </footer>
+      <!-- /.site-footer-one -->
+    </div>
+    <!-- /.page-wrapper -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"
+      ><i class="fa fa-angle-up"></i
+    ></a>
+    <div class="side-menu__block">
+      <div class="side-menu__block-overlay custom-cursor__overlay">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+      </div>
+      <!-- /.side-menu__block-overlay -->
+      <div class="side-menu__block-inner">
+        <div class="side-menu__top justify-content-end">
+          <a href="#" class="side-menu__toggler side-menu__close-btn"
+            ><img src="../static/uploads/assets/images/shapes/close-1-1.png" alt=""
+          /></a>
+        </div>
+        <!-- /.side-menu__top -->
+        <nav class="mobile-nav__container">
+          <!-- content is loading via js -->
+        </nav>
+        <!-- /.side-menu__content -->
+      </div>
+      <!-- /.side-menu__block-inner -->
+    </div>
+    <!-- /.side-menu__block -->
+    <script src="../static/uploads/assets/js/jquery.min.js"></script>
+    <script src="../static/uploads/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/uploads/assets/js/owl.carousel.min.js"></script>
+    <script src="../static/uploads/assets/js/waypoints.min.js"></script>
+    <script src="../static/uploads/assets/js/jquery.counterup.min.js"></script>
+    <script src="../static/uploads/assets/js/TweenMax.min.js"></script>
+    <script src="../static/uploads/assets/js/wow.js"></script>
+    <script src="../static/uploads/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/uploads/assets/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../static/uploads/assets/js/jquery.validate.min.js"></script>
+    <script src="../static/uploads/assets/js/bootstrap-select.min.js"></script>
+    <script src="../static/uploads/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/uploads/assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="../static/uploads/assets/js/isotope.js"></script>
+    <!-- template scripts -->
+    <script src="../static/uploads/assets/js/theme.js"></script>
+    <script src="../static/uploads/assets/js/testimonials-owl.carousel.config.js"></script>
+  </body>
+</html>

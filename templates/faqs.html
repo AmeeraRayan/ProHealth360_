@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <style>
+            .moving-image-container {
+    position: relative;
+    width: 100%;
+    animation: moveImage 5s linear infinite; /* Adjust the animation duration and timing function */
+  }
+
+  @keyframes moveImage {
+    from {
+      left: 0;
+    }
+    to {
+      left: calc(100% - 50px); /* Adjust the distance the image travels */
+    }
+  }
+    </style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FAQ Page | COVID-19 Detector</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="../static/uploads/assets/images/favicons/site.webmanifest"
+    />
+
+    <!-- plugin scripts -->
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700%7CBarlow:300,400,500,600,700,800,900%7CPT+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/owl.theme.default.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/magnific-popup.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/fontawesome-all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/bootstrap-select.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/jquery.mCustomScrollbar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/bootstrap-datepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/vimns-icons.css"
+    />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="../static/uploads/assets/css/main.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/responsive.css" />
+  </head>
+
+  <body>
+    <div class="preloader">
+      <img
+        src="../static/uploads/assets/images/loader.png"
+        class="preloader__image"
+        alt=""
+      />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+      <header class="site-header-one">
+        <nav class="main-nav__one stricky">
+          <div class="container-fluid">
+            <div class="main-nav__logo-box">
+              <a href="index.html">
+                <img
+                  width="137"
+                  src="../static/uploads/assets/images/logo-1-1.png"
+                  alt=""
+                />
+              </a>
+              <a href="#" class="side-menu__toggler"
+                ><i class="fa fa-bars"></i
+              ></a>
+            </div>
+            <!-- /.main-nav__logo-box -->
+            <div class="main-nav__main-navigation">
+              <ul class="main-nav__navigation-box">
+                <li class="dropdown">
+                  <a href="index.html">
+                    <img
+                      src="../static/uploads/assets/images/home.png"
+                      alt="Home Icon"
+                      width="24"
+                      height="24"
+                    />
+                    Home
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="/">
+                    <img src="../static/uploads/assets/images/smart-home.png" alt="about Icon" width="30" height="30">
+                    Back to ProHealth360
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="about.html">
+                    <img
+                      src="../static/uploads/assets/images/about.png"
+                      alt="about Icon"
+                      width="24"
+                      height="24"
+                    />
+                    About Project
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="faqs.html">
+                    <img
+                      src="../static/uploads/assets/images/faq.png"
+                      alt="FAQs Icon"
+                      width="28"
+                      height="28"
+                    />
+                    FAQs
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="https://news.google.com/search?q=covid">
+                    <img
+                      src="../static/uploads/assets/images/radio.png"
+                      alt="News Icon"
+                      width="28"
+                      height="28"
+                    />
+                    News
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="contact.html">
+                    <img
+                      src="../static/uploads/assets/images/call.png"
+                      alt="contact Icon"
+                      width="28"
+                      height="28"
+                    />
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.main-nav__main-navigation -->
+            <div class="main-nav__cta">
+              <div class="main-nav__cta-icon">
+                <i class="vimns-icon-phone"></i>
+              </div>
+              <!-- /.main-nav__cta-icon -->
+              <div class="main-nav__cta-content">
+                <h3><a href="tel:666-888-0000">666 888 0000</a></h3>
+                <p>Helpline</p>
+              </div>
+              <!-- /.main-nav__cta-content -->
+            </div>
+            <!-- /.main-nav__cta -->
+            <div class="main-nav__right">
+              <a href="/covid" class="main-nav__btn">Detect COVID</a
+              ><!-- /.main-nav__btn -->
+            </div>
+            <!-- /.main-nav__right -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+        <!-- /.main-nav__one -->
+      </header>
+      <!-- /.site-header-one -->
+
+      <section class="page-header">
+        <div class="container">
+          <h2>FAQs</h2>
+          <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><span>FAQs</span></li>
+          </ul>
+          <!-- /.thm-breadcrumb -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.page-header -->
+
+      
+      <section class="faq-one faq-one__home-one">
+        <img
+          src="../static/uploads/assets/images/shapes/virus-shape-1-3.png"
+          class="faq-one__virus"
+          alt=""
+        />
+        <div class="container">
+          <p  style=" font-family: cursive;color: black
+                  ; font-size: 28px;">Frequently Asked Questions</p>
+          <div class="row">
+            <div class="col-lg-5">
+              <div class="faq-one__block">
+                <div class="block-title text-left">
+                  <h3>Have any question? </h3>
+                  <p style=" font-family: cursive;color: black
+                  ; font-size: 28px;">Sure you are !<img src="../static/uploads/assets/images/smile.png" alt="" width="20" />
+                  </p>
+                </div>
+                <div class="col-lg-15">
+                  <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                <div class="accrodion">
+                  <div class="accrodion-title">
+                    <h4>Are the COVID-19 vaccines safe and effective?<img src="../static/uploads/assets/images/covid-19 .png" alt="Icon" width="70" height="70"></h4>
+                  </div>
+                  <div class="accrodion-content">
+                    <div class="inner">
+                      <p style="font-family: Georgia;color: black
+                      ; font-size: 18px; padding: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                        Yes, even though COVID-19 vaccines have been developed as rapidly as possible, they must go through rigorous testing in clinical trials to prove that they meet internationally agreed benchmarks for safety and effectiveness. Only if they meet these standards can a vaccine receive validation from WHO and national regulatory agencies.
+                      </p>
+                    </div>
+                    <!-- /.inner -->
+                  </div>
+                </div>  
+                </div>
+                </div>          
+              </br>
+            </br>
+                <div class="container1" onclick="toggleVideo()">
+                  <div class="icon"></div>
+                  <p style="font-size: 30px;font-family: cursive;color: rgb(10, 10, 50);">Coronavirus disease (COVID-19) advice for the public <br/> so if you wanna advice <span style="text-decoration: underline;">click on me </sp>  <img src="../static/uploads/virus.png" alt="" width="40" height="30" />
+                  </p>
+                </div>
+                <div class="video-container" id="videoContainer">
+                  <iframe src="https://www.youtube.com/embed/mOV1aBVYKGA?si=cCpZ21jfB9ptrd0n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>        </div>
+                <script>
+                  function toggleVideo() {
+                    var videoContainer = document.getElementById("videoContainer");
+                    if (videoContainer.style.display === "none") {
+                      videoContainer.style.display = "block";
+                    } else {
+                      videoContainer.style.display = "none";
+                    }
+                  }
+                </script>
+              </div>
+              <!-- /.faq-one__block -->
+            </div>
+            <!-- /.col-lg-5 -->
+            <div class="col-lg-7">
+              <div class="accrodion-grp" data-grp-name="faq-one-accrodion">
+                <div class="accrodion active">
+                  <div class="accrodion-title">
+                    <h4>What Are The Coronavirus Symptoms?<img src="../static/uploads/assets/images/symptoms.png" alt="Icon" width="50" height="50"></h4>
+                  </div>
+                  <div class="accrodion-content">
+                    <div class="inner"  style="font-family: Georgia;color: black
+                    ; font-size: 16px; padding: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                      <p>  Common symptoms of COVID-19 include: <img src="../static/uploads/assets/images/symptom.png" alt="Icon" width="40" height="40">
+                      <ul style="list-style-type: none;color: black;" >
+                        <li>Fever or chills <img src="../static/uploads/assets/images/fiverr.png" alt="Icon" width="30" height="30"></li>
+                        <li>Cough <img src="../static/uploads/assets/images/cough.png" alt="Icon" width="30" height="30"></li>
+                        <li>Shortness of breath or difficulty breathing <img src="../static/uploads/assets/images/breathing.png" alt="Icon" width="30" height="30"></li>
+                        <li>Fatigue <img src="../static/uploads/assets/images/burnout.png" alt="Icon" width="30" height="30"> </li>
+                        <li>Muscle or body aches <img src="../static/uploads/assets/images/pain-in-joints.png" alt="Icon" width="30" height="30"></li>
+                        <li>Headache <img src="../static/uploads/assets/images/headache.png" alt="Icon" width="30" height="30"></li>
+                        <li>New loss of taste or smell <img src="../static/uploads/assets/images/sick.png" alt="Icon" width="30" height="30"> </li>
+                        <li>Sore throat <img src="../static/uploads/assets/images/sore-throat.png" alt="Icon" width="40" height="40"></li>
+                        <li>Nausea or vomiting <img src="../static/uploads/assets/images/nausea.png" alt="Icon" width="30" height="30"></li>
+                        <li>Diarrhea  <img src="../static/uploads/assets/images/stomach-flu.png" alt="Icon" width="40" height="40"></li>
+                      </ul>
+                    </p>
+                    </div>
+                    <!-- /.inner -->
+                  </div>
+                </div>
+                <div class="accrodion">
+                  <div class="accrodion-title">
+                    <h4>Why We Should Stay At Home?<img src="../static/uploads/assets/images/stay-at-home.png" alt="Icon" width="50" height="50"></h4>
+                  </div>
+                  <div class="accrodion-content">
+                    <div class="inner">
+                      <p style="font-family: Georgia;color: black
+                      ; font-size: 18px; padding: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                        If you test positive for COVID-19, stay home for at least 5 days and isolate from others in your home. You are likely most infectious during these first 5 days. Wear a high-quality mask if you must be around others at home and in public. Do not go places where you are unable to wear a mask.
+                      </p>
+                    </div>
+                    <!-- /.inner -->
+                  </div>
+                </div>
+                <div class="accrodion">
+                  <div class="accrodion-title">
+                    <h4>COVID-19 Illness can Affect Your Lungs? <img src="../static/uploads/assets/images/lungs.png" alt="Icon" width="40" height="40"></h4>
+                  </div>
+                  <div class="accrodion-content">
+                    <div class="inner">
+                      <p style="font-family: Georgia;color: black
+                      ; font-size: 18px; padding: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                      In critical COVID-19 -- about 5% of total cases -- The infection can damage the walls and linings of the air sacs in your lungs. As your body tries to fight it, your lungs become more inflamed and fill with fluid. This can make it harder for them to swap oxygen and carbon dioxide.
+                      </p>
+                    </div>
+                    <!-- /.inner -->
+                  </div>
+                </div>
+                <div class="accrodion">
+                  <div class="accrodion-title">
+                    <h4 >Find Out How We Are Monitoring a Covid patient? <img src="../static/uploads/assets/images/heartbeat.png" alt="Icon" width="50" height="50"></h4>
+                  </div>
+                  <div class="accrodion-content">
+                    <div class="inner"  style="font-family: Georgia;color: black
+                    ; font-size: 16px; padding: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                      <p>Monitoring: <img src="../static/uploads/assets/images/symptom.png" alt="Icon" width="40" height="40">
+                      <ol >
+                        <li>Vital signs (Temperature, Respiratory Rate, Heart Rate, Blood Pressure, Oxygen Saturation) </li>
+                        <li>Hematologic and biochemistry parameters</li>
+                        <li>Coagulation parameters (D-dimer, Fibrinogen, Platelet Count, Prothrombin Time)
+                          ECG</li>
+                        <li>Chest imaging</li>
+                        <li>Signs and symptoms of venous or arterial thromboembolism</li>
+                      </ol>
+                    </p>
+                    </div>
+                    <!-- /.inner -->
+                  </div>
+
+                </div>
+              </div>
+              
+            </div>
+            <!-- /.col-lg-7 -->
+          </div>
+          
+          <!-- /.row -->
+        </div>
+
+        <div class="moving-image-container">
+          <img src="../static/uploads/assets/images/stay-home.png" alt="Moving Icon" width="100" height="100">
+        </div>
+        <!-- /.container -->
+      </section>
+
+      <section class="contact-one">
+        <div class="container">
+          <div class="block-title text-center">
+            <h3>Still Have a Question?</h3>
+            <h3>Contact With Us</h3>
+          </div>
+          <!-- /.block-title -->
+          <form method="POST" class="contact-form-validated contact-one__form">
+            <div class="row">
+              <div class="col-lg-6">
+                <input style="font-family: cursive; font-size: 20px"
+                 type="text" name="name" placeholder="Name" />
+              </div>
+              <!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <input style="font-family: cursive; font-size: 20px" type="text" name="email" placeholder="Email Address" />
+              </div>
+              <!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <input style="font-family: cursive; font-size: 20px" type="text" name="phone" placeholder="Phone Number" />
+              </div>
+              <!-- /.col-lg-6 -->
+              <div class="col-lg-6">
+                <select style="font-family: cursive; font-size: 20px" class="selectpicker" name="discuss">
+                  <option value="">Discussion For</option>
+                  <option value="#">For Test Kit</option>
+                  <option value="#">For Quarentien</option></select
+                ><!-- /#.selectpicker -->
+              </div>
+              <!-- /.col-lg-6 -->
+              <div class="col-lg-12">
+                <input style="font-family: cursive; font-size: 20px" type="text" name="subject" placeholder="Subject" />
+              </div>
+              <!-- /.col-lg-12 -->
+              <div class="col-lg-12">
+                <textarea style="font-family: cursive; font-size: 20px" name="message" placeholder="Write Message"></textarea>
+              </div>
+              <!-- /.col-lg-12 -->
+              <div class="col-lg-12 text-center">
+                <button style="font-family: cursive; font-size: 20px" type="submit" class="thm-btn contact-one__btn">
+                  Send Message
+                </button>
+                <!-- /.thm-btn contact-one__btn -->
+              </div>
+              <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+          </form>
+          <!-- /.contact-one__form -->
+          <div class="result"></div>
+          <!-- /.result -->
+        </div>
+        <!-- /.container -->
+      </section>
+
+            <!-- /.faq-one faq-one__home-one -->
+            <footer class="site-footer-one site-footer-one__home-one">
+              <div class="site-footer-one__upper">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="footer-widget footer-widget__about">
+                        <a href="index.html">
+                          <img width="137" src="../static/uploads/assets/images/coronavirus.png" alt="" />
+                        </a>
+                      </div>
+                      <!-- /.footer-widget footer-widget__about -->
+                    </div>
+                    <!-- /.col-lg-4 -->
+                    <img
+                    src="../static/uploads/assets/images/shapes/virus-shape-1-3.png"
+                    class="faq-one__virus"
+                    alt=""
+                  />
+                    <div class="col-lg-3">
+                      <div class="footer-widget footer-widget__links">
+                        <h3 class="footer-widget__title" style="font-family: Oswald
+                        ; font-size: 24px;">Quick Links</h3>
+                        <!-- /.footer-widget__title -->
+                        <div class="footer-widget__links-wrap">
+                          <ul class="list-unstyled footer-widget__links-list">
+                            <li><a href="about.html" style="font-family: Oswald
+                              ; font-size: 18px;" >About</a></li>
+                            <li><a href="prevention.html" style="font-family: Oswald
+                              ; font-size: 18px;">Prevention</a></li>
+                            <li><a href="contact.html" style="font-family: Oswald
+                              ; font-size: 18px;">Contact</a></li>
+                            <li><a href="faqs.html" style="font-family: Oswald
+                              ; font-size: 18px;">FAQs</a></li>
+                        
+                          </ul>
+                        </div>
+                        <!-- /.footer-widget__links-wrap -->
+                      </div>
+                      <!-- /.footer-widget footer-widget__about -->
+                    </div>
+                    <!-- /.col-lg-3 -->
+                    <div class="col-lg-4">
+                      <div class="footer-widget footer-widget__contact">
+                        <h3 class="footer-widget__title" style="font-family: Oswald
+                        ; font-size: 24px;">Contact</h3>
+                        <!-- /.footer-widget__title -->
+                        <p>
+                          <a href="tel:888-999-0000" style="font-family: Oswald
+                          ; font-size: 18px;">
+                            Call us at 888 999 0000 <i class="fas fa-phone"></i> 
+                          </a>
+                        </p>
+                          <p>
+                            <a href="mailto:ameerarayan2@gmail.com" style="font-family: Oswald
+                            ; font-size: 18px;">
+                              ameerarayan2@gmail.com <i class="fas fa-envelope"></i>                      </a>
+                          </p>
+                          <p>
+                            <a href="mailto:aseel.khaldy@gmail.com" style="font-family: Oswald
+                            ; font-size: 18px;">
+                              aseel.khaldy@gmail.com <i class="fas fa-envelope"></i>                      </a>
+                          </p>
+                          <p>
+                            <a href="mailto:orabimaria@gmail.com" style="font-family: Oswald
+                            ; font-size: 18px;">
+                              orabimaria@gmail.com <i class="fas fa-envelope"></i>                      </a>
+                          </p>
+                        <p style="font-family: Oswald
+                        ; font-size: 18px;">
+                          University of Haifa,<br />
+                          199 Aba khoushy ave. mount 
+                          </p>
+                      </div>
+                      <!-- /.footer-widget footer-widget__contact -->
+                      <div class="center-container">
+                      <div class="col-lg-2 d-flex">
+                        <div class="footer-widget my-auto">
+                      <div class="footer-widget__social">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-square"></a>
+                        <a href="https://www.twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                        <a href="https://www.pinterest.com/" class="fab fa-pinterest-p"></a>
+                      </div>
+                      </div>
+              </div>
+            </div>
+                    </div>
+                    <!-- /.col-lg-3 -->
+                          <!-- Social Media Links -->
+          </div>
+        </div>
+              <!-- /.site-footer-one__upper -->
+              <div class="site-footer-one__bottom">
+                <div class="container">
+                  <p style="font-family: Oswald
+                  ; font-size: 20px;">© copyright 2023 by <a href="#" style="font-family: Oswald
+                    ; font-size: 20px;">AmeeraRayan&AseelKwaled&MariaOrabi</a></p>
+                </div>
+                <!-- /.container -->
+              </div>
+              <!-- /.site-footer-one__bottom -->
+            </footer>
+            <!-- /.site-footer-one -->
+          </div>
+          <!-- /.page-wrapper -->
+          <a href="#" data-target="html" class="scroll-to-target scroll-to-top"
+            ><i class="fa fa-angle-up"></i
+          ></a>
+          <div class="side-menu__block">
+            <div class="side-menu__block-overlay custom-cursor__overlay">
+              <div class="cursor"></div>
+              <div class="cursor-follower"></div>
+            </div>
+            <!-- /.side-menu__block-overlay -->
+            <div class="side-menu__block-inner">
+              <div class="side-menu__top justify-content-end">
+                <a href="#" class="side-menu__toggler side-menu__close-btn"
+                  ><img src="../static/uploads/assets/images/shapes/close-1-1.png" alt=""
+                /></a>
+              </div>
+              <!-- /.side-menu__top -->
+              <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+              </nav>
+              <!-- /.side-menu__content -->
+            </div>
+            <!-- /.side-menu__block-inner -->
+          </div>
+          <!-- /.side-menu__block -->
+          <script src="../static/uploads/assets/js/jquery.min.js"></script>
+          <script src="../static/uploads/assets/js/bootstrap.bundle.min.js"></script>
+          <script src="../static/uploads/assets/js/owl.carousel.min.js"></script>
+          <script src="../static/uploads/assets/js/waypoints.min.js"></script>
+          <script src="../static/uploads/assets/js/jquery.counterup.min.js"></script>
+          <script src="../static/uploads/assets/js/TweenMax.min.js"></script>
+          <script src="../static/uploads/assets/js/wow.js"></script>
+          <script src="../static/uploads/assets/js/jquery.magnific-popup.min.js"></script>
+          <script src="../static/uploads/assets/js/jquery.ajaxchimp.min.js"></script>
+          <script src="../static/uploads/assets/js/jquery.validate.min.js"></script>
+          <script src="../static/uploads/assets/js/bootstrap-select.min.js"></script>
+          <script src="../static/uploads/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+          <script src="../static/uploads/assets/js/bootstrap-datepicker.min.js"></script>
+          <script src="../static/uploads/assets/js/isotope.js"></script>
+          <!-- template scripts -->
+          <script src="../static/uploads/assets/js/theme.js"></script>
+          <script src="../static/uploads/assets/js/testimonials-owl.carousel.config.js"></script>
+        </body>
+      </html>

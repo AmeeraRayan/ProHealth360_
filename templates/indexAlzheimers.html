@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Alzheimer's Disease Prediction Wep</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/Alzheimersvendor/aos/aos.css" rel="stylesheet">
+  <link href="static/Alzheimersvendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/Alzheimersvendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!--GitHub icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="static/cssAlzahiemers/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Appland - v4.7.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="#"><img src="static/imagesAlzheimers/logo.png" alt="" class="img-fluid"> Alzheimer's Disease Prediction </a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto active" href="{{url_for('homealzhiemers')}}">Home</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('aboutAlzheimers')}}">About Us</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('classifier')}}">Alzheimer's Disease Classifier</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('faqsAlzhiemers')}}">FAQS </a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('game')}}" target="_blank">Memory Game </a></li>
+            <!-- Add this line for Alzheimer's news -->
+            <li><a class="nav-link scrollto" href="https://news.google.com/search?q=Alzheimer's" target="_blank">News</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-up">
+          <div>
+            <h1>Alzheimer's Disease</h1>
+            <p>
+              Alzheimer's disease is the most common type of dementia. It is a progressive disease beginning with mild
+              memory loss and possibly leading to loss of the ability to carry on a conversation and respond to the
+              environment. Alzheimer's disease involves parts of the brain that control thought, memory, and language.
+            </p>
+            <h2> Stages of Alzheimer's disease: <br><br> 1.Mild Alzheimer’s disease </h2>
+            <p>
+              As Alzheimer’s worsens, people experience greater memory loss and other cognitive difficulties.
+              Problems can include wandering and getting lost, trouble handling money and paying bills, repeating questions, taking longer to complete normal daily tasks, and personality and behavior changes. People are often diagnosed in this stage.
+            </p>
+            <h2> 2.Moderate Alzheimer’s disease </h2>
+            <p>
+              In this stage, damage occurs in areas of the brain that control language, reasoning, conscious thought, and sensory processing, such as the ability to correctly detect sounds and smells.
+              Memory loss and confusion grow worse, and people begin to have problems recognizing family and friends. They may be unable to learn new things, carry out multistep tasks such as getting dressed, or cope with new situations. In addition, people at this stage may have hallucinations, delusions, and paranoia and may behave impulsively
+            </p>
+            <h2> 3.Severe Alzheimer’s disease </h2>
+            <p> Ultimately, plaques and tangles spread throughout the brain, and brain tissue shrinks significantly. People with severe Alzheimer’s cannot communicate and are completely dependent on others for their care.
+               Near the end of life, the person may be in bed most or all of the time as the body shuts down.
+            </p>
+          </div>
+        </div>
+            <div class="col-lg-6" data-aos="fade-up">
+              <img src="static/imagesAlzheimers/brain.png" class="img-fluid" alt="">
+              </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Disease  Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>What are the warning signs of Alzheimer’s disease?</h2>
+        </div>
+
+        <div class="row">
+          <p>
+            Alzheimer’s disease is not a normal part of aging. Memory problems are typically one of the first warning signs of Alzheimer’s disease and related dementias.
+            In addition to memory problems, someone with symptoms of Alzheimer’s disease may experience one or more of the following:<br>
+            <ul style="list-style-type: disc; padding-right: 10px;"> 
+              <li>Memory loss that disrupts daily life, such as getting lost in a familiar place or repeating questions.
+              </li>
+              <li>Trouble handling money and paying bills.</li>
+              <li>Difficulty completing familiar tasks at home, at work or at leisure.</li>
+              <li>Decreased or poor judgment. </li>
+              <li>Misplacing things and being unable to retrace steps to find them. </il>
+              <li>Changes in mood, personality, or behavior. </li>
+            </ul>
+              Even if you or someone you know has several or even most of these signs, it doesn’t mean it’s Alzheimer’s disease.
+          </p>
+          <div class="section-title">
+          <h2>Memory loss explaining video</h2>
+        </div>
+          <div class="video-container">
+            <iframe width="700" height="450" src="https://www.youtube.com/embed/YhT58SSQQrA" frameborder="0" allowfullscreen></iframe>
+          </div>          
+        </div>
+      </div>
+    </section><!-- End Disease Classifier Section -->
+
+    <!-- ======= App Features Section ======= -->
+    <section id="causes" class="causes">
+      <div class="container">
+        <div class="section-title">
+          <h2>What causes Alzheimer’s disease? </h2>
+        </div>
+        <div class="row"> 
+          <p> 
+            In recent years, scientists have made tremendous progress in better understanding Alzheimer’s and the momentum continues to grow. Still, scientists don’t yet fully understand what causes Alzheimer’s disease in most people.
+             The causes probably include a combination of age-related changes in the brain, along with genetic, environmental, and lifestyle factors. The importance of any one of these factors in increasing or decreasing the risk of developing Alzheimer’s may differ from person to person.
+          </p>
+        </div>
+      </div>
+    </section><!-- End App Features Section -->
+<!--------------------animation------------------------------>
+<div class="marquee" style="white-space: nowrap;overflow: hidden;width: 100%;">
+  <p style=" display: inline-block; animation: marquee 20s linear infinite; font-size:36px; color:hsl(224, 63%, 52%);">Self Protect~ Alzheimer Disease detection~ Get Involved and raise your knowledge~</p>
+ </div>
+<!----end--->
+
+  </main><!-- End #main -->
+<!------footer------------------------------------>
+      <div class="footer" id="footer">
+        <div class="footer-container">
+            <div class="container1">
+                <div class="row1">
+                    <div class="footer-content">
+                      <div class="news-contact-container">
+                      <div class="about-section">
+                            <div class="footer-about-info">
+                                <h4> About Us </h4>
+                                <p> Alzheimers disease web App Classifier , aims to detect whether patient have an Alzheimer or not using machine learning Algorithems. </p>
+                                <ul style="list-style-type: none; /* Remove default bullet points */">
+                                    <li><i class="fa fa-map-marker"></i>
+                                        <span>university of Haifa , Abba Khoushy Ave 199,Haifa</span></li>
+                                    <li><i class="fa fa-envelope"></i>
+                                        <span>Email: <a href="mailto:aseel.khlady@gmail.com">aseel.khlady@gmail.com</a></span>
+                                    <li><i class="fa fa-envelope"></i>
+                                        <span>Email: <a href="mailto:orabimaria@gmail.com">orabimaria@gmail.com</a></span>
+                                    <li><i class="fa fa-envelope"></i>
+                                        <span>Email: <a href="mailto:ameerarayan2@gmail.com">ameerarayan2@gmail.com </a></span></li>
+                                </ul>
+                            </div>
+                            <div class="social-link footer-social-link">
+                                <ul>
+                                    <li><a href="https://is-web.hevra.haifa.ac.il/index.php" target="_blank">
+                                           <img src="static\imagesAlzheimers\download.png" style="background-size: 20%; /* Adjust this property as needed */
+                                                border-radius: 50%; /* Create a circular shape */
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                width: 45px;
+                                                height: 45px;"></a></li>
+                                    <li><a href="https://www.haifa.ac.il/?lang=en" class="circle c-2">
+                                        <img src="static\imagesAlzheimers\images.png" style="background-size: 20%; /* Adjust this property as needed */
+                                                border-radius: 50%; /* Create a circular shape */
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                width: 45px;
+                                                height: 45px;"></a></li>
+                                     <li><a href="https://www.facebook.com/ishaifau" target="_blank" class="circle c-3"><i
+                                            class="fa fa-facebook"></i></a></li>
+                                    <li><a href="https://gitlab.com/u_of_haifa_is_dpt/capstone_george_martvel/be-my-eyes" class="circle c-4">
+                                         <img src="static\imagesAlzheimers\Screenshot 2023-09-26 225801.png" style="background-size: cover; /* Adjust this property as needed */
+                                                border-radius: 50%; /* Create a circular shape */
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;">
+                                    </a></li>
+                                </ul>
+                            </div> <!-- footer-social-link -->
+                        </div>
+                        <div class="news-section">
+                            <h4> Our News </h4>
+                            <div class="news-1">
+                                <a href="FAQs.html">
+                                    <img src="static/imagesAlzheimers/news1.webp" alt="..." style="width:65px; height:65px;">
+                                </a>
+                                <div class="news">
+                                    <h5 class="news-h"><a href="https://www.sciencedaily.com/releases/2023/10/231005173755.htm">Protein that could help defeat Alzheimer's and increase productive lifespan..</a></h5>
+                                    <p class="date">OCT 5, 2023</p>
+                                </div>
+                            </div>
+                            <div class="news-2">
+                                <a href="FAQs.html">
+                                    <img src="static/imagesAlzheimers/download.jfif" alt="..." style="width:65px; height:65px;">
+                                </a>
+                                <div class="news">
+                                    <h5 class="news-h"><a href="https://www.yourerie.com/news/local-news/health-report-identifying-risk-factors-for-alzheimers-disease/">Health Report: Identifying risk factors for Alzheimer’s Disease</a></h5>
+                                    <p class="date">Sep 1, 2023</p>
+                                </div>
+                            </div>
+                            <div class="news-3">
+                                <a href="FAQs.html">
+                                    <img src="static/imagesAlzheimers/news2.webp" alt="..." style="width:65px; height:65px;">
+                                </a>
+                                <div class="news">
+                                    <h5 class="news-h"><a href="https://www.biospace.com/article/small-percentage-of-adults-with-early-alzheimer-s-eligible-for-leqembi-study-/">Small Percentage of Adults with Early Alzheimer’s Eligible for Leqembi: Study</a></h5>
+                                    <p class="date">Sep 26, 2023</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="contact-section">
+                            <h4> Contact Us </h4>
+                            <form action="...">
+                                <div class="form-group">
+                                    <input id="first_name" name="first_name" type="text" placeholder="Name"
+                                           class="form-control" required="">
+                                </div>
+                                <div class="form-group">
+                                    <input id="email" name="email" type="email" placeholder="E-mail"
+                                           class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" rows="4" placeholder="Message..."></textarea>
+                                </div>
+                                <div class="form-group buttons ">
+                                    <input type="submit" class="red-btn red-btn-form" value="Send Message">
+                                </div>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="back-to-top">
+                <a class="top top-page" href="#"> <i class="icon-up-open-big"></i></a>
+            </div>
+    
+            <div class="back-to-top-mob">
+                <a class="top top-mob" href="#"> <i class="icon-up-open-big"></i></a>
+            </div>
+        </div>
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="copy-title">Copyright &copy; 2023 created by
+                            <a href="https://gitlab.com/u_of_haifa_is_dpt/capstone_george_martvel/be-my-eyes" target="_blank">Aseel&Ameera&Maria</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+ <!------------------end footer --------------->
+
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="static/Alzheimersvendor/aos/aos.js"></script>
+  <script src="static/Alzheimersvendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Template Main JS File -->
+  <script src="static/jsAlzaheimers/main.js"></script>
+
+</body>
+
+</html>

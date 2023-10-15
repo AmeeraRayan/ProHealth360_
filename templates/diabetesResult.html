@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.101.0" />
+    <title>Diabetes Detction</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet" />
+    <style>
+      .starter-template {
+        padding: 3rem 1.5rem;
+        text-align: center;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md navbar-dark fixed-top"
+      style="background-color: #021e64"
+    >
+      <a
+        style="font-family: cursive"
+        class="navbar-brand"
+        href="{{ url_for('pageOfdiabetes') }}"
+        ><img
+          src="https://www.svgrepo.com/show/16084/doctor.svg"
+          width="30"
+          height="30"
+          class="d-inline-block align-top"
+          alt=""
+        />
+        Diabetes Detection</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto"></ul>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8 mt-4">
+          <div
+            class="card shadow-sm p-3 mb-5 bg-white rounded"
+            style="height: 40vh"
+          >
+            <div class="card-body">
+              {% if data == "HAS DIABETES" %}
+              <img
+                src="https://www.svgrepo.com/show/16084/doctor.svg"
+                width="60"
+                height="60"
+                class="d-block mx-auto"
+                alt=""
+              />
+              <h4
+                style="font-family: cursive"
+                class="card-title text-center text-danger mt-4"
+              >
+                STATUS: Probability of having diabetes: {{probability}}%
+              </h4>
+              <p
+                style="font-family: cursive; font-size: 30"
+                class="text-center mt-4"
+              >
+                <br /><br />
+                You may check this
+                <a
+                  href="https://www.mayoclinic.org/diseases-conditions/diabetes/in-depth/diabetes-management/art-20047963"
+                  >link
+                </a>
+                to know tips on how to manage diabetes. Never forget to stay
+                healthy always!
+              </p>
+              <a href="javascript:window.history.back();"
+                ><p class="text-center mt-4">Back</p></a
+              >
+              <!-- Display a message and a button only when the person has diabetes -->
+              <p
+                style="font-family: cursive; font-size: 30"
+                class="text-center mt-4"
+              >
+                Yeah you already have diabetes, so you may experience
+                complications, and some of them is Heart and Kidney Disease. If
+                you want to check for this, click on me "Heart-Disease
+                Detection" or "Kidney-Disease Detection" .
+              </p>
+              <div style="display: flex; justify-content: space-between">
+                <div>
+                  <button
+                    style="
+                      height: 50px;
+                      width: 250px;
+                      font-family: cursive;
+                      font-size: 20px;
+                      background-color: #021e64;
+                      color: azure;
+                    "
+                  >
+                    <a
+                      style="text-align: center; color: white"
+                      href="/heartdisease-detection"
+                      class="btn-style-one"
+                    >
+                      Heart-Disease Detection
+                    </a>
+                  </button>
+                </div>
+                <div>
+                  <button
+                    style="
+                      height: 50px;
+                      width: 270px;
+                      font-family: cursive;
+                      font-size: 20px;
+                      background-color: #021e64;
+                      color: azure;
+                    "
+                  >
+                    <a
+                      style="text-align: center; color: white"
+                      href="/KidneyDisease"
+                      class="btn-style-one"
+                    >
+                      Kidney-Disease Detection
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <br />
+              <br />
+
+              <!-- End of additional content for diabetes -->
+              {% else %}
+              <img
+                src="https://www.svgrepo.com/show/16084/doctor.svg"
+                width="60"
+                height="60"
+                class="d-block mx-auto"
+                alt=""
+              />
+              <h4
+                style="font-family: cursive"
+                class="card-title text-center text-primary mt-4"
+              >
+                STATUS:Probability of having diabetes: {{probability}}%
+              </h4>
+              <p
+                style="font-family: cursive; font-size: 30"
+                class="text-center mt-4"
+              >
+                <br /><br />
+                You may check this
+                <a
+                  href="https://www.mayoclinic.org/diseases-conditions/diabetes/in-depth/diabetes-management/art-20047963"
+                  >link
+                </a>
+                to know tips on how to manage diabetes. Never forget to stay
+                healthy always!
+              </p>
+              <a href="javascript:window.history.back();"
+                ><p style="font-family: cursive" class="text-center mt-4">
+                  Back
+                </p></a
+              >
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- /.container -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(document).on("keypress", "input,select", function (e) {
+        if (e.which == 13) {
+          e.preventDefault();
+          var $next = $("[tabIndex=" + (+this.tabIndex + 1) + "]");
+          console.log($next.length);
+          if (!$next.length) {
+            $next = $("[tabIndex=1]");
+          }
+          $next.focus();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Alzheimer's Disease Prediction Wep App</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!--GitHub icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Appland - v4.7.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-app-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top  header-transparent ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <a href="#"><img src="static/assets/img/logo.png" alt="" class="img-fluid"> Alzheimer's Disease Prediction </a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+            <li><a class="nav-link scrollto" href="{{url_for('homealzhiemers')}}">Home</a></li>
+            <li><a class="nav-link scrollto active" href="{{url_for('aboutAlzheimers')}}">About Us</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('classifier')}}">Alzheimer's Disease Classifier</a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('faqsAlzhiemers')}}">FAQS </a></li>
+            <li><a class="nav-link scrollto" href="{{url_for('game')}}" target="_blank">Memory Game </a></li>
+            <!-- Add this line for Alzheimer's news -->
+            <li><a class="nav-link scrollto" href="https://news.google.com/search?q=Alzheimer's" target="_blank">News</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+<!-------------------------- About ----------------------------------->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-up">
+          <div>
+            <h1> About the project </h1>
+                <p>
+                    Using this website, you can find out if an MRI image is Alzheimer's disease.
+                    It is classified according to four different stages of Alzheimer's disease.
+                <ol>
+                    <li>Mild Demented</li>
+                    <li>Moderate Demented</li>
+                    <li>Non Demented</li>
+                    <li>Very Mild Demented</li>
+                </ol>
+                </p>
+                <h2>So how the classifier works? </h2>
+                <p>Firstly, we've tested CNN, InceptionV3, ResNet50, VGG16 and DenseNet121 models using Alzheimer's Dataset (4 class of Images). Then, according to results, we decided to improve our CNN model and change our dataset because it was not clarified.
+                   <br> We improved our CNN model and we named it "Custom CNN".</p>
+                <h1> Dataset </h1>
+                <h2> Alzheimer MRI Preprocessed Dataset </h2>
+                <ul>
+                    <li>The data is collected from several websites, hospitals, and public repositories.</li>
+                    <li>The dataset is consists of Preprocessed MRI (Magnetic Resonance Imaging) Images.</li>
+                    <li>All the images are resized into 128 x 128 pixels.</li>
+                </ul>
+                <h2> ADNI (The Alzheimer’s Disease Neuroimaging Initiative)</h2>
+                <ul>
+                    <li>The Alzheimer’s Disease Neuroimaging Initiative (ADNI) is a longitudinal multicenter study designed to develop clinical, imaging, genetic,
+                         and biochemical biomarkers for the early detection and tracking of Alzheimer’s disease (AD).</li>
+                    <li>ADNI researchers collect, validate and utilize data, including MRI and PET images, genetics, cognitive tests,
+                         CSF and blood biomarkers as predictors of the disease.</li>
+                </ul>
+                </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up">
+                <img src="static/assets/img/brain.png" class="img-fluid" alt="">
+                </div>
+            </div>
+            </div>
+                </section>
+    <!-- ======= App Features Section ======= -->
+    <section id="features" class="features">
+        <div class="container">
+        
+          <div class="row no-gutters">
+            <div class="col-xl-12">
+              <div class="content d-flex flex-column justify-content-center">
+                <div class="row">
+                    <div class="section-title">
+                        <h2>Acuuracy result for each Model</h2>
+                      </div>
+                  <div class="col-md-6">
+                    <table border="2">
+                        <tr>
+                            <th>Model</th>
+                            <th>Accuracy</th>
+                        </tr>
+                        <tr>
+                            <td>Custom CNN</td>
+                            <td>%98.18</td>
+                        </tr>
+                        <tr>
+                            <td>CNN</td>
+                            <td>%86.48</td>
+                        </tr>
+                        <tr>
+                            <td>DenseNet121</td>
+                            <td>%88.36</td>
+                        </tr>
+                        <tr>
+                            <td>InceptionV3</td>
+                            <td>%76.80</td>
+                        </tr>
+                        <tr>
+                            <td>ResNet50</td>
+                            <td>%78.20</td>
+                        </tr>
+                        <tr>
+                            <td>VGG16</td>
+                            <td>%79.45</td>
+                        </tr>
+                    </table>   
+                    <h4> As we see We improved our CNN model and we named it "Custom CNN".</h4>                 
+                  </div>
+                  <div class="col-md-6">
+                    <img src="/static/assets/img/output.png" style="padding-bottom: 50px;">
+                    <h4> We can see a high acuuracy on validation and train set but after testing it on test set  we have 0.981875 Accuracy.
+                        According to results, we see that Custom CNN model is trained properly and tested well.
+                    </h4>
+                  </div>
+                  <div class="col-md-6">
+                    <h2> Confusion Matrix </h2>
+                    <img src="/static/assets/img/cf.png" style="height:300;width:300; padding-bottom:20px;">
+                    <h4> The classifier made a total of 1600 predictions.</h4>
+                    <ul>
+                        <li> In reality, 827 patients in the sample is "Non Demented", but the classifier predicted 822 patients correctly.</li>
+                        <li>In reality, 527 patients in the sample is "Very Mild Demented", but the classifier predicted 515 patients correctly.</li>
+                        <li>In reality, 232 patients in the sample is "Mild Demented", but the classifier predicted 220 patients correctly.</li>
+                        <li> In reality, 14 patients in the sample is "Moderate Demented", and the classifier predicted all patients correctly.</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6" style="padding-left: 120px;">
+                    <h2> about images </h2>
+                    <img src="/static/assets/img/input.png" style="padding-bottom:20px;">
+                    <ul>
+                        <li>Image Shape: (128, 128, 3)</li>
+                        <li>Image Height: 128</li>
+                        <li>Image Width: 128</li>    
+                        <li>Image Dimension: 3</li>
+                        <li>Image Size: 48kb</li>
+                        <li>Image Data Type: uint8</li>
+                        <li>Maximum RGB value of the image: 255</li>
+                        <li>Minimum RGB value of the image: 0</li>
+                    </ul>
+                    <p>The image under review is an MRI image, but it has 3 channels,
+                       so this image is in RGB scale. In short, even though the image we are examining is an X-Ray image, it is in RGB scale.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End App Features Section -->
+  
+  
+    </main><!-- End #main -->
+
+  <!------footer------------------------------------>
+  <div class="footer" id="footer">
+    <div class="footer-container">
+        <div class="container1">
+            <div class="row1">
+                <div class="footer-content">
+                  <div class="news-contact-container">
+                  <div class="about-section">
+                        <div class="footer-about-info">
+                            <h4> About Us </h4>
+                            <p> Alzheimers disease web App Classifier , aims to detect whether patient have an Alzheimer or not using machine learning Algorithems. </p>
+                            <ul style="list-style-type: none; /* Remove default bullet points */">
+                                <li><i class="fa fa-map-marker"></i>
+                                    <span>university of Haifa , Abba Khoushy Ave 199,Haifa</span></li>
+                                <li><i class="fa fa-envelope"></i>
+                                    <span>Email: <a href="mailto:aseel.khlady@gmail.com">aseel.khlady@gmail.com</a></span>
+                                <li><i class="fa fa-envelope"></i>
+                                    <span>Email: <a href="mailto:orabimaria@gmail.com">orabimaria@gmail.com</a></span>
+                                <li><i class="fa fa-envelope"></i>
+                                    <span>Email: <a href="mailto:ameerarayan2@gmail.com">ameerarayan2@gmail.com </a></span></li>
+                            </ul>
+                        </div>
+                        <div class="social-link footer-social-link">
+                            <ul>
+                                <li><a href="https://is-web.hevra.haifa.ac.il/index.php" target="_blank">
+                                       <img src="static\assets\img\download.png" style="background-size: 20%; /* Adjust this property as needed */
+                                            border-radius: 50%; /* Create a circular shape */
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 45px;
+                                            height: 45px;"></a></li>
+                                <li><a href="https://www.haifa.ac.il/?lang=en" class="circle c-2">
+                                    <img src="static\assets\img\images.png" style="background-size: 20%; /* Adjust this property as needed */
+                                            border-radius: 50%; /* Create a circular shape */
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            width: 45px;
+                                            height: 45px;"></a></li>
+                                 <li><a href="https://www.facebook.com/ishaifau" target="_blank" class="circle c-3"><i
+                                        class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://gitlab.com/u_of_haifa_is_dpt/capstone_george_martvel/be-my-eyes" class="circle c-4">
+                                     <img src="static\assets\img\Screenshot 2023-09-26 225801.png" style="background-size: cover; /* Adjust this property as needed */
+                                            border-radius: 50%; /* Create a circular shape */
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;">
+                                </a></li>
+                            </ul>
+                        </div> <!-- footer-social-link -->
+                    </div>
+                    <div class="news-section">
+                        <h4> Our News </h4>
+                        <div class="news-1">
+                            <a href="FAQs.html">
+                                <img src="static/assets/img/news1.webp" alt="..." style="width:65px; height:65px;">
+                            </a>
+                            <div class="news">
+                                <h5 class="news-h"><a href="https://www.sciencedaily.com/releases/2023/10/231005173755.htm">Protein that could help defeat Alzheimer's and increase productive lifespan..</a></h5>
+                                <p class="date">OCT 5, 2023</p>
+                            </div>
+                        </div>
+                        <div class="news-2">
+                            <a href="FAQs.html">
+                                <img src="static/assets/img/download.jfif" alt="..." style="width:65px; height:65px;">
+                            </a>
+                            <div class="news">
+                                <h5 class="news-h"><a href="https://www.yourerie.com/news/local-news/health-report-identifying-risk-factors-for-alzheimers-disease/">Health Report: Identifying risk factors for Alzheimer’s Disease</a></h5>
+                                <p class="date">Sep 1, 2023</p>
+                            </div>
+                        </div>
+                        <div class="news-3">
+                            <a href="FAQs.html">
+                                <img src="static/assets/img/news2.webp" alt="..." style="width:65px; height:65px;">
+                            </a>
+                            <div class="news">
+                                <h5 class="news-h"><a href="https://www.biospace.com/article/small-percentage-of-adults-with-early-alzheimer-s-eligible-for-leqembi-study-/">Small Percentage of Adults with Early Alzheimer’s Eligible for Leqembi: Study</a></h5>
+                                <p class="date">Sep 26, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-section">
+                        <h4> Contact Us </h4>
+                        <form action="...">
+                            <div class="form-group">
+                                <input id="first_name" name="first_name" type="text" placeholder="Name"
+                                       class="form-control" required="">
+                            </div>
+                            <div class="form-group">
+                                <input id="email" name="email" type="email" placeholder="E-mail"
+                                       class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="4" placeholder="Message..."></textarea>
+                            </div>
+                            <div class="form-group buttons ">
+                                <input type="submit" class="red-btn red-btn-form" value="Send Message">
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-to-top">
+            <a class="top top-page" href="#"> <i class="icon-up-open-big"></i></a>
+        </div>
+
+        <div class="back-to-top-mob">
+            <a class="top top-mob" href="#"> <i class="icon-up-open-big"></i></a>
+        </div>
+    </div>
+    <div id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <p class="copy-title">Copyright &copy; 2023 created by
+                        <a href="https://gitlab.com/u_of_haifa_is_dpt/capstone_george_martvel/be-my-eyes" target="_blank">Aseel&Ameera&Maria</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+<!------------------end footer --------------->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+    <!-- Vendor JS Files -->
+    <script src="static/assets/vendor/aos/aos.js"></script>
+    <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="static/assets/js/main.js"></script>
+  
+  </body>
+  
+  </html>

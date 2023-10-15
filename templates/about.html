@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 15px; /* Adjust this value to control cell size */
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+      </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>About Us | COVID-19 Detector</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../static/uploads/assets/images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../static/uploads/assets/images/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../static/uploads/assets/images/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="../static/uploads/assets/images/favicons/site.webmanifest"
+    />
+
+    <!-- plugin scripts -->
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700%7CBarlow:300,400,500,600,700,800,900%7CPT+Sans:400,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/owl.theme.default.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/magnific-popup.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/fontawesome-all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/bootstrap-select.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/jquery.mCustomScrollbar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/bootstrap-datepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../static/uploads/assets/css/vimns-icons.css"
+    />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="../static/uploads/assets/css/main.css" />
+    <link rel="stylesheet" href="../static/uploads/assets/css/responsive.css" />
+  </head>
+  <body>
+    <div class="preloader">
+      <img
+        src="../static/uploads/assets/images/loader.png"
+        class="preloader__image"
+        alt=""
+      />
+    </div>
+    <!-- /.preloader -->
+    <div class="page-wrapper">
+      <header class="site-header-one">
+        <nav class="main-nav__one stricky">
+          <div class="container-fluid">
+            <div class="main-nav__logo-box">
+              <a href="index.html">
+                <img
+                  width="137"
+                  src="../static/uploads/assets/images/logo-1-1.png"
+                  alt=""
+                />
+              </a>
+              <a href="#" class="side-menu__toggler"
+                ><i class="fa fa-bars"></i
+              ></a>
+            </div>
+            <!-- /.main-nav__logo-box -->
+            <div class="main-nav__main-navigation">
+              <ul class="main-nav__navigation-box">
+                <li class="dropdown">
+                  <a href="index.html">
+                    <img
+                      src="../static/uploads/assets/images/home.png"
+                      alt="Home Icon"
+                      width="24"
+                      height="24"
+                    />
+                    Home
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="/">
+                    <img src="../static/uploads/assets/images/smart-home.png" alt="about Icon" width="30" height="30">
+                    Back to ProHealth360
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="about.html">
+                    <img
+                      src="../static/uploads/assets/images/about.png"
+                      alt="about Icon"
+                      width="24"
+                      height="24"
+                    />
+                    About Project
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="faqs.html">
+                    <img
+                      src="../static/uploads/assets/images/faq.png"
+                      alt="FAQs Icon"
+                      width="28"
+                      height="28"
+                    />
+                    FAQs
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="https://news.google.com/search?q=covid">
+                    <img
+                      src="../static/uploads/assets/images/radio.png"
+                      alt="News Icon"
+                      width="28"
+                      height="28"
+                    />
+                    News
+                  </a>
+                </li>
+                <li class="dropdown">
+                  <a href="contact.html">
+                    <img
+                      src="../static/uploads/assets/images/call.png"
+                      alt="contact Icon"
+                      width="28"
+                      height="28"
+                    />
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- /.main-nav__main-navigation -->
+            <div class="main-nav__cta">
+              <div class="main-nav__cta-icon">
+                <i class="vimns-icon-phone"></i>
+              </div>
+              <!-- /.main-nav__cta-icon -->
+              <div class="main-nav__cta-content">
+                <h3><a href="tel:666-888-0000">666 888 0000</a></h3>
+                <p>Helpline</p>
+              </div>
+              <!-- /.main-nav__cta-content -->
+            </div>
+            <!-- /.main-nav__cta -->
+            <div class="main-nav__right">
+              <a href="/covid" class="main-nav__btn">Detect COVID</a
+              ><!-- /.main-nav__btn -->
+            </div>
+            <!-- /.main-nav__right -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+        <!-- /.main-nav__one -->
+      </header>
+      <!-- /.site-header-one -->
+      <section class="page-header">
+        <div class="container">
+          <h2>About Us</h2>
+          <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><span>About</span></li>
+          </ul>
+          <!-- /.thm-breadcrumb -->
+        </div>
+        <!-- /.container -->
+      </section>
+      <!-- /.page-header -->
+      <section class="about-three">
+        <div class="container">
+          <div class="block-title text-center">
+            <p style=" font-family: cursive;
+            ; font-size: 35px;">More Know About Corona</p>
+            <h3>Protect Yourself From Cronoavirus</h3>
+          </div>
+          <!-- /.block-title -->
+          <div class="row">
+            <h1 style="color: blue;">Selection of Project
+             <img
+              src="../static/uploads/assets/images/confused.png"
+              alt="FAQs Icon"
+              width="40"
+              height="40"
+            /></h1>
+          </div>
+          <p  style=" font-family: cursive;color:black;
+          ; font-size: 20px;">
+          COVID-19, short for "Coronavirus Disease 2019," is a highly contagious respiratory illness caused by a novel coronavirus known as SARS-CoV-2. It first emerged in late 2019 in the city of Wuhan, Hubei province, China, and rapidly spread to become a global pandemic. COVID-19 is primarily transmitted through respiratory droplets when an infected person coughs, sneezes, or talks, and it can also spread by touching surfaces contaminated with the virus and then touching the face.</p>
+          <p style=" font-family: cursive;color:black;
+          ; font-size: 20px;">
+            <span style="text-decoration: underline;color:red">So why </span>did we choose to focus on this disease?
+          </p>
+              <!-- /.about-three__image -->
+              <div class="accrodion-content">
+                <div class="inner">
+                  <p style=" font-family: cursive;color:black;
+                  ; font-size: 20px;">
+                    <span style="color: blue;">First and foremost,</span> COVID-19 has emerged as one of the most significant public health challenges in recent history. It has not only caused immense suffering and loss of life but has also strained healthcare infrastructure worldwide. By developing a machine learning web application for COVID-19 prediction, we are contributing to the ongoing efforts to combat the pandemic. This can potentially help in early detection, isolation, and treatment of infected individuals, thereby reducing the spread of the virus.
+                  </p>
+                </div>
+                <!-- /.inner -->
+              </div>
+              <div class="accrodion-content">
+                <div class="inner">
+                  <p style=" font-family: cursive;color:black;
+                  ; font-size: 20px;">
+                 <span style="color: blue;">Moreover,</span> the COVID-19 pandemic has highlighted the importance of leveraging technology and data science in healthcare.Our project demonstrates the power of machine learning and data analysis in aiding healthcare professionals and policymakers in making informed decisions. It showcases how technology can be harnessed for the benefit of public health, which is particularly relevant in the context of future pandemics or health crises.                  </p>
+                </div>
+                <!-- /.inner -->
+              </div>
+              <div class="accrodion-content">
+                <div class="inner">
+                  <p style=" font-family: cursive;color:black;
+                  ; font-size: 20px;">
+                <span style="color: blue;">Additionally,</span> the development of such a web application aligns with the broader trend of digital health innovation. It offers a user-friendly platform for individuals to assess their risk of COVID-19 based on clinical parameters, making health information more accessible and empowering users to take proactive measures to protect themselves and others.                </div>
+                <!-- /.inner -->
+              </div>
+              <div class="accrodion">
+                <div class="about-three__title">
+                  <h1 style="color: white;">By focusing on this project, you are not only addressing a critical societal issue but also showcasing the potential of machine learning and data science to positively impact healthcare and public health outcomes.<img src="../static/uploads/assets/images/covid-19 .png" alt="Icon" width="70" height="70"></h1>
+                </div>
+              </div>
+              <!-- /.about-three__title -->
+              <!-- /.block-title -->
+              <p>
+          <br></p>
+          <h1 style="color: blue;">Here the user can upload Chest X-rays or CT Scans and get the output of possibility of COVID infection : </h1>
+          <h2 style="color: blue;">COVID-19-Detection-based-on-Chest-X-rays-and-CT-Scans
+            <img
+             src="../static/uploads/assets/images/virus.png"
+             alt="FAQs Icon"
+             width="50"
+             height="50"
+           /></h2>
+           <p style=" font-family: cursive;color:black;
+           ; font-size: 20px;">
+COVID-19 Detection based on Chest X-rays and CT Scans using four Transfer Learning algorithms: VGG16, ResNet50, InceptionV3, Xception. The models were trained for 500 epochs on around 1000 Chest X-rays and around 750 CT Scan images. After training, the accuracies acheived for the model are as follows:
+<table style=" font-family: cursive;color:black;
+; font-size: 20px;" border="1">
+  <tr>
+      <th></th>
+      <th>InceptionV3</th>
+      <th>VGG16</th>
+      <th>ResNet50</th>
+      <th>Xception</th>
+  </tr>
+  <tr>
+      <th>Chest X-rays</th>
+      <td>96%</td>
+      <td>94%</td>
+      <td>83%</td>
+      <td>92%</td>
+  </tr>
+  <tr>
+      <th>CT Scans</th>
+      <td>93%</td>
+      <td>93%</td>
+      <td>80%</td>
+      <td>95%</td>
+  </tr>
+</table>             </p>
+                  <h1 style="color: blue;">Data Gathering
+                         <img
+                          src="../static/uploads/assets/images/data-gathering.png"
+                          alt="FAQs Icon"
+                          width="50"
+                          height="50"
+                        /></h1>
+                        <p style=" font-family: cursive;color:black;
+                        ; font-size: 20px;">
+                          The dataset for the project was gathered from two sources:
+                          </p>
+                          <ul style=" font-family: cursive;color:black;
+                          ; font-size: 20px;">
+                            <li class="dropdown">
+                                Chest X-ray images (1000 images) were obtained from:
+                                <a href="https://github.com/ieee8023/covid-chestxray-dataset" target="_blank">Chest X-ray Repository</a>                                 <img
+                                src="../static/uploads/assets/images/xRay.png"
+                                alt="Home Icon"
+                                width="40"
+                                height="40"
+                              />
+                              </li>
+                              <li class="dropdown">
+                                CT Scan images (750 images) were obtained from:                                
+                                <a href="https://github.com/UCSD-AI4H/COVID-CT/tree/master/Data-split" target="_blank">CT Scan Repository</a>                                 <img
+                                src="../static/uploads/assets/images/ctScan.png"
+                                alt="Home Icon"
+                                width="40"
+                                height="40"
+                              />
+                               <br> 80% of the images were used for training the models and the remaining 20% for testing
+                              </li>
+                          </ul>
+        <!-- /.container -->
+        <h1 style="color: blue;">Building the Model
+          <img
+           src="../static/uploads/assets/images/machine-learning.png"
+           alt="FAQs Icon"
+           width="50"
+           height="50"
+         /></h1>
+         <p style=" font-family: cursive;color:black;
+                        ; font-size: 20px;">
+we first added 3 custom layers to the pretrained models so that they can be trained on our dataset .  
+The code for adding custom layers, for example, to the ResNet50 model is shown below. 
+We added a Flatten layer to flatten all our features and a Dropout layer to overcome overfitting. Finally, We added the Dense output layer using softmax function as the activation function.</p>
+<img width="750" height="300" src="../static/uploads/assets/images/ResNet50 model.png" alt="" />
+<h1 style="color: blue;">Training the Model
+  <img
+   src="../static/uploads/assets/images/machine-learning.png"
+   alt="FAQs Icon"
+   width="50"
+   height="50"
+ /></h1>
+ <p style=" font-family: cursive;color:black;
+                ; font-size: 20px;">
+We first defined an Image Data Generator to train the models at modified versions of the images, such as at different angles, flips, rotations or shifts.
+</p>
+<img
+   src="../static/uploads/assets/images/ImageDataGenerator.png"
+   alt="FAQs Icon"
+   width="700"
+   height="100"
+ />
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Next, training of the model was performed, with all the required parameters specified as follows:</p>
+<img
+   src="../static/uploads/assets/images/trainingmodel.png"
+   alt="FAQs Icon"
+   width="600"
+   height="100"
+ />
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+As you can see, we have trained the model for 500 epochs with a batch size of 32 images.</p>
+<h1 style="color: blue;">Making Predictions
+  <img
+   src="../static/uploads/assets/images/business.png"
+   alt="FAQs Icon"
+   width="50"
+   height="50"
+ /></h1>
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Predictions were generated by running the trained models on images of the test set.</p>
+<img
+   src="../static/uploads/assets/images/predictions.png"
+   alt="FAQs Icon"
+   width="600"
+   height="200"
+ />
+ <img
+   src="../static/uploads/assets/images/xray1.png"
+   alt="FAQs Icon"
+   width="400"
+   height="300"
+ />
+ <img
+   src="../static/uploads/assets/images/xray2.png"
+   alt="FAQs Icon"
+   width="400"
+   height="300"
+ />
+ <h1 style="color: blue;">Classification Report</h1>
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Chest X-rays(Left) and CT scans(Right)</p>
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Classification Reports of VGG16 model for Chest X-rays and CT scans</p>
+<img
+   src="../static/uploads/assets/images/Reports of VGG16 model.png"
+   alt="FAQs Icon"
+   width="800"
+   height="200"
+ />
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Classification Reports of ResNet50 model for Chest X-rays and CT scans
+<img
+   src="../static/uploads/assets/images/Reports of ResNet50.png"
+   alt="FAQs Icon"
+   width="800"
+   height="200"
+ />
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Classification Reports of InceptionV3 model for Chest X-rays and CT scans
+<img
+   src="../static/uploads/assets/images/Reports of InceptionV3.png"
+   alt="FAQs Icon"
+   width="800"
+   height="200"
+ />
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Classification Reports of Xception model for Chest X-rays and CT scans
+<img
+   src="../static/uploads/assets/images/Xception .png"
+   alt="FAQs Icon"
+   width="800"
+   height="200"
+ />
+ <!--Confusion matrix -->
+ <h1 style="color: blue;">Confusion Matrix</h1>
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Chest X-rays(Left) and CT scans(Right)</p>
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Confusion Matrix of VGG16 model for Chest X-rays and CT scans</p>
+<div style="text-align: center;">
+<img
+   src="../static/uploads/assets/images/VGG16Matrix.png"
+   alt="FAQs Icon"
+   width="600"
+   height="200"
+ /></div>
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Confusion Matrix of ResNet50 model for Chest X-rays and CT scans
+<div style="text-align: center;"><img
+  src="../static/uploads/assets/images/ResNet50 Matrix.png"
+  alt="FAQs Icon"
+  width="600"
+  height="200"
+/></div>
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Confusion Matrix of InceptionV3 model for Chest X-rays and CT scans
+<div style="text-align: center;"><img
+  src="../static/uploads/assets/images/InceptionV3Matrix.png"
+  alt="FAQs Icon"
+  width="600"
+  height="200"
+/></div>
+ <p style=" font-family: cursive;color:black;
+ ; font-size: 20px;">
+Confusion Matrix of Xception model for Chest X-rays and CT scans
+<div style="text-align: center;"><img
+  src="../static/uploads/assets/images/XceptionMatrix.png"
+  alt="FAQs Icon"
+  width="600"
+  height="200"
+/></div>
+</section>
+            <!-- /.faq-one faq-one__home-one -->
+            <footer class="site-footer-one site-footer-one__home-one">
+              <div class="site-footer-one__upper">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="footer-widget footer-widget__about">
+                        <a href="index.html">
+                          <img width="137" src="../static/uploads/assets/images/coronavirus.png" alt="" />
+                        </a>
+                      </div>
+                      <!-- /.footer-widget footer-widget__about -->
+                    </div>
+                    <!-- /.col-lg-4 -->
+                    <img
+                    src="../static/uploads/assets/images/shapes/virus-shape-1-3.png"
+                    class="faq-one__virus"
+                    alt=""
+                  />
+                    <div class="col-lg-3">
+                      <div class="footer-widget footer-widget__links">
+                        <h3 class="footer-widget__title" style="font-family: Oswald
+                        ; font-size: 24px;">Quick Links</h3>
+                        <!-- /.footer-widget__title -->
+                        <div class="footer-widget__links-wrap">
+                          <ul class="list-unstyled footer-widget__links-list">
+                            <li><a href="about.html" style="font-family: Oswald
+                              ; font-size: 18px;" >About</a></li>
+                            <li><a href="prevention.html" style="font-family: Oswald
+                              ; font-size: 18px;">Prevention</a></li>
+                            <li><a href="contact.html" style="font-family: Oswald
+                              ; font-size: 18px;">Contact</a></li>
+                            <li><a href="faqs.html" style="font-family: Oswald
+                              ; font-size: 18px;">FAQs</a></li>
+                          </ul>
+                        </div>
+                        <!-- /.footer-widget__links-wrap -->
+                      </div>
+                      <!-- /.footer-widget footer-widget__about -->
+                    </div>
+                    <!-- /.col-lg-3 -->
+                    <div class="col-lg-4">
+                      <div class="footer-widget footer-widget__contact">
+                        <h3 class="footer-widget__title" style="font-family: Oswald
+                        ; font-size: 24px;">Contact</h3>
+                        <!-- /.footer-widget__title -->
+                        <p>
+                          <a href="tel:888-999-0000" style="font-family: Oswald
+                          ; font-size: 18px;">
+                            Call us at 888 999 0000 <i class="fas fa-phone"></i> 
+                          </a>
+                        </p>
+                          <p>
+                            <a href="mailto:ameerarayan2@gmail.com" style="font-family: Oswald
+                            ; font-size: 18px;">
+                              ameerarayan2@gmail.com <i class="fas fa-envelope"></i>                      </a>
+                          </p>
+                          <p>
+                            <a href="mailto:aseel.khaldy@gmail.com" style="font-family: Oswald
+                            ; font-size: 18px;">
+                              aseel.khaldy@gmail.com <i class="fas fa-envelope"></i>                      </a>
+                          </p>
+                          <p>
+                            <a href="mailto:orabimaria@gmail.com" style="font-family: Oswald
+                            ; font-size: 18px;">
+                              orabimaria@gmail.com <i class="fas fa-envelope"></i>                      </a>
+                          </p>
+                        <p style="font-family: Oswald
+                        ; font-size: 18px;">
+                          University of Haifa,<br />
+                          199 Aba khoushy ave. mount 
+                          </p>
+                      </div>
+                      <!-- /.footer-widget footer-widget__contact -->
+                      <div class="center-container">
+                      <div class="col-lg-2 d-flex">
+                        <div class="footer-widget my-auto">
+                      <div class="footer-widget__social">
+                        <a href="https://www.facebook.com/" class="fab fa-facebook-square"></a>
+                        <a href="https://www.twitter.com/" class="fab fa-twitter"></a>
+                        <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                        <a href="https://www.pinterest.com/" class="fab fa-pinterest-p"></a>
+                      </div>
+                      </div>
+              </div>
+            </div>
+                    </div>
+                    <!-- /.col-lg-3 -->
+                          <!-- Social Media Links -->
+          </div>
+        </div>
+              <!-- /.site-footer-one__upper -->
+              <div class="site-footer-one__bottom">
+                <div class="container">
+                  <p style="font-family: Oswald
+                  ; font-size: 20px;">© copyright 2023 by <a href="#" style="font-family: Oswald
+                    ; font-size: 20px;">AmeeraRayan&AseelKwaled&MariaOrabi</a></p>
+                </div>
+                <!-- /.container -->
+              </div>
+              <!-- /.site-footer-one__bottom -->
+            </footer>
+            <!-- /.site-footer-one -->
+          </div>
+          <!-- /.page-wrapper -->
+          <a href="#" data-target="html" class="scroll-to-target scroll-to-top"
+            ><i class="fa fa-angle-up"></i
+          ></a>
+          <div class="side-menu__block">
+            <div class="side-menu__block-overlay custom-cursor__overlay">
+              <div class="cursor"></div>
+              <div class="cursor-follower"></div>
+            </div>
+            <!-- /.side-menu__block-overlay -->
+            <div class="side-menu__block-inner">
+              <div class="side-menu__top justify-content-end">
+                <a href="#" class="side-menu__toggler side-menu__close-btn"
+                  ><img src="../static/uploads/assets/images/shapes/close-1-1.png" alt=""
+                /></a>
+              </div>
+              <!-- /.side-menu__top -->
+              <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+              </nav>
+              <!-- /.side-menu__content -->
+            </div>
+            <!-- /.side-menu__block-inner -->
+          </div>
+          <!-- /.side-menu__block -->
+          <script src="../static/uploads/assets/js/jquery.min.js"></script>
+          <script src="../static/uploads/assets/js/bootstrap.bundle.min.js"></script>
+          <script src="../static/uploads/assets/js/owl.carousel.min.js"></script>
+          <script src="../static/uploads/assets/js/waypoints.min.js"></script>
+          <script src="../static/uploads/assets/js/jquery.counterup.min.js"></script>
+          <script src="../static/uploads/assets/js/TweenMax.min.js"></script>
+          <script src="../static/uploads/assets/js/wow.js"></script>
+          <script src="../static/uploads/assets/js/jquery.magnific-popup.min.js"></script>
+          <script src="../static/uploads/assets/js/jquery.ajaxchimp.min.js"></script>
+          <script src="../static/uploads/assets/js/jquery.validate.min.js"></script>
+          <script src="../static/uploads/assets/js/bootstrap-select.min.js"></script>
+          <script src="../static/uploads/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+          <script src="../static/uploads/assets/js/bootstrap-datepicker.min.js"></script>
+          <script src="../static/uploads/assets/js/isotope.js"></script>
+          <!-- template scripts -->
+          <script src="../static/uploads/assets/js/theme.js"></script>
+          <script src="../static/uploads/assets/js/testimonials-owl.carousel.config.js"></script>
+        </body>
+      </html>
