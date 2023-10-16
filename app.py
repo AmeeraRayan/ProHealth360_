@@ -86,8 +86,6 @@ def prevention():
 
 
 
-
-
 ############################################# BRAIN TUMOR FUNCTIONS ################################################
 
 def preprocess_imgs(set_name, img_size):
