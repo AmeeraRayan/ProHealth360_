@@ -44,7 +44,6 @@ alz_model = load_model("models/alzheimer_cnn_model.h5", compile=False)
 alz_model.make_predict_function()
 
 # Loading Models
-covid_model = load_model('models/covid.h5')
 model = joblib.load('ml_model_diabetes')
 heartDiseaseModel = joblib.load('ml_model_heart_disease')
 modelkidney = joblib.load('Kidney.pkl')
@@ -139,14 +138,10 @@ def home():
     return render_template('homepage.html')
 
 
-@app.route('/covid')
+@app.route('/covid')##detection
 def covid():
     return render_template('covid.html')
-
-@app.route('/upload.html')
-def uploadCovid():
-   return render_template('upload.html') 
-
+ 
 @app.route('/upload_chest.html')
 def upload_chest():
    return render_template('results_chest.html')
@@ -240,35 +235,6 @@ def game():
  ######################## end rounting functions #######################################################
 
 ########################### Result Functions ########################################
-
-
-@app.route('/resultc', methods=['POST'])
-def resultc():
-    if request.method == 'POST':
-        firstname = request.form['firstname']
-        lastname = request.form['lastname']
-        email = request.form['email']
-        phone = request.form['phone']
-        gender = request.form['gender']
-        age = request.form['age']
-        file = request.files['file']
-        
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            flash('Image successfully uploaded and displayed below')
-            img = cv2.imread('static/uploads/'+filename)
-            img = cv2.resize(img, (224, 224))
-            img = img.reshape(1, 224, 224, 3)
-            img = img / 255.0
-            pred = covid_model.predict(img)
-            probability = pred[0][0]  # Get the probability from the prediction
-            print(probability)
-            return render_template('resultc.html', filename=filename, fn=firstname, ln=lastname, age=age, probability=probability, gender=gender)
-
-        else:
-            flash('Allowed image types are - png, jpg, jpeg')
-            return redirect(request.url)
 
 ######covid
 @app.route('/uploaded_chest', methods = ['POST', 'GET'])
