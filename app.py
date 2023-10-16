@@ -1,6 +1,5 @@
 from flask import Flask, flash, request, redirect, url_for, render_template
 from sklearn.preprocessing import StandardScaler
-
 import urllib.request
 import os
 from werkzeug.utils import secure_filename
@@ -19,7 +18,30 @@ from tensorflow.keras.models import load_model
 import flask
 import numpy as np
 import pandas as pd
-from PIL import Image
+from datetime import datetime
+from flask import Flask, render_template, request, redirect, url_for, session
+from keras.models import load_model
+from keras.preprocessing import image
+from keras.metrics import AUC
+import pyrebase
+from config import firebase_config
+
+firebase = pyrebase.initialize_app(firebase_config)
+auth = firebase.auth()
+db = firebase.database()
+
+dependencies = {"auc_roc": AUC}
+
+verbose_name = {
+    0: "Non Demented",
+    1: "Very Mild Demented",
+    2: "Mild Demented",
+    3: "Moderate Demented",
+}
+
+# Select model for alzhiemer's
+alz_model = load_model("models/alzheimer_cnn_model.h5", compile=False)
+alz_model.make_predict_function()
 
 # Loading Models
 covid_model = load_model('models/covid.h5')
@@ -158,12 +180,66 @@ def projectBrain():
 def faq():
     return render_template('FAQbrain.html')
 
-########################### Routing Functions of braintumor ########################################
+########################### end Routing Functions of braintumor ########################################
+
+###########################  Function of Alzhiemer's#############################################
+def predict_label(img_path):
+    test_image = Image.open(img_path).convert("L")
+    test_image = test_image.resize((128, 128))
+    test_image = image.img_to_array(test_image) / 255.0
+    test_image = test_image.reshape(-1, 128, 128, 1)
+
+    predict_x = alz_model.predict(test_image)
+    classes_x = np.argmax(predict_x, axis=1)
+
+    return verbose_name[classes_x[0]]
+
+################################### Routing Functions of Alzhiemer's#######################################
+
+@app.route("/alzhiemerhome", methods=["GET", "POST"])
+def alzhiemerhome():
+    return render_template("indexAlzheimers.html")
 
 
+@app.route("/submit", methods=["POST"])
+def get_output():
+    if request.method == "POST":
+        img = request.files["my_image"]
+
+        img_path = "static/tests/" + img.filename
+        img.save(img_path)
+
+        predict_result = predict_label(img_path)
+
+    return render_template(
+        "classifier.html", prediction=predict_result, img_path=img_path
+    )
 
 
+@app.route("/previous-results", methods=["GET"])
+def previous_results():
+    return render_template("previous_results.html")
 
+
+@app.route("/faqsAlzhiemer", methods=["GET"])
+def faqsAlzhiemer():
+    return render_template("FAQsAlzheimers.html")
+
+@app.route("/classifier", methods=["GET"])
+def classifier():
+    return render_template("classifier.html")
+
+@app.route("/aboutAlzhiemer", methods=["GET"])
+def aboutAlzhiemer():
+    # Render the About.html page
+    return render_template("AboutAlzheimers.html")
+
+@app.route("/game", methods=["GET"])
+def game():
+    # Render the About.html page
+    return render_template("memory_game.html")
+ 
+ ######################## end rounting functions #######################################################
 
 ########################### Result Functions ########################################
 
