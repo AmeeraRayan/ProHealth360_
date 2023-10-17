@@ -202,7 +202,7 @@ def get_output():
 
     return render_template(
         "classifier.html", prediction=predict_result, img_path=img_path
-    )
+)
 
 
 @app.route("/previous-results", methods=["GET"])
