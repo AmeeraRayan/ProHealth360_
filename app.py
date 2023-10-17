@@ -194,15 +194,16 @@ def get_output():
     if request.method == "POST":
         img = request.files["my_image"]
 
-        img_path = "dataAlzheimers\\testsAlzheimers\\" + img.filename
-
+        desktop_path = "C:\\Users\\Aseel\\Downloads\\ProHealth360_\\dataAlzheimers\\testsAlzheimers"
+        img_path = os.path.join(desktop_path, img.filename)
+        
         img.save(img_path)
 
         predict_result = predict_label(img_path)
 
     return render_template(
         "classifier.html", prediction=predict_result, img_path=img_path
-    )
+)
 
 
 @app.route("/previous-results", methods=["GET"])
