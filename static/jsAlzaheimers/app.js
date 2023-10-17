@@ -5,42 +5,42 @@ var scoreText = document.querySelectorAll(".score")[0];
 var imageSource = [
   {
     id: 0,
-    source: "./static/assets/images/burger.png",
+    source: "./static/imagesAlzheimers/img_app/burger.png",
     usedCount: 0
   },
   {
     id: 1,
-    source: "./static/assets/images/donut.png",
+    source: "./static/imagesAlzheimers/img_app/donut.png",
     usedCount: 0
   },
   {
     id: 2,
-    source: "./static/assets/images/fried-chicken.png",
+    source: "./static/imagesAlzheimers/img_app/fried-chicken.png",
     usedCount: 0
   },
   {
     id: 3,
-    source: "./static/assets/images/ice-cream.png",
+    source: "./static/imagesAlzheimers/img_app/ice-cream.png",
     usedCount: 0
   },
   {
     id: 4,
-    source: "./static/assets/images/milkshake.png",
+    source: "./static/imagesAlzheimers/img_app/milkshake.png",
     usedCount: 0
   },
   {
     id: 5,
-    source: "./static/assets/images/muffin.png",
+    source: "./static/imagesAlzheimers/img_app/muffin.png",
     usedCount: 0
   },
   {
     id: 6,
-    source: "./static/assets/images/noodles.png",
+    source: "./static/imagesAlzheimers/img_app/noodles.png",
     usedCount: 0
   },
   {
     id: 7,
-    source: "./static/assets/images/pizza.png",
+    source: "./static/imagesAlzheimers/img_app/pizza.png",
     usedCount: 0
   }
 ]
@@ -120,16 +120,16 @@ for(var i = 0; i < button.length; i++) {
 
           if(successfulMoves == 16) {
 
-            var audio = new Audio("./static/assets/sounds/game-over.wav");
+            var audio = new Audio("./static/soundsAlzheimers/game-over.wav");
             audio.play();
             scores = Math.ceil((successfulMoves / totalMoves) * 100);
             scoreText.textContent = "Final Score :"
           } else {
-            var audio = new Audio("./static/assets/sounds/correct.wav");
+            var audio = new Audio("./static/soundsAlzheimers/correct.wav");
             audio.play();
           }
         } else {
-          var audio = new Audio("./static/assets/sounds/wrong.wav");
+          var audio = new Audio("./static/soundsAlzheimers/wrong.wav");
           audio.play();
           for(var i = 0; i < button.length; i++) {
               button[i].disabled = true;
