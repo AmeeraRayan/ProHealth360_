@@ -195,7 +195,7 @@ def get_output():
         img = request.files["my_image"]
 
         img_path = "dataAlzheimers/testsAlzheimers/" + img.filename
-        print("Image Path:", img_path)
+        
         img.save(img_path)
 
         predict_result = predict_label(img_path)
