@@ -194,7 +194,7 @@ def get_output():
     if request.method == "POST":
         img = request.files["my_image"]
 
-        img_path = "C:\\Users\\Aseel\\Downloads\\ProHealth360_\\dataAlzheimers\\testsAlzheimers\\" + img.filename
+        img_path = "\\dataAlzheimers\\testsAlzheimers\\" + img.filename
 
         img.save(img_path)
 
