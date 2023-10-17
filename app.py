@@ -1,4 +1,4 @@
-from flask import Flask, flash, request, redirect, url_for, render_template
+from flask import Flask, flash, request, redirect, render_template, url_for, session
 from sklearn.preprocessing import StandardScaler
 import urllib.request
 import os
@@ -14,13 +14,8 @@ import numpy as np
 from keras.applications.vgg16 import preprocess_input
 import tensorflow as tf
 from PIL import Image
-from tensorflow.keras.models import load_model
-import flask
-import numpy as np
 import pandas as pd
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for, session
-from keras.models import load_model
 from keras.preprocessing import image
 from keras.metrics import AUC
 import pyrebase
@@ -199,7 +194,7 @@ def get_output():
     if request.method == "POST":
         img = request.files["my_image"]
 
-        img_path = "static/tests/" + img.filename
+        img_path = "/dataAlzheimers/testsAlzheimers" + img.filename
         img.save(img_path)
 
         predict_result = predict_label(img_path)
