@@ -38,6 +38,7 @@ verbose_name = {
 alz_model = load_model("models/alzheimer_cnn_model.h5", compile=False)
 alz_model.make_predict_function()
 
+
 # Loading Models
 model = joblib.load('ml_model_diabetes')
 heartDiseaseModel = joblib.load('ml_model_heart_disease')
@@ -194,12 +195,15 @@ def get_output():
     if request.method == "POST":
         img = request.files["my_image"]
 
-        desktop_path = "C:\\Users\\Aseel\\Downloads\\ProHealth360_\\dataAlzheimers\\testsAlzheimers"
-        img_path = os.path.join(desktop_path, img.filename)
-        
-        img.save(img_path)
-
-        predict_result = predict_label(img_path)
+        app.config['desktop_path'] = 'C:\\Users\\Aseel\\Downloads\\ProHealth360_\\dataAlzheimers\\testsAlzheimers'
+        if img:
+            img.save(os.path.join(app.config['desktop_path'], img.filename))
+            img_path = os.path.join(app.config['desktop_path'], img.filename)
+            predict_result = predict_label(img_path)
+        else:
+            # Handle the case where no image was uploaded
+            img_path = ""
+            predict_result = "No image uploaded."
 
     return render_template(
         "classifier.html", prediction=predict_result, img_path=img_path
