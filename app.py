@@ -38,7 +38,7 @@ verbose_name = {
 # Select model for alzhiemer's
 alz_model = load_model("models/alzheimer_cnn_model.h5", compile=False)
 alz_model.make_predict_function()
-app.config['desktop_path'] = 'static/testsAlzheimers'
+app.config['desktop_path'] = 'static/dataAlzheimers/testsAlzheimers'
 
 # Loading Models
 model = joblib.load('ml_model_diabetes')
