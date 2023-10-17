@@ -21,6 +21,7 @@ from keras.metrics import AUC
 import pyrebase
 from config import firebase_config
 
+app = Flask(__name__)
 firebase = pyrebase.initialize_app(firebase_config)
 auth = firebase.auth()
 db = firebase.database()
@@ -37,7 +38,7 @@ verbose_name = {
 # Select model for alzhiemer's
 alz_model = load_model("models/alzheimer_cnn_model.h5", compile=False)
 alz_model.make_predict_function()
-
+app.config['desktop_path'] = 'C:\\Users\\Aseel\\Downloads\\ProHealth360_\\dataAlzheimers\\testsAlzheimers'
 
 # Loading Models
 model = joblib.load('ml_model_diabetes')
@@ -47,7 +48,6 @@ modelkidney = joblib.load('Kidney.pkl')
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
-app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = "secret key"
@@ -195,7 +195,6 @@ def get_output():
     if request.method == "POST":
         img = request.files["my_image"]
 
-        app.config['desktop_path'] = 'C:\\Users\\Aseel\\Downloads\\ProHealth360_\\dataAlzheimers\\testsAlzheimers'
         if img:
             img.save(os.path.join(app.config['desktop_path'], img.filename))
             img_path = os.path.join(app.config['desktop_path'], img.filename)
