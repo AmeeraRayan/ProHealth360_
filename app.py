@@ -42,6 +42,9 @@ alz_model = load_model("models/alzheimer_cnn_model.h5", compile=False)
 alz_model.make_predict_function()
 app.config['desktop_path'] = 'static/dataAlzheimers/testsAlzheimers'
 
+ # Select model for breast cancer 
+cancer_model = pickle.load(open('models/model.pkl', 'rb'))
+
 # Loading Models
 model = joblib.load('ml_model_diabetes')
 heartDiseaseModel = joblib.load('ml_model_heart_disease')
@@ -237,8 +240,6 @@ def game():
  ######################## end rounting functions #######################################################
 
  ########################### breast cancer function ###################################################
- # Select model for breast cancer 
-cancer_model = pickle.load(open('model.pkl', 'rb'))
 @app.route('/predict',methods=['POST'])
 def predict():
   input_features = [int(x) for x in request.form.values()]
