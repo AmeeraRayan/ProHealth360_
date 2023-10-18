@@ -241,7 +241,7 @@ def game():
 
  ########################### breast cancer function ###################################################
 @app.route('/predict',methods=['POST'])
-def predict():
+def predict_cancer():
   input_features = [int(x) for x in request.form.values()]
   features_value = [np.array(input_features)]
 
