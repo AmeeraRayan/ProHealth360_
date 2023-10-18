@@ -279,7 +279,7 @@ def about_us():
    return render_template('about-us.html')
 
 @app.route('/cancer_detection.html')
-def detection():
+def cancer_detection():
    return render_template('cancer_detection.html')
 
 @app.route('/Analyzer.html')
