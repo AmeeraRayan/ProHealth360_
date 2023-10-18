@@ -156,8 +156,6 @@ def upload_ct():
 def breast_cancer():
     return render_template('breastcancer.html')
 ########################### Routing Functions of braintumor ########################################
-
-
 @app.route('/homebrain')
 def main():
     return render_template('homebrain.html')
