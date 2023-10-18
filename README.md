@@ -21,7 +21,9 @@ At ProHealth360, we harness the formidable capabilities of machine learning to d
 ## Problem Definition
 
 - This project addresses a critical issue—the lack of rapid and accurate disease detection, especially for individuals without immediate access to healthcare services. Our motivation behind choosing this project name stems from the urgent need to bridge this gap in healthcare accessibility.
-
+  
+- Patients can access medical care from anywhere, at any time, without the need to travel to a clinic or hospital, which can save time and money. Additionally, online medical treatment can be especially helpful for patients who live in remote or rural areas and may not have easy access to healthcare services.
+  
 - By offering a swifter and more efficient alternative to conventional diagnostic methods, our initiative aims to expedite the treatment process, ultimately saving lives and improving patient outcomes. With the capacity to identify a wide range of diseases, including COVID-19, Brain Tumors, Breast Cancer, Alzheimer's, Brain Tumor, Diabetes, Kidney, and Heart diseases. Our system underscores the potential to revolutionize patient care on a global scale.
 
 - Our project incorporates advanced machine learning models to provide a comprehensive solution that streamlines the entire disease diagnosis process from start to finish. By leveraging the synergistic power of these models, we empower individuals and healthcare professionals alike with accurate and timely information, enabling early intervention and better-informed treatment decisions.
