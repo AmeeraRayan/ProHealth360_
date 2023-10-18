@@ -1,0 +1,238 @@
+<!--GUI for Breast Cancer Detection Application using SVM-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+      <!-- Favicons -->
+    <link rel="shortcut icon" sizes="16x16" href="static/assets/images/logo.png"/>
+    <title>Breast Cancer Wep App | About Us</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/assets/css/manual.css">
+    <link rel="stylesheet" type="text/css" href="static/assets/css/animate.css">
+    <link rel="stylesheet" href="static/assets/css/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/assets/css/owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="static/assets/css/bootstrap-responsive.min.css">
+    <!-- Google fonts Poppins -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Fontello -->
+    <link rel="stylesheet" href="static/assets/css/css-fontello/animation.css" type="text/css"/>
+    <link rel="stylesheet" href="static/assets/css/css-fontello/fontello.css" type="text/css"/>
+    <link rel="stylesheet" href="static/assets/css/css-fontello/fontello-codes.css" type="text/css"/>
+    <link rel="stylesheet" href="static/assets/css/css-fontello/fontello-embedded.css" type="text/css"/>
+    <link rel="stylesheet" href="static/assets/css/css-fontello/fontello-ie7.css" type="text/css"/>
+    <link rel="stylesheet" href="static/assets/css/css-fontello/fontello-ie7-codes.css" type="text/css"/>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="static/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+   /* Style for the main container */
+  .main-container{
+      /*background-image: url(static/assets/images/bc.png);*/
+      background-position: center;
+      /*background-size: cover;*/
+      margin: 0;
+      align-items: center;
+   }
+  .block-container {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #FFFFFF;
+  }
+
+  /* Style for the form container */
+  .form-container {
+      width: 800px;
+      background-color: rgba(0, 0, 0, 0.8);
+      margin-bottom: 70px;
+      color: #FFFFFF;
+      padding: 0px 0px 10px 0px;
+      text-align: center;
+      border-radius: 15px 15px 0px 0px;
+  }
+
+  /* Style for form input fields */
+  .form-group {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row; /* Display label and input in a row */
+      align-items: center; /* Center vertically */
+  }
+
+  /* Style for labels */
+  label {
+      font-size: 14px;
+      font-family: sans-serif;
+      text-align: left; /* Right-align the labels */
+      margin-left: 10px; /* Add spacing between label and input */
+  }
+
+  /* Style for input fields */
+  .form-control {
+      flex: 2; /* Allow the input to take up available space */
+      margin-left: 10px; /* Add spacing between label and input */
+      width: 150px; /* Adjust the width as needed */
+      height: 40px; /* Adjust the height as needed */
+  }
+
+  /* Style for the submit button */
+  .btn-main {
+      display: block;
+      margin: 0 auto ;
+      padding-right: 20px;
+      margin-right: 290px;
+      background-color:black;
+  }
+
+  .btn-main:hover {
+     background-color: #de7abb;
+  }
+
+  /* Style for headings */
+  .head {
+      font-size: 20px;
+      font-family: sans-serif;
+      margin:auto;
+      padding: 10px 0px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 15px 15px 0px 0px;
+  }
+     /* Style for form input pairs */
+    .form-pair {
+        display: flex;
+        justify-content: space-around; /* Adjust this value to your preference */
+        align-items: center;
+        margin-bottom: 10px;
+     }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+  <!--=============================== Menu-Bar ========================-->
+    <div id="menuBar-charity"></div>
+
+   <!--=============================== Slider ==========================-->
+    <div style="background-image: url('static/assets/images/bc.png');background-repeat: no-repeat;background-attachment: fixed;
+  background-size: cover;">
+                <div>
+                    <div class="container p0" style="margin-bottom: 0;">
+                        <div class="item-content" style="margin: 0;">
+                            <div class="gb-middle" style="margin: 0; height:700px;">
+                                <div class="slider-info" style="margin: 0;">
+                                    <h2>Early Detection will save you</h2>
+                                </div>
+                            </div>
+                        </div>
+
+<!--=============================== Form for Cancer Detection ========================-->
+<div class="main-container">
+  <div class="block-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-container">
+              <h1 class="head">Breast Cancer Detection</h1>
+                <form action="{{ url_for('predict')}}" method="post">
+                   <div class="form-pair">
+                    <div class="form-group">
+                        <label for="clump_thickness">Clump Thickness</label>
+                        <input type="text" class="form-control" name="clump_thickness" required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="uniform_cell_size">Uniform Cell size</label>
+                        <input type="text" class="form-control" name="uniform_cell_size" required="required">
+                    </div>
+                   </div>
+                  <div class="form-pair">
+                    <div class="form-group">
+                    <label for="uniform_cell_shape">Uniform Cell shape</label>
+                    <input type="text" class="form-control" name="uniform_cell_shape" required="required" />
+                  </div>
+                  <div class="form-group">
+                    <label for="marginal_adhesion">Marginal Adhesion</label>
+                    <input type="text" class="form-control" name="marginal_adhesion" required="required" />
+                  </div>
+                  </div>
+                  <div class="form-pair">
+                  <div class="form-group">
+                    <label for="single_epithelial_size">Single Epithelial <br>Cell Size</label>
+                    <input type="text" class="form-control" name="single_epithelial_size" required="required" />
+                  </div>
+                  <div class="form-group">
+                    <label for="bare_nuclei">Bare Nuclei</label>
+                    <input type="text" class="form-control" name="bare_nuclei" required="required" />
+                  </div>
+                  </div>
+                  <div class="form-pair">
+                  <div class="form-group">
+                    <label for="bland_chromatin">Bland Chromatin</label>
+                    <input type="text" class="form-control" name="bland_chromatin" required="required" />
+                  </div>
+                  <div class="form-group">
+                    <label for="normal_nucleoli">Normal Nucleoli</label>
+                    <input type="text" class="form-control" name="normal_nucleoli" required="required" />
+                  </div>
+                  </div>
+                  <div class="form-pair">
+                  <div class="form-group">
+                    <label for="mitoses">Mitoses</label>
+                    <input type="text" class="form-control" name="mitoses" required="required" />
+                  </div>
+                  </div>
+                    <button type="submit" class="btn btn-main btn-lg">Predict Cancer</button>
+                </form>
+                <br />
+                 <center>
+                  <h1 style="background:#de5499">{{prediction_text}}</h1>
+                </center>
+               <br />
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+  </div>
+ </div>
+
+    </div>
+ <!--=============================== Footer ===========================-->
+    <div id="footer"></div>
+
+</div>  <!--  /.page -->
+<!-- JS code -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="static/assets/js/jquery.spincrement.js"></script>
+<script src="static/assets/js/owl.carousel.min.js"></script>
+<script src="static/assets/js/bootstrap.min.js"></script>
+<script src="static/assets/js/myScript.js"></script>
+<!-- Include the SweetAlert library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function predictCancer() {
+    // Your form submission code here
+    // Replace the following line with your actual logic to predict cancer
+    let predictionResult = "{{prediction_text}}";
+
+    // Show a SweetAlert message box with the prediction result and an "OK" button
+    Swal.fire({
+        title: 'Cancer Prediction',
+        text: predictionResult,
+        icon: 'info'
+    });
+    console.log("Prediction Text:", "{{prediction_text}}");
+}
+</script>
+
+</body>
+</html>
