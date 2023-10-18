@@ -15,11 +15,13 @@ from keras.applications.vgg16 import preprocess_input
 import tensorflow as tf
 from PIL import Image
 import pandas as pd
-from datetime import datetime
+from datetime import datetime,date,time
 from keras.preprocessing import image
 from keras.metrics import AUC
 import pyrebase
 from config import firebase_config
+import sqlite3 as sql
+
 
 app = Flask(__name__)
 firebase = pyrebase.initialize_app(firebase_config)
@@ -39,6 +41,9 @@ verbose_name = {
 alz_model = load_model("models/alzheimer_cnn_model.h5", compile=False)
 alz_model.make_predict_function()
 app.config['desktop_path'] = 'static/dataAlzheimers/testsAlzheimers'
+
+ # Select model for breast cancer 
+cancer_model = pickle.load(open('models/model.pkl', 'rb'))
 
 # Loading Models
 model = joblib.load('ml_model_diabetes')
@@ -151,8 +156,6 @@ def upload_ct():
 def breast_cancer():
     return render_template('breastcancer.html')
 ########################### Routing Functions of braintumor ########################################
-
-
 @app.route('/homebrain')
 def main():
     return render_template('homebrain.html')
@@ -233,6 +236,56 @@ def game():
     return render_template("memory_game.html")
  
  ######################## end rounting functions #######################################################
+
+ ########################### breast cancer function ###################################################
+@app.route('/predict',methods=['POST'])
+def predict_cancer():
+  input_features = [int(x) for x in request.form.values()]
+  features_value = [np.array(input_features)]
+
+  features_name = ['clump_thickness', 'uniform_cell_size', 'uniform_cell_shape',
+       'marginal_adhesion', 'single_epithelial_size', 'bare_nuclei',
+       'bland_chromatin', 'normal_nucleoli', 'mitoses']
+
+  df = pd.DataFrame(features_value, columns=features_name)
+  output = cancer_model.predict(df)
+  if output == 4:
+      res_val = "Breast cancer"
+  else:
+      res_val = "no Breast cancer"
+
+  return render_template('cancer_detection.html', prediction_text='Patient has {}'.format(res_val))
+
+ ###########################breast cancer webApp###########################################
+@app.route('/index_cancer.html')
+def index_cancer():
+   return render_template('index_cancer.html')
+
+@app.route('/menu-bar-charity.html')
+def menu_bar_charity():
+   return render_template('menu-bar-charity.html')
+
+@app.route('/footer.html')
+def footer():
+   return render_template('footer.html')
+
+@app.route('/our-causes.html')
+def our_causes():
+   return render_template('our-causes.html')
+
+@app.route('/about-us.html')
+def about_us():
+   return render_template('about-us.html')
+
+@app.route('/cancer_detection.html')
+def cancer_detection():
+   return render_template('cancer_detection.html')
+
+@app.route('/Analyzer.html')
+def analyzer():
+   return render_template('Analyzer.html')
+
+########################### end breast cancer routing functions ###################################
 
 ########################### Result Functions ########################################
 
