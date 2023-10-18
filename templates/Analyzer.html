@@ -173,9 +173,14 @@ and is wrapped around the whole page content. -->
 	<script src="static/jscript_analyzer/app_startup_code.js"></script>
 	<script src="static/jscript_analyzer/met_cancer_analyzer.js"></script>
 	<script src="static/jscript_analyzer/breast_cancer_analyzer.js"></script>
-	
-	
-	
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script>
+  async function loadModel() {
+    const model = await tf.loadGraphModel('tfjs_model_1/model.json');
+  }
+  loadModel();
+</script>
+
 </div> <!-- w3-content -->
 
 </body>
