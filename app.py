@@ -203,16 +203,20 @@ def get_output():
             class_probabilities = predict_probabilities(img_path)
 
             # Determine the class with the highest probability
-            highest_prob_class = verbose_name[np.argmax(class_probabilities)]
+            highest_prob_index = np.argmax(class_probabilities)
+            highest_prob_class = verbose_name[highest_prob_index]
+            highest_prob_value = class_probabilities[highest_prob_index]
         else:
             # Handle the case where no image was uploaded
             img_path = ""
             class_probabilities = None
             highest_prob_class = None
+            highest_prob_value = None
 
     return render_template(
-        "classifier.html", class_probabilities=class_probabilities, img_path=img_path, highest_prob_class=highest_prob_class
+        "classifier.html", class_probabilities=class_probabilities, img_path=img_path, highest_prob_class=highest_prob_class, highest_prob_value=highest_prob_value
     )
+
 
 @app.route("/previous-results", methods=["GET"])
 def previous_results():
