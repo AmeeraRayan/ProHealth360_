@@ -139,13 +139,19 @@
           </form>
        </div>
       </div>
-          {% if prediction %}
-          </br>
-          <img src="{{img_path}}" height="400px" width="400px">
-          </br>
-          </br>
-          <h2> Alzheimer Disease Prediction : <i> {{prediction}} </i></h2>
-          {% endif %}
+          {% if img_path %}
+          <img src="{{ img_path }}" alt="Uploaded Image" height="400px" width="400px">
+          <br>
+          <h2>Class Probabilities:</h2>
+          <ul>
+              <li>Non Demented: {{ class_probabilities[0] }}</li>
+              <li>Very Mild Demented: {{ class_probabilities[1] }}</li>
+              <li>Mild Demented: {{ class_probabilities[2] }}</li>
+              <li>Moderate Demented: {{ class_probabilities[3] }}</li>
+          </ul>
+      {% else %}
+          <p>{{ prediction }}</p>
+      {% endif}
     </div> 
   </section><!-- End Disease Classifier Section -->
 

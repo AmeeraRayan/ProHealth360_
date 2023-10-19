@@ -152,9 +152,6 @@ def upload_chest():
 def upload_ct():
    return render_template('results_ct.html')
  
-@app.route('/breastcancer')
-def breast_cancer():
-    return render_template('breastcancer.html')
 ########################### Routing Functions of braintumor ########################################
 @app.route('/homebrain')
 def main():
@@ -175,16 +172,16 @@ def faq():
 ########################### end Routing Functions of braintumor ########################################
 
 ###########################  Function of Alzhiemer's#############################################
-def predict_label(img_path):
+
+def predict_probabilities(img_path):
     test_image = Image.open(img_path).convert("L")
     test_image = test_image.resize((128, 128))
     test_image = image.img_to_array(test_image) / 255.0
     test_image = test_image.reshape(-1, 128, 128, 1)
 
-    predict_x = alz_model.predict(test_image)
-    classes_x = np.argmax(predict_x, axis=1)
+    predict_probabilities = alz_model.predict(test_image)
 
-    return verbose_name[classes_x[0]]
+    return predict_probabilities[0]
 
 ################################### Routing Functions of Alzhiemer's#######################################
 
@@ -201,16 +198,15 @@ def get_output():
         if img:
             img.save(os.path.join(app.config['desktop_path'], img.filename))
             img_path = os.path.join(app.config['desktop_path'], img.filename)
-            predict_result = predict_label(img_path)
+            class_probabilities = predict_probabilities(img_path)
         else:
             # Handle the case where no image was uploaded
             img_path = ""
-            predict_result = "No image uploaded."
+            class_probabilities = None
 
     return render_template(
-        "classifier.html", prediction=predict_result, img_path=img_path
-)
-
+        "classifier.html", class_probabilities=class_probabilities, img_path=img_path
+    )
 
 @app.route("/previous-results", methods=["GET"])
 def previous_results():
