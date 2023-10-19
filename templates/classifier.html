@@ -149,6 +149,7 @@
             <li>Mild Demented: {{ class_probabilities[2] }}%</li>
             <li>Moderate Demented: {{ class_probabilities[3] }}%</li>
           </ul>
+          <h2>You have <i>{{ highest_prob_class }}</i> chance of getting Alzheimer's Disease</h2>
         {% else %}
           <p>{{ prediction }}</p>
         {% endif%}
