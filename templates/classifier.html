@@ -144,14 +144,14 @@
           <br>
           <h2>Class Probabilities:</h2>
           <ul>
-              <li>Non Demented: {{ class_probabilities[0] }}</li>
-              <li>Very Mild Demented: {{ class_probabilities[1] }}</li>
-              <li>Mild Demented: {{ class_probabilities[2] }}</li>
-              <li>Moderate Demented: {{ class_probabilities[3] }}</li>
+            <li>Non Demented: {{ class_probabilities[0] }}%</li>
+            <li>Very Mild Demented: {{ class_probabilities[1] }}%</li>
+            <li>Mild Demented: {{ class_probabilities[2] }}%</li>
+            <li>Moderate Demented: {{ class_probabilities[3] }}%</li>
           </ul>
-      {% else %}
+        {% else %}
           <p>{{ prediction }}</p>
-      {% endif%}
+        {% endif%}
     </div> 
   </section><!-- End Disease Classifier Section -->
 

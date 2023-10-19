@@ -181,7 +181,9 @@ def predict_probabilities(img_path):
 
     predict_probabilities = alz_model.predict(test_image)
 
-    return predict_probabilities[0]
+    class_probabilities = [probability * 100 for probability in predict_probabilities[0]]
+
+    return class_probabilities
 
 ################################### Routing Functions of Alzhiemer's#######################################
 
