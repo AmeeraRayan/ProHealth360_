@@ -220,22 +220,30 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
   document.querySelector("form").addEventListener("submit", function (e) {
-      var inputElements = document.querySelectorAll(".form-control"); // Select elements with the class "cancer_input"
-      var valid = true;
+    var inputElements = document.querySelectorAll(".form-control");
+    var valid = true;
 
-      inputElements.forEach(function (inputElement) {
-          var inputValue = parseInt(inputElement.value, 10);
-          if (isNaN(inputValue) || inputValue < 1 || inputValue > 10) {
-              valid = false;
-          }
-      });
+    inputElements.forEach(function (inputElement) {
+      var inputValue = parseInt(inputElement.value, 10);
+      var errorArrow = inputElement.nextElementSibling; // The error arrow icon
+      var errorMessage = inputElement.parentElement.nextElementSibling; // The error message
 
-      if (!valid) {
-          e.preventDefault();
-          alert("Please enter valid values between 1 and 10.");
+      if (isNaN(inputValue) || inputValue < 1 || inputValue > 10) {
+        valid = false;
+        errorArrow.style.display = "block"; // Show the error arrow
+        errorMessage.style.display = "block"; // Show the error message
+      } else {
+        errorArrow.style.display = "none"; // Hide the error arrow
+        errorMessage.style.display = "none"; // Hide the error message
       }
+    });
+
+    if (!valid) {
+      e.preventDefault();
+    }
   });
 </script>
+
 
 </body>
 </html>
