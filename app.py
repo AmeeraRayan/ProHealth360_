@@ -283,6 +283,8 @@ def predict_cancer():
 
     # Apply the sigmoid function to get probabilities
     probabilities = sigmoid(raw_scores)
+    print(probabilities.shape)  # Print the shape of probabilities
+    print(probabilities)  # Print the content of probabilities
 
     # The probability for "Breast cancer" can be obtained based on the class index
     probability_of_breast_cancer = probabilities[0][1] * 100  # Probability for class 1 (malignant)
