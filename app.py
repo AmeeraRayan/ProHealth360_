@@ -284,11 +284,14 @@ def predict_cancer():
     # Apply the sigmoid function to get probabilities
     probabilities = sigmoid(raw_scores)
 
-    # The probability for "Breast cancer" can be obtained based on the class index
-    probability_of_breast_cancer = probabilities[0] * 100  # Probability for class 1 (malignant)
+    # Assuming index 1 corresponds to the positive class (breast cancer)
+    probability_of_breast_cancer = probabilities[0][1] * 100
 
-    return render_template('cancer_detection.html', probability=probability_of_breast_cancer)
+    # You can set a custom threshold, e.g., 30%, to make a classification decision
+    custom_threshold = 30  # Adjust as needed
+    prediction_text = "Breast Cancer" if probability_of_breast_cancer >= custom_threshold else "No Breast Cancer"
 
+    return render_template('cancer_detection.html', prediction_text=prediction_text, probability=probability_of_breast_cancer)
 
  ###########################breast cancer webApp###########################################
 @app.route('/index_cancer.html')
