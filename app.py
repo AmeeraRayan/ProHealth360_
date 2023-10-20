@@ -285,9 +285,10 @@ def predict_cancer():
     probabilities = sigmoid(raw_scores)
 
     # The probability for "Breast cancer" can be obtained based on the class index
-    probability_of_breast_cancer = probabilities[0]*100  # Adjust as per your model's class index
+    probability_of_breast_cancer = probabilities[0][1] * 100  # Probability for class 1 (malignant)
 
     return render_template('cancer_detection.html', probability=probability_of_breast_cancer)
+
 
  ###########################breast cancer webApp###########################################
 @app.route('/index_cancer.html')
