@@ -266,7 +266,7 @@ def game():
  ######################## end rounting functions #######################################################
 
  ########################### breast cancer function ###################################################
-@app.route('/predict',methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict_cancer():
     input_features = [int(x) for x in request.form.values()]
     features_value = [np.array(input_features)]
@@ -276,11 +276,12 @@ def predict_cancer():
        'bland_chromatin', 'normal_nucleoli', 'mitoses']
 
     df = pd.DataFrame(features_value, columns=features_name)
-    probability = cancer_model.predict_proba(df)  # Assuming your model can provide probabilities
-    probability_of_breast_cancer = probability[0][4]  # Assuming class 4 represents "Breast cancer" in the probabilities
+    raw_scores = cancer_model.predict(df)  # Raw scores from your model
+
+    # Calculate a probability or likelihood based on the raw scores (adjust this as per your model)
+    probability_of_breast_cancer = some_transformation(raw_scores)
 
     return render_template('cancer_detection.html', probability=probability_of_breast_cancer)
-
 
  ###########################breast cancer webApp###########################################
 @app.route('/index_cancer.html')
