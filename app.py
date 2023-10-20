@@ -266,6 +266,11 @@ def game():
  ######################## end rounting functions #######################################################
 
  ########################### breast cancer function ###################################################
+def softmax(logits):
+    exp_logits = np.exp(logits)
+    probabilities = exp_logits / np.sum(exp_logits)
+    return probabilities
+
 @app.route('/predict', methods=['POST'])
 def predict_cancer():
     input_features = [int(x) for x in request.form.values()]
@@ -278,10 +283,14 @@ def predict_cancer():
     df = pd.DataFrame(features_value, columns=features_name)
     raw_scores = cancer_model.predict(df)  # Raw scores from your model
 
-    # Calculate a probability or likelihood based on the raw scores (adjust this as per your model)
-    probability_of_breast_cancer = some_transformation(raw_scores)
+    # Apply the softmax transformation to get probabilities
+    probabilities = softmax(raw_scores)
+
+    # The probability for "Breast cancer" can be obtained based on the class index
+    probability_of_breast_cancer = probabilities[0]  # Adjust as per your model's class index
 
     return render_template('cancer_detection.html', probability=probability_of_breast_cancer)
+
 
  ###########################breast cancer webApp###########################################
 @app.route('/index_cancer.html')
