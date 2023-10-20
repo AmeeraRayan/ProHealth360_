@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .big-name {
+        font-size: 18px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    }
+    .blue-text {
+        color: rgb(29, 29, 231); 
+    }
+    .answer {
+    display: none;
+}
+.search-bar-box {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    padding: 8px;
+    width: 1200px; 
+}
+
+#searchInput {
+    border: none;
+    background: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+.search-icon {
+    color: #555; 
+    margin-right: 8px;
+}
+.social-icons a,
+    .contact-link {
+        color: #4a3fe3; 
+        text-decoration: none; 
+        margin-right: 20px;
+        font-weight: bold;
+    }
+    .footer {
+        font-family: 'Times New Roman', Times, serif;
+    }
+        </style>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>🧠FAQS-Brain tumor</title>
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel = "stylesheet" href = "../static/cssBrain/normalize.css">
+        <link rel = "stylesheet" href = "../static/cssBrain/homebrain.css">
+    </head>
+</head>
+<body>
+    <!-- header -->
+    <header class = "header bg-blue">
+        <nav class = "navbar bg-blue">
+            <div class = "container flex">
+                <a href = "/homebrain" class = "navbar-brand">
+                    <img src = "../static/imagesBrain/logo.png" alt = "site logo">
+                </a>
+                <button type = "button" class = "navbar-show-btn">
+                    <img src = "../static/imagesBrain/ham-menu-icon.png">
+                </button>
+
+                <div class = "navbar-collapse bg-white">
+                    <button type = "button" class = "navbar-hide-btn">
+                        <img src = "../static/imagesBrain/close-icon.png">
+                    </button>
+                    <ul class = "navbar-nav">
+                        <li class = "nav-item">
+                            <a href = "/homebrain" class = "nav-link">Home</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "/projectBrain" class = "nav-link">About project</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "/Faqbrain" class = "nav-link">FAQS</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a href = "/braindetect" class = "nav-link">Tumor Detection</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://news.google.com/search?q=brain%20tumors" class="nav-link" target="_blank">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href = "/what" class = "nav-link">More info</a>
+                        </li>
+                        <li class = "nav-item">
+                     <a href = "/" class = "nav-link"> Back to ProHealth360</a>
+                 </li>
+                </div> 
+            </div>
+        </nav>
+        <div class = "header-inner text-white text-center">
+            <div class = "container grid">
+                <div class = "header-inner-left">
+                    <h1> <span><br>FAQS<br>About brain tumor </span></h1>
+                        <br><br><br><br>
+                    </div>
+                </div>
+                <div class = "header-inner-right">
+                    <img src = "../static/imagesBrain/Header.png">
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="search-bar">
+        <form>
+            <div class="search-bar-box flex">
+                <span class="search-icon flex">
+                    <i class="fas fa-search"></i>
+                </span>
+                <input type="text" id="searchInput" placeholder="Search for a question...">
+            </div>
+        </form>
+    </div>
+        <br><br>
+    <section id="faq">
+        <h1>General Questions:</h1>
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">What is a brain tumor?</h3>
+            <p class="answer">A brain tumor is an abnormal growth of cells in the brain. It can be benign (non-cancerous) or malignant (cancerous).</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">What are the common symptoms of a brain tumor?</h3>
+            <p class="answer">Common symptoms may include headaches, seizures, changes in vision or hearing, and personality changes.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">How are brain tumors diagnosed?</h3>
+            <p class="answer">Diagnosis often involves imaging tests like MRI or CT scans, and sometimes a biopsy.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">What are the treatment options for brain tumors?</h3>
+            <p class="answer">Treatment options may include surgery, radiation therapy, chemotherapy, and targeted therapies.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">What is the success rate of brain tumor surgery?
+            </h3>
+            <p class="answer">The success rate of brain tumor surgery depends on various factors, including the tumor type, location, and the patient's overall health. Success rates vary and should be discussed with a neurosurgeon.
+                </p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">Is radiation therapy always required after brain tumor surgery?
+            </h3>
+            <p class="answer">Radiation therapy may or may not be necessary after surgery. It depends on the tumor type, size, and location. The treatment plan is individualized for each patient.
+            </p>
+        </div>
+        
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">Are there alternative or complementary therapies for brain tumor treatment?
+            </h3>
+            <p class="answer">In some cases, brain tumors can be hereditary, especially if there is a family history of specific genetic syndromes associated with brain tumors. Genetic counseling and testing may be recommended for individuals with a family history of brain tumors.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)"> Can brain tumors be hereditary?
+            </h3>
+            <p class="answer">Some patients explore alternative or complementary therapies, such as acupuncture, yoga, or dietary changes, alongside conventional treatments. However, it's essential to consult with healthcare professionals before trying these approaches.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">What are the different types of brain tumors?
+            </h3>
+            <p class="answer">Brain tumors can be categorized based on their location, type of cells involved, and whether they are primary (originating in the brain) or secondary (metastatic tumors that spread to the brain from other parts of the body). Common types include gliomas, meningiomas, and metastatic brain tumors.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)"> What are the potential complications of brain tumor surgery?
+            <p class="answer">Complications of brain tumor surgery can include infection, bleeding, damage to surrounding brain tissue, and neurological deficits. The specific risks depend on factors such as the tumor's location and size.
+            </p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)"> Are there any preventive measures to reduce the risk of brain tumors?
+            </h3>
+            <p class="answer">There are no guaranteed preventive measures, but reducing exposure to ionizing radiation, adopting a healthy lifestyle, and avoiding known risk factors (if possible) may help lower the risk. Regular check-ups and early detection are also essential.
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(this)">What support and resources are available for individuals and families affected by brain tumors?
+            </h3>
+            <p class="answer">There are various support groups, organizations, and healthcare professionals specializing in brain tumor care. These can provide emotional support, information, and resources to help patients and their families navigate the challenges of diagnosis and treatment.
+            </p>
+        </div>
+
+        <br>        
+    </section>
+
+    <!-- footer -->
+<footer id="footer" class="footer text-center">
+    <div class="container">
+        <div class="footer-inner text-white py grid">
+            <div class="footer-item">
+                <h3 class="footer-head">Copyright © 2023</h3>
+                <p class="text text-md">
+                    <span class="big-name">
+                        <a href="https://www.linkedin.com/in/ameera-rayan-a80349268/" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i> <span class="blue-text">Ameera Rayan</span>
+                        </a> <br>
+                        <a href="https://www.linkedin.com/in/aseel-khaldy-683774264/" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i> <span class="blue-text">Aseel Khawaled</span>
+                        </a><br>
+                        <a href="https://www.linkedin.com/in/maria-orabi-9a4209250" target="_blank" class="linkedin-link">
+                            <i class="fab fa-linkedin"></i> <span class="blue-text">Maria Orabi</span>
+                        </a>
+                    </span>
+                </p>
+            </div>
+            <div class="footer-item">
+                <h3 class="footer-head">Location</h3>
+                <p class="text text-lg"> 
+                    <a href="#" class="text-blue">
+                        <i class="fas fa-map-marker-alt"></i> Haifa, Israel
+                    </a>
+                </p>
+            </div>            
+
+            <div class="footer-item">
+                <h3 class="footer-head">Brain Detection</h3>
+                <a href="/braindetect" class="btn btn-blue">Detect Now</a>
+            </div>
+            
+            <!-- Social Media Icons and Contact Information -->
+            <div class="footer-item">
+                <h3 class="footer-head">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/yourpage" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/yourpage" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+                <h3 class="footer-head">Contact Us</h3>
+                <p class="text text-md">
+                    <a href="mailto:ameerarayan2@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> <span class="contact-text">ameerarayan2@gmail.com</span>
+                    </a>
+                    <br>
+                    <a href="mailto:aseel.khaldy@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> <span class="contact-text">aseel.khaldy@gmail.com</span>
+                    </a>
+                    <br>
+                    <a href="mailto:orabimaria@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> <span class="contact-text">orabimaria@gmail.com</span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end of footer -->
+    <!-- custom js -->
+    <script src = "../static/jsBrain/homebrain.js"></script>
+<script>
+    // Function to toggle answers
+    function toggleAnswer(question) {
+        const answer = question.nextElementSibling;
+        if (answer.style.display === 'block' || answer.style.display === '') {
+            answer.style.display = 'none';
+        } else {
+            answer.style.display = 'block';
+        }
+    }
+
+    // Function for searching questions
+    document.getElementById('searchInput').addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase();
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(function (faqItem) {
+            const questionText = faqItem.querySelector('h3').textContent.toLowerCase();
+            const answer = faqItem.querySelector('.answer');
+
+            if (questionText.includes(searchTerm)) {
+                faqItem.style.display = 'block';
+            } else {
+                faqItem.style.display = 'none';
+                answer.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
