@@ -21,6 +21,12 @@ from keras.metrics import AUC
 import pyrebase
 from config import firebase_config
 import sqlite3 as sql
+from tensorflow.keras.models import load_model
+from flask import Flask,url_for,render_template,redirect,session,Response
+from flask_wtf import FlaskForm
+from wtforms import FileField,SubmitField
+from flask_wtf.file import file_required,file_allowed
+from werkzeug.utils import secure_filename
 
 
 app = Flask(__name__)
@@ -87,50 +93,77 @@ def prevention():
 
 
 ############################################# BRAIN TUMOR FUNCTIONS ################################################
+app.config['SECRET_KEY']='jaykumar'
 
-def preprocess_imgs(set_name, img_size):
-    """
-    Resize and apply VGG-15 preprocessing
-    """
-    set_new = []
-    for img in set_name:
-        img = cv2.resize(img,dsize=img_size,interpolation=cv2.INTER_CUBIC)
-        set_new.append(preprocess_input(img))
-    return np.array(set_new)
+class BrainForm(FlaskForm):
+    style={'class': 'form-control', 'style':'width:25%;'}
+    image = FileField("",validators=[file_required(),file_allowed(['jpg','png','jpeg'],'Images Only!')],render_kw=style)
+    submit = SubmitField("Analyze",render_kw={'class':'btn btn-outline-primary'})
 
-def crop_imgs(set_name, add_pixels_value=0):
-    """
-    Finds the extreme points on the image and crops the rectangular out of them
-    """
-    set_new = []
-    for img in set_name:
-        gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-        gray = cv2.GaussianBlur(gray, (5, 5), 0)
+modelBrain = load_model('brain_tumor.h5')
 
-        # threshold the image, then perform a series of erosions +
-        # dilations to remove any small regions of noise
-        thresh = cv2.threshold(gray, 45, 255, cv2.THRESH_BINARY)[1]
-        thresh = cv2.erode(thresh, None, iterations=2)
-        thresh = cv2.dilate(thresh, None, iterations=2)
+def predict(modelBrain, sample):
+    img = cv2.imread(sample)
+    img = cv2.resize(img, (150, 150))
+    img = np.reshape(img, (1, 150, 150, 3))
+    predictions = modelBrain.predict(img)
+    class_prediction = np.argmax(predictions)
+    probability = predictions[0][class_prediction]
+    return class_prediction, probability
+def tumor_name(value):
+    if value==0:
+        return 'Glioma Tumor'
+    elif value==1:
+        return 'Meningioma Tumor'
+    elif value==2:
+        return 'No Tumor Found'
+    elif value==3:
+        return 'Pituitary Tumor'
+x=0
 
-        # find contours in thresholded image, then grab the largest one
-        cnts = cv2.findContours(
-            thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        cnts = imutils.grab_contours(cnts)
-        c = max(cnts, key=cv2.contourArea)
+@app.route('/braindetect', methods=['GET','POST'])
+def index2():
+    form = BrainForm()
 
-        # find the extreme points
-        extLeft = tuple(c[c[:, :, 0].argmin()][0])
-        extRight = tuple(c[c[:, :, 0].argmax()][0])
-        extTop = tuple(c[c[:, :, 1].argmin()][0])
-        extBot = tuple(c[c[:, :, 1].argmax()][0])
+    if form.validate_on_submit():
 
-        ADD_PIXELS = add_pixels_value
-        new_img = img[extTop[1]-ADD_PIXELS:extBot[1]+ADD_PIXELS,
-                      extLeft[0]-ADD_PIXELS:extRight[0]+ADD_PIXELS].copy()
-        set_new.append(new_img)
+        assets_dir = './static'
+        img = form.image.data
+        img_name = secure_filename(img.filename)
 
-    return np.array(set_new)
+        img.save(os.path.join(assets_dir, img_name))
+        global x
+        x=os.path.join(assets_dir, img_name)
+
+        return redirect(url_for('prediction'))
+
+    return render_template('brain_detect.html',form=form)
+
+@app.route('/result')
+def prediction2():
+    class_prediction, probability = predict(modelBrain, x)
+    result = tumor_name(class_prediction)
+    os.remove(x)
+    return render_template('prediction.html', result=result, probability=probability)
+
+
+@app.route('/what')
+def what():
+    return render_template('what.html')
+
+
+@app.route('/projectBrain')
+def brainproject():
+    return render_template('Implementationproject.html')
+
+
+@app.route('/Faqbrain')
+def FAQ2():
+    return render_template('FAQbrain.html')
+
+@app.route('/homebrain')
+def homebrain2():
+    return render_template('homebrain.html')
 
 ########################### Routing Functions ########################################
 
@@ -157,17 +190,6 @@ def upload_ct():
 def main():
     return render_template('homebrain.html')
 
-@app.route('/brain_tumor')
-def brain():
-    return render_template('brain_tumor.html')
-
-@app.route('/projectBrain')
-def projectBrain():
-    return render_template('Implementationproject.html')
-
-@app.route('/FAQSBrain')
-def faq():
-    return render_template('FAQbrain.html')
 
 ########################### end Routing Functions of braintumor ########################################
 
@@ -431,39 +453,7 @@ def uploaded_ct():
 
 
 ####### brain #########################
-def predict_Btumor(img_path):
-    model_load = load_model("Trained ModelBrain/brain_tumor.h5")
 
-    img = cv2.imread(img_path)
-    img = Image.fromarray(img)
-    img = img.resize((64, 64))
-    img = np.array(img)
-    img = np.expand_dims(img, axis=0)
-
-    preds = model_load.predict(img)
-    return preds[0]
-
-@app.route('/predictBTumor', methods=['GET', 'POST'])
-def upload():
-    if request.method == 'POST':
-        # Get the file from post request
-        f = request.files['file']
-        basepath = os.path.dirname(__file__)
-        file_path = os.path.join(basepath, 'uploadsbrain', secure_filename(f.filename))
-        print(file_path)
-        preds = predict_Btumor(file_path)
-        print(preds)
-
-        if int(preds[0]) == 0:
-            result = "No worry! No Brain Tumor"
-        else:
-            result = "Patient has Brain Tumor"
-
-        print(f'prdicted: {result}')
-
-        return result
-
-    return None
 # No caching at all for API endpoints.
 @app.after_request
 def add_header(response):
