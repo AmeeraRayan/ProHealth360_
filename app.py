@@ -289,8 +289,6 @@ def predict_cancer():
 
     return render_template('cancer_detection.html', probability=probability_of_breast_cancer)
 
-
-
  ###########################breast cancer webApp###########################################
 @app.route('/index_cancer.html')
 def index_cancer():
