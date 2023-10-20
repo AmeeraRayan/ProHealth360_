@@ -23,9 +23,9 @@ html{
     font-size: 10px;
 }
 body{
-    font-size: 1.6rem;
+    font-size: 2rem;
     line-height: 1.6;
-    font-family: var(--poppins-font);
+    font-family: var(--transition);
 }
 img{
     width: 100%;
@@ -158,6 +158,9 @@ h1, h2, h3{
     width: 100%;
     padding: 0.2rem 0;
     z-index: 999;
+}
+.nav-item{
+    color: #000;
 }
 .navbar .container{
     -webkit-box-pack: justify;
@@ -640,8 +643,7 @@ button[class ^= navbar]:hover{
 .footer {
     padding-top: 10px; 
     padding-bottom: 10px;
-    background-color: var(--dark-color);
-
+    background-color: aliceblue;
 }
 
 .footer-inner {
@@ -689,10 +691,6 @@ button[class ^= navbar]:hover{
     margin-right: auto;
     margin-left: auto;
 }
-.footer-item address{
-    font-size: 1.5rem;
-    font-style: normal;
-}
 .footer-item .tags-list{
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -711,7 +709,7 @@ button[class ^= navbar]:hover{
     transition: var(--transition);
 }
 .footer-item a:hover{
-    color: var(--dark-gray);
+    color: var(--dark-color);
 }
 .footer-item:last-child .text{
     padding-top: 0;
@@ -726,6 +724,15 @@ button[class ^= navbar]:hover{
     border-top: 2px solid var(--dark-gray);
     padding: 4.5rem 0;
 }
+.footer .text {
+    font-size: 1.7rem;
+    color: #000;
+}
+.footer-head {
+    font-size: 1.8rem;
+    color: #000;
+}
+
 .footer-links li{
     margin: 0 2.4rem;
     font-size: 2rem;

@@ -347,3 +347,16 @@ template {
 [hidden] {
   display: none;
 }
+.cloud-background {
+  background-color: #e0e0e0; /* Light gray background color */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners for the cloud */
+}
+
+.cloud-item {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff; /* White background for each item */
+  border-radius: 5px; /* Rounded corners for each item */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Drop shadow for each item */
+}
