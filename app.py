@@ -279,7 +279,7 @@ def predict_cancer():
        'bland_chromatin', 'normal_nucleoli', 'mitoses']
 
     df = pd.DataFrame(features_value, columns=features_name)
-    raw_scores = cancer_model.predict(df)  # Raw scores from your model
+    raw_scores = cancer_model.predict_cancer(df)  # Raw scores from your model
 
     # Apply the sigmoid function to get probabilities
     probabilities = sigmoid(raw_scores)
