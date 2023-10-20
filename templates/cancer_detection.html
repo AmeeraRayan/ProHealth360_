@@ -193,9 +193,9 @@
                     <button type="submit" class="btn btn-main btn-lg">Predict Cancer</button>
                 </form>
                 <br />
-                 <center>
-                  <h1 style="background:#de5499">{{prediction_text}}</h1>
-                </center>
+                <div class="result-container">
+                  <h2 id="prediction-text" style="background: #de5499">{{ prediction_text }}</h2>
+              </div>
                <br />
             </div>
             </div>
@@ -218,7 +218,6 @@
 <script src="static/jscancer/myScript.js"></script>
 <!-- Include the SweetAlert library -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 
 </body>
 </html>
