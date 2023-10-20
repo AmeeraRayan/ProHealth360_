@@ -268,21 +268,19 @@ def game():
  ########################### breast cancer function ###################################################
 @app.route('/predict',methods=['POST'])
 def predict_cancer():
-  input_features = [int(x) for x in request.form.values()]
-  features_value = [np.array(input_features)]
+    input_features = [int(x) for x in request.form.values()]
+    features_value = [np.array(input_features)]
 
-  features_name = ['clump_thickness', 'uniform_cell_size', 'uniform_cell_shape',
+    features_name = ['clump_thickness', 'uniform_cell_size', 'uniform_cell_shape',
        'marginal_adhesion', 'single_epithelial_size', 'bare_nuclei',
        'bland_chromatin', 'normal_nucleoli', 'mitoses']
 
-  df = pd.DataFrame(features_value, columns=features_name)
-  output = cancer_model.predict(df)
-  if output == 4:
-      res_val = "Breast cancer"
-  else:
-      res_val = "no Breast cancer"
+    df = pd.DataFrame(features_value, columns=features_name)
+    probability = cancer_model.predict_proba(df)  # Assuming your model can provide probabilities
+    probability_of_breast_cancer = probability[0][4]  # Assuming class 4 represents "Breast cancer" in the probabilities
 
-  return render_template('cancer_detection.html', prediction_text='Patient has {}'.format(res_val))
+    return render_template('cancer_detection.html', probability=probability_of_breast_cancer)
+
 
  ###########################breast cancer webApp###########################################
 @app.route('/index_cancer.html')
