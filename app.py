@@ -140,7 +140,7 @@ def index2():
     return render_template('brain_detect.html',form=form)
 
 @app.route('/result')
-def prediction2():
+def prediction():
     class_prediction, probability = predict(modelBrain, x)
     result = tumor_name(class_prediction)
     os.remove(x)
