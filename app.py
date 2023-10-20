@@ -141,7 +141,7 @@ def index2():
 
 @app.route('/result')
 def prediction():
-    class_prediction, probability = predict(modelBrain, x)
+    class_prediction, probability = predict_brain(modelBrain, x)
     result = tumor_name(class_prediction)
     os.remove(x)
     return render_template('prediction.html', result=result, probability=probability)
