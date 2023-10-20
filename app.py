@@ -102,7 +102,7 @@ class BrainForm(FlaskForm):
 
 modelBrain = load_model('brain_tumor.h5')
 
-def predict(modelBrain, sample):
+def predict_brain(modelBrain, sample):
     img = cv2.imread(sample)
     img = cv2.resize(img, (150, 150))
     img = np.reshape(img, (1, 150, 150, 3))
