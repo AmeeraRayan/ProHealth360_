@@ -219,19 +219,22 @@
 <!-- Include the SweetAlert library -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  function predictCancer() {
-    // Your form submission code here
-    // Replace the following line with your actual logic to predict cancer
-    let predictionResult = "{{prediction_text}}";
+  document.querySelector("form").addEventListener("submit", function (e) {
+      var inputElements = document.querySelectorAll(".form-control"); // Select elements with the class "cancer_input"
+      var valid = true;
 
-    // Show a SweetAlert message box with the prediction result and an "OK" button
-    Swal.fire({
-        title: 'Cancer Prediction',
-        text: predictionResult,
-        icon: 'info'
-    });
-    console.log("Prediction Text:", "{{prediction_text}}");
-}
+      inputElements.forEach(function (inputElement) {
+          var inputValue = parseInt(inputElement.value, 10);
+          if (isNaN(inputValue) || inputValue < 1 || inputValue > 10) {
+              valid = false;
+          }
+      });
+
+      if (!valid) {
+          e.preventDefault();
+          alert("Please enter valid values between 1 and 10.");
+      }
+  });
 </script>
 
 </body>
