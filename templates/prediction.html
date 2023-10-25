@@ -10,18 +10,52 @@
 <br/>
 <br/>
 <br/>
-<table class="table table-hover" style="width:25%; margin-left:auto; margin-right:auto;">
+<style>
+  /* Add custom CSS styles for the table */
+  table.custom-table {
+    width: 25%;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  table.custom-table th {
+    font-size: 18px;
+    color: #333;
+  }
+
+  table.custom-table td {
+    font-size: 16px;
+    color: #555;
+  }
+
+  /* Style the "RESULT" row differently */
+  tr.result-row {
+    background-color: #07cef1;
+    color: #fff;
+  }
+
+  /* Style the "With Probability" row differently */
+  tr.probability-row {
+    background-color: #2196F3;
+    color: #fff;
+  }
+</style>
+
+<table class="table custom-table">
   <tbody>
-    <tr class="table-dark">
-      <th scope="row">RESULT</th>
-      <td>{{ result }}</td>
+    <tr class="result-row">
+      <th scope="row">RESULT: <span>{{ result }}</span></th>
+     
     </tr>
-    <tr class="table-dark">
-      <th scope="row">Probability</th>
-      <td>{{ probability * 100 }}%</td>
+    <tr class="probability-row">
+      <th scope="row">With Probability: <span>{{ probability * 100 }}%</span></th>
     </tr>
   </tbody>
 </table>
+
 <br/>
 <br/>
 <p><center>Here is some more information which might help you:</center></p>
