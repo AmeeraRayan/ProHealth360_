@@ -39,46 +39,51 @@
 </head>
 
 <body>
-  <!-- header -->
-  <header class="header bg-blue">
-    <nav class="navbar bg-blue">
-      <div class="container flex">
-        <a href="/homebrain" class="navbar-brand">
-          <img src="../static/imagesBrain/logo.png" alt="site logo">
-        </a>
-        <button type="button" class="navbar-show-btn">
-          <img src="../static/imagesBrain/ham-menu-icon.png">
-        </button>
-        <div class="navbar-collapse bg-white">
-          <button type="button" class="navbar-hide-btn">
-            <img src="../static/imagesBrain/close-icon.png">
+ <!-- header -->
+ <header class = "header bg-blue">
+  <nav class = "navbar bg-blue">
+      <div class = "container flex">
+          <a href = "/homebrain" class = "navbar-brand">
+              <img src = "../static/imagesBrain/logo.png" alt = "site logo">
+          </a>
+          <button type = "button" class = "navbar-show-btn">
+              <img src = "../static/imagesBrain/ham-menu-icon.png">
           </button>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a href="/homebrain" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-              <a href="/projectBrain" class="nav-link">About project</a>
-            </li>
-            <li class="nav-item">
-              <a href="/Faqbrain" class="nav-link">FAQS</a>
-            </li>
-            <li class="nav-item">
-              <a href="/braindetect" class="nav-link">Tumor Detection</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://news.google.com/search?q=brain%20tumors" class="nav-link" target="_blank">News</a>
-            </li>
-            <li class="nav-item">
-              <a href="/what" class="nav-link">More info</a>
-            </li>
-            <li class="nav-item">
-              <a href="/" class="nav-link">Back to ProHealth360</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+
+          <div class="navbar-collapse bg-white">
+              <button type="button" class="navbar-hide-btn">
+                  <img src="../static/imagesBrain/close-icon.png">
+              </button>
+              <ul class="navbar-nav">
+                  <li class="nav-item" id="home-link">
+                      <a href="#" class="nav-link" onclick="toggleHomeLinks()">Home</a>
+                      <ul id="home-submenu" style="display: none;">
+                          <li class="nav-item">
+                              <a href="/homebrain" class="nav-link">Home</a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="/" class="nav-link">ProHealth360</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/projectBrain" class="nav-link">About project</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/Faqbrain" class="nav-link">FAQS</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/braindetect" class="nav-link">Tumor Detection</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="https://news.google.com/search?q=brain%20tumors" class="nav-link" target="_blank">News</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/what" class="nav-link">More info</a>
+                  </li>
+              </ul>
+          </div>
+  </nav>
     <br><br>
   <br><br>
 <div class = "header-inner text-white text-center">
@@ -195,5 +200,16 @@
         </div>
       </div>
     </div>
-  </footer>  </body><!-- end of footer -->
+  </footer>
+  <script>
+    function toggleHomeLinks() {
+        var submenu = document.getElementById("home-submenu");
+        if (submenu.style.display === "none" || submenu.style.display === "") {
+            submenu.style.display = "block";
+        } else {
+            submenu.style.display = "none";
+        }
+    }
+    </script>
+      </body>
 </html>
