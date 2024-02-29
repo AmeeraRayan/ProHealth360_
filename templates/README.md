@@ -102,7 +102,7 @@ More information can be found <a href="https://www.mathworks.com/help/deeplearni
   <li>Activate free <b>Google Colab GPU</b> for faster execution. Go to Runtime -> Change Runtime Type -> Hardware Accelerator -> GPU -> Save</li>
 </ul>
 
-# Authors
+# Authorsssss
 
 ## Kaushik Jadhav
 
