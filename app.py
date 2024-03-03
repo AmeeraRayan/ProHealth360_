@@ -174,7 +174,7 @@ def home():
 
 @app.route('/covid')##detection
 def covid():
-    return render_template('covid.html')
+    return render_template('covid_.html')
  
 @app.route('/upload_chest.html')
 def upload_chest():
